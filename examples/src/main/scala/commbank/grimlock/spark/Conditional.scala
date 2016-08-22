@@ -1,0 +1,96 @@
+// Copyright 2014,2015,2016 Commonwealth Bank of Australia
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+// http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+package commbank.grimlock.spark.examples
+
+import commbank.grimlock.framework._
+import commbank.grimlock.framework.content._
+import commbank.grimlock.framework.encoding._
+import commbank.grimlock.framework.position._
+
+import commbank.grimlock.library.aggregate._
+import commbank.grimlock.library.squash._
+import commbank.grimlock.library.transform._
+
+import commbank.grimlock.spark.environment._
+import commbank.grimlock.spark.environment.Context._
+import commbank.grimlock.spark.Matrix._
+
+import org.apache.spark.{ SparkConf, SparkContext }
+
+import shapeless.{ Nat, Succ }
+import shapeless.nat.{ _1, _2 }
+
+object Conditional {
+  def main(args: Array[String]) {
+    // Define implicit context.
+    implicit val ctx = Context(new SparkContext(args(0), "Grimlock Spark Demo", new SparkConf()))
+
+    // Path to data files, output folder
+    val path = if (args.length > 1) args(1) else "../../data"
+    val output = "spark"
+
+    // Read the data.
+    // 1/ Read the data (ignoring errors), this returns a 2D matrix (row x feature).
+    val (data, _) = loadText(ctx, s"${path}/exampleConditional.txt", Cell.parse2D())
+
+    // Define function that appends the value as a string, or "missing" if no value is available
+    def cast[P <: Nat](cell: Cell[P], value: Option[Value]): Option[Position[Succ[P]]] = cell
+      .position
+      .append(value.map(_.toShortString).getOrElse("missing").toString)
+      .toOption
+
+    // Generate 3D matrix (hair color x eye color x gender)
+    // 1/ Reshape matrix expanding it with hair color.
+    // 2/ Reshape matrix expanding it with eye color.
+    // 3/ Reshape matrix expanding it with gender.
+    // 4/ Melt the remaining 'value' column of the second dimension into the row key (first) dimension.
+    // 5/ Squash the first dimension (row ids + value). As there is only one value for each
+    //    hair/eye/gender triplet, any squash function can be used.
+    val heg = data
+      .reshape(_2, "hair", cast)
+      .reshape(_2, "eye", cast)
+      .reshape(_2, "gender", cast)
+      .melt(_2, _1, Value.concatenate("."))
+      .squash(_1, PreservingMaxPosition())
+
+    // Define an extractor for getting data out of the gender count (gcount) map.
+    def extractor = ExtractWithDimension[_2, Content](_2).andThenPresent(_.value.asDouble)
+
+    // Get the gender counts. Sum out hair and eye color.
+    val gcount = heg
+      .summarise(Along(_1))(Sum())
+      .summarise(Along(_1))(Sum())
+      .compact()
+
+    // Get eye color conditional on gender.
+    // 1/ Sum out hair color.
+    // 2/ Divide each element by the gender's count to get conditional distribution.
+    heg
+      .summarise(Along(_1))(Sum())
+      .transformWithValue(Fraction(extractor), gcount)
+      .saveAsText(ctx, s"./demo.${output}/eye.out")
+      .toUnit
+
+    // Get hair color conditional on gender.
+    // 1/ Sum out eye color.
+    // 2/ Divide each element by the gender's count to get conditional distribution.
+    heg
+      .summarise(Along(_2))(Sum())
+      .transformWithValue(Fraction(extractor), gcount)
+      .saveAsText(ctx, s"./demo.${output}/hair.out")
+      .toUnit
+  }
+}
+

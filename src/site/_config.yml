@@ -1,0 +1,3 @@
+name: grimlock
+exclude: [Gemfile]
+markdown: kramdown
