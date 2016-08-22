@@ -1,0 +1,5 @@
+val.1|long|continuous|1
+val.2|long|continuous|2
+val.3|long|continuous|3
+val.4|long|continuous|4
+val.5|long|continuous|5
