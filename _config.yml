@@ -1,5 +1,0 @@
-name: grimlock
-exclude: [Gemfile]
-markdown: kramdown
-
-releaseVersion: 0.1.1-20160822211127-9201bc6
