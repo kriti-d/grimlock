@@ -1,0 +1,4 @@
+iid:0066848|fid:A|long|continuous|2
+iid:0066848|fid:B|long|continuous|4
+iid:0066848|fid:C|long|continuous|6
+iid:0066848|fid:D|long|continuous|8
