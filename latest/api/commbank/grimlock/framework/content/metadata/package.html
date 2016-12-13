@@ -1,0 +1,384 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>metadata - commbank.grimlock.framework.content.metadata</title>
+          <meta name="description" content="metadata - commbank.grimlock.framework.content.metadata" />
+          <meta name="keywords" content="metadata commbank.grimlock.framework.content.metadata" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../../index.html';
+            var hash = 'commbank.grimlock.framework.content.metadata.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Package" src="../../../../../lib/package_big.png" />
+        <p id="owner"><a href="../../../../package.html" class="extype" name="commbank">commbank</a>.<a href="../../../package.html" class="extype" name="commbank.grimlock">grimlock</a>.<a href="../../package.html" class="extype" name="commbank.grimlock.framework">framework</a>.<a href="../package.html" class="extype" name="commbank.grimlock.framework.content">content</a></p>
+        <h1>metadata</h1><span class="permalink">
+      <a href="../../../../../index.html#commbank.grimlock.framework.content.metadata.package" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">metadata</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        
+        
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="commbank.grimlock.framework.content.metadata.CategoricalSchema" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="CategoricalSchema[T]extendsSchema"></a>
+      <a id="CategoricalSchema[T]:CategoricalSchema[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="CategoricalSchema.html"><span class="name">CategoricalSchema</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <a href="Schema.html" class="extype" name="commbank.grimlock.framework.content.metadata.Schema">Schema</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#commbank.grimlock.framework.content.metadata.package@CategoricalSchema[T]extendsSchema" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Base trait for schemas for categorical variables.</p>
+    </li><li name="commbank.grimlock.framework.content.metadata.ContinuousSchema" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ContinuousSchema[T]extendsNumericalSchema[T]withProductwithSerializable"></a>
+      <a id="ContinuousSchema[T]:ContinuousSchema[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ContinuousSchema.html"><span class="name">ContinuousSchema</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <a href="NumericalSchema.html" class="extype" name="commbank.grimlock.framework.content.metadata.NumericalSchema">NumericalSchema</a>[<span class="extype" name="commbank.grimlock.framework.content.metadata.ContinuousSchema.T">T</span>] with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#commbank.grimlock.framework.content.metadata.package@ContinuousSchema[T]extendsNumericalSchema[T]withProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Schema for continuous variables.</p><div class="fullcomment"><div class="comment cmt"><p>Schema for continuous variables.
+</p></div><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>The constructor is private to ensure a clean interface as provided by the <code>apply</code> methods of the companion
+      object.</p></span></dd></dl></div>
+    </li><li name="commbank.grimlock.framework.content.metadata.DateSchema" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="DateSchema[T]extendsSchemawithProductwithSerializable"></a>
+      <a id="DateSchema[T]:DateSchema[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="DateSchema.html"><span class="name">DateSchema</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <a href="Schema.html" class="extype" name="commbank.grimlock.framework.content.metadata.Schema">Schema</a> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#commbank.grimlock.framework.content.metadata.package@DateSchema[T]extendsSchemawithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Schema for date variables.</p><div class="fullcomment"><div class="comment cmt"><p>Schema for date variables.
+</p></div><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>The constructor is private to ensure a clean interface as provided by the <code>apply</code> methods of the companion
+      object.</p></span></dd></dl></div>
+    </li><li name="commbank.grimlock.framework.content.metadata.DiscreteSchema" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="DiscreteSchema[T]extendsNumericalSchema[T]withProductwithSerializable"></a>
+      <a id="DiscreteSchema[T]:DiscreteSchema[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="DiscreteSchema.html"><span class="name">DiscreteSchema</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <a href="NumericalSchema.html" class="extype" name="commbank.grimlock.framework.content.metadata.NumericalSchema">NumericalSchema</a>[<span class="extype" name="commbank.grimlock.framework.content.metadata.DiscreteSchema.T">T</span>] with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#commbank.grimlock.framework.content.metadata.package@DiscreteSchema[T]extendsNumericalSchema[T]withProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Schema for discrete variables.</p><div class="fullcomment"><div class="comment cmt"><p>Schema for discrete variables.
+</p></div><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>The constructor is private to ensure a clean interface as provided by the <code>apply</code> methods of the companion
+      object.</p></span></dd></dl></div>
+    </li><li name="commbank.grimlock.framework.content.metadata.NominalSchema" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="NominalSchema[T]extendsCategoricalSchema[T]withProductwithSerializable"></a>
+      <a id="NominalSchema[T]:NominalSchema[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="NominalSchema.html"><span class="name">NominalSchema</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="domain">domain: <span class="extype" name="scala.Predef.Set">Set</span>[<span class="extype" name="commbank.grimlock.framework.content.metadata.NominalSchema.T">T</span>] = <span class="symbol">Set[T]()</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="evidence$9">evidence$9: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.reflect.ClassTag" class="extype" target="_top">ClassTag</a>[<span class="extype" name="commbank.grimlock.framework.content.metadata.NominalSchema.T">T</span>]</span>)</span><span class="result"> extends <a href="CategoricalSchema.html" class="extype" name="commbank.grimlock.framework.content.metadata.CategoricalSchema">CategoricalSchema</a>[<span class="extype" name="commbank.grimlock.framework.content.metadata.NominalSchema.T">T</span>] with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#commbank.grimlock.framework.content.metadata.package@NominalSchema[T]extendsCategoricalSchema[T]withProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Schema for nominal variables.</p><div class="fullcomment"><div class="comment cmt"><p>Schema for nominal variables.
+</p></div><dl class="paramcmts block"><dt class="param">domain</dt><dd class="cmt"><p>The values of the variable.</p></dd></dl></div>
+    </li><li name="commbank.grimlock.framework.content.metadata.NumericalSchema" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="NumericalSchema[T]extendsSchema"></a>
+      <a id="NumericalSchema[T]:NumericalSchema[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="NumericalSchema.html"><span class="name">NumericalSchema</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <a href="Schema.html" class="extype" name="commbank.grimlock.framework.content.metadata.Schema">Schema</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#commbank.grimlock.framework.content.metadata.package@NumericalSchema[T]extendsSchema" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Base trait for schemas for numerical variables.</p>
+    </li><li name="commbank.grimlock.framework.content.metadata.OrdinalSchema" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="OrdinalSchema[T]extendsCategoricalSchema[T]withProductwithSerializable"></a>
+      <a id="OrdinalSchema[T]:OrdinalSchema[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="OrdinalSchema.html"><span class="name">OrdinalSchema</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="domain">domain: <span class="extype" name="scala.Predef.Set">Set</span>[<span class="extype" name="commbank.grimlock.framework.content.metadata.OrdinalSchema.T">T</span>] = <span class="symbol">Set[T]()</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="evidence$10">evidence$10: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.reflect.ClassTag" class="extype" target="_top">ClassTag</a>[<span class="extype" name="commbank.grimlock.framework.content.metadata.OrdinalSchema.T">T</span>]</span>, <span name="evidence$11">evidence$11: <span class="extype" name="scala.Ordering">Ordering</span>[<span class="extype" name="commbank.grimlock.framework.content.metadata.OrdinalSchema.T">T</span>]</span>)</span><span class="result"> extends <a href="CategoricalSchema.html" class="extype" name="commbank.grimlock.framework.content.metadata.CategoricalSchema">CategoricalSchema</a>[<span class="extype" name="commbank.grimlock.framework.content.metadata.OrdinalSchema.T">T</span>] with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#commbank.grimlock.framework.content.metadata.package@OrdinalSchema[T]extendsCategoricalSchema[T]withProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Schema for ordinal variables.</p><div class="fullcomment"><div class="comment cmt"><p>Schema for ordinal variables.
+</p></div><dl class="paramcmts block"><dt class="param">domain</dt><dd class="cmt"><p>The optional values of the variable.</p></dd></dl></div>
+    </li><li name="commbank.grimlock.framework.content.metadata.Schema" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="SchemaextendsAnyRef"></a>
+      <a id="Schema:Schema"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Schema.html"><span class="name">Schema</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#commbank.grimlock.framework.content.metadata.package@SchemaextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Base trait for variable schemas.</p>
+    </li><li name="commbank.grimlock.framework.content.metadata.StructuredSchema" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="StructuredSchemaextendsSchema"></a>
+      <a id="StructuredSchema:StructuredSchema"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="StructuredSchema.html"><span class="name">StructuredSchema</span></a><span class="result"> extends <a href="Schema.html" class="extype" name="commbank.grimlock.framework.content.metadata.Schema">Schema</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#commbank.grimlock.framework.content.metadata.package@StructuredSchemaextendsSchema" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Schema for structured data variables.</p>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="commbank.grimlock.framework.content.metadata.ContinuousSchema" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ContinuousSchema"></a>
+      <a id="ContinuousSchema:ContinuousSchema"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ContinuousSchema$.html"><span class="name">ContinuousSchema</span></a><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#commbank.grimlock.framework.content.metadata.package@ContinuousSchema" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Companion object to <code>ContinuousSchema</code> case class.</p>
+    </li><li name="commbank.grimlock.framework.content.metadata.DateSchema" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="DateSchema"></a>
+      <a id="DateSchema:DateSchema"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="DateSchema$.html"><span class="name">DateSchema</span></a><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#commbank.grimlock.framework.content.metadata.package@DateSchema" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Companion object to <code>DateSchema</code>.</p>
+    </li><li name="commbank.grimlock.framework.content.metadata.Dictionary" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Dictionary"></a>
+      <a id="Dictionary:Dictionary"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Dictionary$.html"><span class="name">Dictionary</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#commbank.grimlock.framework.content.metadata.package@Dictionary" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="commbank.grimlock.framework.content.metadata.DiscreteSchema" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="DiscreteSchema"></a>
+      <a id="DiscreteSchema:DiscreteSchema"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="DiscreteSchema$.html"><span class="name">DiscreteSchema</span></a><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#commbank.grimlock.framework.content.metadata.package@DiscreteSchema" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Companion object to <code>DiscreteSchema</code> case class.</p>
+    </li><li name="commbank.grimlock.framework.content.metadata.NominalSchema" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="NominalSchema"></a>
+      <a id="NominalSchema:NominalSchema"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="NominalSchema$.html"><span class="name">NominalSchema</span></a><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#commbank.grimlock.framework.content.metadata.package@NominalSchema" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Companion object to <code>NominalSchema</code> case class.</p>
+    </li><li name="commbank.grimlock.framework.content.metadata.OrdinalSchema" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="OrdinalSchema"></a>
+      <a id="OrdinalSchema:OrdinalSchema"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="OrdinalSchema$.html"><span class="name">OrdinalSchema</span></a><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#commbank.grimlock.framework.content.metadata.package@OrdinalSchema" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Companion object to <code>OrdinalSchema</code>.</p>
+    </li><li name="commbank.grimlock.framework.content.metadata.Schema" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Schema"></a>
+      <a id="Schema:Schema"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Schema$.html"><span class="name">Schema</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#commbank.grimlock.framework.content.metadata.package@Schema" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Companion object to the <code>Schema</code> trait.</p>
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>
