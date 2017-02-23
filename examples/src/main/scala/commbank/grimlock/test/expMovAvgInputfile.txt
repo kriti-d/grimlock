@@ -1,0 +1,9 @@
+day.1|long|continuous|16
+day.2|long|continuous|17
+day.3|long|continuous|17
+day.4|long|continuous|10
+day.5|long|continuous|17
+day.6|long|continuous|18
+day.7|long|continuous|17
+day.8|long|continuous|17
+day.9|long|continuous|17
