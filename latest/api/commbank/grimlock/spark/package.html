@@ -1,0 +1,495 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>spark - commbank.grimlock.spark</title>
+          <meta name="description" content="spark - commbank.grimlock.spark" />
+          <meta name="keywords" content="spark commbank.grimlock.spark" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../index.html';
+            var hash = 'commbank.grimlock.spark.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Package" src="../../../lib/package_big.png" />
+        <p id="owner"><a href="../../package.html" class="extype" name="commbank">commbank</a>.<a href="../package.html" class="extype" name="commbank.grimlock">grimlock</a></p>
+        <h1>spark</h1><span class="permalink">
+      <a href="../../../index.html#commbank.grimlock.spark.package" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">spark</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        
+        
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="commbank.grimlock.spark.Matrix" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="Matrix[L&lt;:shapeless.Nat,P&lt;:shapeless.Nat]extendsMatrix[L,P,commbank.grimlock.spark.environment.Context.U,commbank.grimlock.spark.environment.Context.E,commbank.grimlock.spark.environment.Context]withPersist[commbank.grimlock.framework.Cell[P]]"></a>
+      <a id="Matrix[L&lt;:Nat,P&lt;:Nat]:Matrix[L,P]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Matrix.html"><span class="name">Matrix</span></a><span class="tparams">[<span name="L">L &lt;: <span class="extype" name="shapeless.Nat">Nat</span></span>, <span name="P">P &lt;: <span class="extype" name="shapeless.Nat">Nat</span></span>]</span><span class="result"> extends <a href="../framework/Matrix.html" class="extype" name="commbank.grimlock.framework.Matrix">framework.Matrix</a>[<span class="extype" name="commbank.grimlock.spark.Matrix.L">L</span>, <span class="extype" name="commbank.grimlock.spark.Matrix.P">P</span>, <a href="environment/Context$.html#U[A]=org.apache.spark.rdd.RDD[A]" class="extmbr" name="commbank.grimlock.spark.environment.Context.U">U</a>, <a href="environment/Context$.html#E[A]=A" class="extmbr" name="commbank.grimlock.spark.environment.Context.E">E</a>, <a href="environment/Context.html" class="extype" name="commbank.grimlock.spark.environment.Context">Context</a>] with <a href="Persist.html" class="extype" name="commbank.grimlock.spark.Persist">Persist</a>[<a href="../framework/Cell.html" class="extype" name="commbank.grimlock.framework.Cell">Cell</a>[<span class="extype" name="commbank.grimlock.spark.Matrix.P">P</span>]]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#commbank.grimlock.spark.package@Matrix[L&lt;:shapeless.Nat,P&lt;:shapeless.Nat]extendsMatrix[L,P,commbank.grimlock.spark.environment.Context.U,commbank.grimlock.spark.environment.Context.E,commbank.grimlock.spark.environment.Context]withPersist[commbank.grimlock.framework.Cell[P]]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Trait for matrix operations using a <code>RDD[Cell[P]]</code>.</p>
+    </li><li name="commbank.grimlock.spark.Matrix1D" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Matrix1DextendsMatrix1D[commbank.grimlock.spark.environment.Context.U,commbank.grimlock.spark.environment.Context.E,commbank.grimlock.spark.environment.Context]withMatrix[shapeless.nat._0,shapeless.nat._1]withApproximateDistribution[shapeless.nat._0,shapeless.nat._1]withStatistics[shapeless.nat._0,shapeless.nat._1]withProductwithSerializable"></a>
+      <a id="Matrix1D:Matrix1D"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Matrix1D.html"><span class="name">Matrix1D</span></a><span class="params">(<span name="context">context: <a href="environment/Context.html" class="extype" name="commbank.grimlock.spark.environment.Context">Context</a></span>, <span name="data">data: <a href="environment/Context$.html#U[A]=org.apache.spark.rdd.RDD[A]" class="extmbr" name="commbank.grimlock.spark.environment.Context.U">U</a>[<a href="../framework/Cell.html" class="extype" name="commbank.grimlock.framework.Cell">Cell</a>[<span class="extype" name="shapeless.Nats._1">shapeless.Nat._1</span>]]</span>)</span><span class="result"> extends <a href="../framework/Matrix1D.html" class="extype" name="commbank.grimlock.framework.Matrix1D">framework.Matrix1D</a>[<a href="environment/Context$.html#U[A]=org.apache.spark.rdd.RDD[A]" class="extmbr" name="commbank.grimlock.spark.environment.Context.U">U</a>, <a href="environment/Context$.html#E[A]=A" class="extmbr" name="commbank.grimlock.spark.environment.Context.E">E</a>, <a href="environment/Context.html" class="extype" name="commbank.grimlock.spark.environment.Context">Context</a>] with <a href="Matrix.html" class="extype" name="commbank.grimlock.spark.Matrix">Matrix</a>[<span class="extype" name="shapeless.Nat._0">_0</span>, <span class="extype" name="shapeless.Nats._1">shapeless.Nat._1</span>] with <a href="distribution/ApproximateDistribution.html" class="extype" name="commbank.grimlock.spark.distribution.ApproximateDistribution">ApproximateDistribution</a>[<span class="extype" name="shapeless.Nat._0">_0</span>, <span class="extype" name="shapeless.Nats._1">shapeless.Nat._1</span>] with <a href="statistics/Statistics.html" class="extype" name="commbank.grimlock.spark.statistics.Statistics">Statistics</a>[<span class="extype" name="shapeless.Nat._0">_0</span>, <span class="extype" name="shapeless.Nats._1">shapeless.Nat._1</span>] with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#commbank.grimlock.spark.package@Matrix1DextendsMatrix1D[commbank.grimlock.spark.environment.Context.U,commbank.grimlock.spark.environment.Context.E,commbank.grimlock.spark.environment.Context]withMatrix[shapeless.nat._0,shapeless.nat._1]withApproximateDistribution[shapeless.nat._0,shapeless.nat._1]withStatistics[shapeless.nat._0,shapeless.nat._1]withProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Rich wrapper around a <code>RDD[Cell[_1]]</code>.</p>
+    </li><li name="commbank.grimlock.spark.Matrix2D" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Matrix2DextendsMatrix2D[commbank.grimlock.spark.environment.Context.U,commbank.grimlock.spark.environment.Context.E,commbank.grimlock.spark.environment.Context]withMatrix[shapeless.nat._1,shapeless.nat._2]withReducibleMatrix[shapeless.nat._1,shapeless.nat._2]withReshapeableMatrix[shapeless.nat._1,shapeless.nat._2]withApproximateDistribution[shapeless.nat._1,shapeless.nat._2]withPairwiseDistance[shapeless.nat._1,shapeless.nat._2]withStatistics[shapeless.nat._1,shapeless.nat._2]withProductwithSerializable"></a>
+      <a id="Matrix2D:Matrix2D"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Matrix2D.html"><span class="name">Matrix2D</span></a><span class="params">(<span name="context">context: <a href="environment/Context.html" class="extype" name="commbank.grimlock.spark.environment.Context">Context</a></span>, <span name="data">data: <a href="environment/Context$.html#U[A]=org.apache.spark.rdd.RDD[A]" class="extmbr" name="commbank.grimlock.spark.environment.Context.U">U</a>[<a href="../framework/Cell.html" class="extype" name="commbank.grimlock.framework.Cell">Cell</a>[<span class="extype" name="shapeless.Nats._2">shapeless.Nat._2</span>]]</span>)</span><span class="result"> extends <a href="../framework/Matrix2D.html" class="extype" name="commbank.grimlock.framework.Matrix2D">framework.Matrix2D</a>[<a href="environment/Context$.html#U[A]=org.apache.spark.rdd.RDD[A]" class="extmbr" name="commbank.grimlock.spark.environment.Context.U">U</a>, <a href="environment/Context$.html#E[A]=A" class="extmbr" name="commbank.grimlock.spark.environment.Context.E">E</a>, <a href="environment/Context.html" class="extype" name="commbank.grimlock.spark.environment.Context">Context</a>] with <a href="Matrix.html" class="extype" name="commbank.grimlock.spark.Matrix">Matrix</a>[<span class="extype" name="shapeless.Nats._1">shapeless.Nat._1</span>, <span class="extype" name="shapeless.Nats._2">shapeless.Nat._2</span>] with <a href="ReducibleMatrix.html" class="extype" name="commbank.grimlock.spark.ReducibleMatrix">ReducibleMatrix</a>[<span class="extype" name="shapeless.Nats._1">shapeless.Nat._1</span>, <span class="extype" name="shapeless.Nats._2">shapeless.Nat._2</span>] with <a href="ReshapeableMatrix.html" class="extype" name="commbank.grimlock.spark.ReshapeableMatrix">ReshapeableMatrix</a>[<span class="extype" name="shapeless.Nats._1">shapeless.Nat._1</span>, <span class="extype" name="shapeless.Nats._2">shapeless.Nat._2</span>] with <a href="distribution/ApproximateDistribution.html" class="extype" name="commbank.grimlock.spark.distribution.ApproximateDistribution">ApproximateDistribution</a>[<span class="extype" name="shapeless.Nats._1">shapeless.Nat._1</span>, <span class="extype" name="shapeless.Nats._2">shapeless.Nat._2</span>] with <a href="distance/PairwiseDistance.html" class="extype" name="commbank.grimlock.spark.distance.PairwiseDistance">PairwiseDistance</a>[<span class="extype" name="shapeless.Nats._1">shapeless.Nat._1</span>, <span class="extype" name="shapeless.Nats._2">shapeless.Nat._2</span>] with <a href="statistics/Statistics.html" class="extype" name="commbank.grimlock.spark.statistics.Statistics">Statistics</a>[<span class="extype" name="shapeless.Nats._1">shapeless.Nat._1</span>, <span class="extype" name="shapeless.Nats._2">shapeless.Nat._2</span>] with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#commbank.grimlock.spark.package@Matrix2DextendsMatrix2D[commbank.grimlock.spark.environment.Context.U,commbank.grimlock.spark.environment.Context.E,commbank.grimlock.spark.environment.Context]withMatrix[shapeless.nat._1,shapeless.nat._2]withReducibleMatrix[shapeless.nat._1,shapeless.nat._2]withReshapeableMatrix[shapeless.nat._1,shapeless.nat._2]withApproximateDistribution[shapeless.nat._1,shapeless.nat._2]withPairwiseDistance[shapeless.nat._1,shapeless.nat._2]withStatistics[shapeless.nat._1,shapeless.nat._2]withProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Rich wrapper around a <code>RDD[Cell[_2]]</code>.</p>
+    </li><li name="commbank.grimlock.spark.Matrix3D" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Matrix3DextendsMatrix3D[commbank.grimlock.spark.environment.Context.U,commbank.grimlock.spark.environment.Context.E,commbank.grimlock.spark.environment.Context]withMatrix[shapeless.nat._2,shapeless.nat._3]withReducibleMatrix[shapeless.nat._2,shapeless.nat._3]withReshapeableMatrix[shapeless.nat._2,shapeless.nat._3]withApproximateDistribution[shapeless.nat._2,shapeless.nat._3]withPairwiseDistance[shapeless.nat._2,shapeless.nat._3]withStatistics[shapeless.nat._2,shapeless.nat._3]withProductwithSerializable"></a>
+      <a id="Matrix3D:Matrix3D"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Matrix3D.html"><span class="name">Matrix3D</span></a><span class="params">(<span name="context">context: <a href="environment/Context.html" class="extype" name="commbank.grimlock.spark.environment.Context">Context</a></span>, <span name="data">data: <a href="environment/Context$.html#U[A]=org.apache.spark.rdd.RDD[A]" class="extmbr" name="commbank.grimlock.spark.environment.Context.U">U</a>[<a href="../framework/Cell.html" class="extype" name="commbank.grimlock.framework.Cell">Cell</a>[<span class="extype" name="shapeless.Nats._3">shapeless.Nat._3</span>]]</span>)</span><span class="result"> extends <a href="../framework/Matrix3D.html" class="extype" name="commbank.grimlock.framework.Matrix3D">framework.Matrix3D</a>[<a href="environment/Context$.html#U[A]=org.apache.spark.rdd.RDD[A]" class="extmbr" name="commbank.grimlock.spark.environment.Context.U">U</a>, <a href="environment/Context$.html#E[A]=A" class="extmbr" name="commbank.grimlock.spark.environment.Context.E">E</a>, <a href="environment/Context.html" class="extype" name="commbank.grimlock.spark.environment.Context">Context</a>] with <a href="Matrix.html" class="extype" name="commbank.grimlock.spark.Matrix">Matrix</a>[<span class="extype" name="shapeless.Nats._2">shapeless.Nat._2</span>, <span class="extype" name="shapeless.Nats._3">shapeless.Nat._3</span>] with <a href="ReducibleMatrix.html" class="extype" name="commbank.grimlock.spark.ReducibleMatrix">ReducibleMatrix</a>[<span class="extype" name="shapeless.Nats._2">shapeless.Nat._2</span>, <span class="extype" name="shapeless.Nats._3">shapeless.Nat._3</span>] with <a href="ReshapeableMatrix.html" class="extype" name="commbank.grimlock.spark.ReshapeableMatrix">ReshapeableMatrix</a>[<span class="extype" name="shapeless.Nats._2">shapeless.Nat._2</span>, <span class="extype" name="shapeless.Nats._3">shapeless.Nat._3</span>] with <a href="distribution/ApproximateDistribution.html" class="extype" name="commbank.grimlock.spark.distribution.ApproximateDistribution">ApproximateDistribution</a>[<span class="extype" name="shapeless.Nats._2">shapeless.Nat._2</span>, <span class="extype" name="shapeless.Nats._3">shapeless.Nat._3</span>] with <a href="distance/PairwiseDistance.html" class="extype" name="commbank.grimlock.spark.distance.PairwiseDistance">PairwiseDistance</a>[<span class="extype" name="shapeless.Nats._2">shapeless.Nat._2</span>, <span class="extype" name="shapeless.Nats._3">shapeless.Nat._3</span>] with <a href="statistics/Statistics.html" class="extype" name="commbank.grimlock.spark.statistics.Statistics">Statistics</a>[<span class="extype" name="shapeless.Nats._2">shapeless.Nat._2</span>, <span class="extype" name="shapeless.Nats._3">shapeless.Nat._3</span>] with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#commbank.grimlock.spark.package@Matrix3DextendsMatrix3D[commbank.grimlock.spark.environment.Context.U,commbank.grimlock.spark.environment.Context.E,commbank.grimlock.spark.environment.Context]withMatrix[shapeless.nat._2,shapeless.nat._3]withReducibleMatrix[shapeless.nat._2,shapeless.nat._3]withReshapeableMatrix[shapeless.nat._2,shapeless.nat._3]withApproximateDistribution[shapeless.nat._2,shapeless.nat._3]withPairwiseDistance[shapeless.nat._2,shapeless.nat._3]withStatistics[shapeless.nat._2,shapeless.nat._3]withProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Rich wrapper around a <code>RDD[Cell[_3]]</code>.</p>
+    </li><li name="commbank.grimlock.spark.Matrix4D" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Matrix4DextendsMatrix4D[commbank.grimlock.spark.environment.Context.U,commbank.grimlock.spark.environment.Context.E,commbank.grimlock.spark.environment.Context]withMatrix[shapeless.nat._3,shapeless.nat._4]withReducibleMatrix[shapeless.nat._3,shapeless.nat._4]withReshapeableMatrix[shapeless.nat._3,shapeless.nat._4]withApproximateDistribution[shapeless.nat._3,shapeless.nat._4]withPairwiseDistance[shapeless.nat._3,shapeless.nat._4]withStatistics[shapeless.nat._3,shapeless.nat._4]withProductwithSerializable"></a>
+      <a id="Matrix4D:Matrix4D"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Matrix4D.html"><span class="name">Matrix4D</span></a><span class="params">(<span name="context">context: <a href="environment/Context.html" class="extype" name="commbank.grimlock.spark.environment.Context">Context</a></span>, <span name="data">data: <a href="environment/Context$.html#U[A]=org.apache.spark.rdd.RDD[A]" class="extmbr" name="commbank.grimlock.spark.environment.Context.U">U</a>[<a href="../framework/Cell.html" class="extype" name="commbank.grimlock.framework.Cell">Cell</a>[<span class="extype" name="shapeless.Nats._4">shapeless.Nat._4</span>]]</span>)</span><span class="result"> extends <a href="../framework/Matrix4D.html" class="extype" name="commbank.grimlock.framework.Matrix4D">framework.Matrix4D</a>[<a href="environment/Context$.html#U[A]=org.apache.spark.rdd.RDD[A]" class="extmbr" name="commbank.grimlock.spark.environment.Context.U">U</a>, <a href="environment/Context$.html#E[A]=A" class="extmbr" name="commbank.grimlock.spark.environment.Context.E">E</a>, <a href="environment/Context.html" class="extype" name="commbank.grimlock.spark.environment.Context">Context</a>] with <a href="Matrix.html" class="extype" name="commbank.grimlock.spark.Matrix">Matrix</a>[<span class="extype" name="shapeless.Nats._3">shapeless.Nat._3</span>, <span class="extype" name="shapeless.Nats._4">shapeless.Nat._4</span>] with <a href="ReducibleMatrix.html" class="extype" name="commbank.grimlock.spark.ReducibleMatrix">ReducibleMatrix</a>[<span class="extype" name="shapeless.Nats._3">shapeless.Nat._3</span>, <span class="extype" name="shapeless.Nats._4">shapeless.Nat._4</span>] with <a href="ReshapeableMatrix.html" class="extype" name="commbank.grimlock.spark.ReshapeableMatrix">ReshapeableMatrix</a>[<span class="extype" name="shapeless.Nats._3">shapeless.Nat._3</span>, <span class="extype" name="shapeless.Nats._4">shapeless.Nat._4</span>] with <a href="distribution/ApproximateDistribution.html" class="extype" name="commbank.grimlock.spark.distribution.ApproximateDistribution">ApproximateDistribution</a>[<span class="extype" name="shapeless.Nats._3">shapeless.Nat._3</span>, <span class="extype" name="shapeless.Nats._4">shapeless.Nat._4</span>] with <a href="distance/PairwiseDistance.html" class="extype" name="commbank.grimlock.spark.distance.PairwiseDistance">PairwiseDistance</a>[<span class="extype" name="shapeless.Nats._3">shapeless.Nat._3</span>, <span class="extype" name="shapeless.Nats._4">shapeless.Nat._4</span>] with <a href="statistics/Statistics.html" class="extype" name="commbank.grimlock.spark.statistics.Statistics">Statistics</a>[<span class="extype" name="shapeless.Nats._3">shapeless.Nat._3</span>, <span class="extype" name="shapeless.Nats._4">shapeless.Nat._4</span>] with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#commbank.grimlock.spark.package@Matrix4DextendsMatrix4D[commbank.grimlock.spark.environment.Context.U,commbank.grimlock.spark.environment.Context.E,commbank.grimlock.spark.environment.Context]withMatrix[shapeless.nat._3,shapeless.nat._4]withReducibleMatrix[shapeless.nat._3,shapeless.nat._4]withReshapeableMatrix[shapeless.nat._3,shapeless.nat._4]withApproximateDistribution[shapeless.nat._3,shapeless.nat._4]withPairwiseDistance[shapeless.nat._3,shapeless.nat._4]withStatistics[shapeless.nat._3,shapeless.nat._4]withProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Rich wrapper around a <code>RDD[Cell[_4]]</code>.</p>
+    </li><li name="commbank.grimlock.spark.Matrix5D" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Matrix5DextendsMatrix5D[commbank.grimlock.spark.environment.Context.U,commbank.grimlock.spark.environment.Context.E,commbank.grimlock.spark.environment.Context]withMatrix[shapeless.nat._4,shapeless.nat._5]withReducibleMatrix[shapeless.nat._4,shapeless.nat._5]withReshapeableMatrix[shapeless.nat._4,shapeless.nat._5]withApproximateDistribution[shapeless.nat._4,shapeless.nat._5]withPairwiseDistance[shapeless.nat._4,shapeless.nat._5]withStatistics[shapeless.nat._4,shapeless.nat._5]withProductwithSerializable"></a>
+      <a id="Matrix5D:Matrix5D"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Matrix5D.html"><span class="name">Matrix5D</span></a><span class="params">(<span name="context">context: <a href="environment/Context.html" class="extype" name="commbank.grimlock.spark.environment.Context">Context</a></span>, <span name="data">data: <a href="environment/Context$.html#U[A]=org.apache.spark.rdd.RDD[A]" class="extmbr" name="commbank.grimlock.spark.environment.Context.U">U</a>[<a href="../framework/Cell.html" class="extype" name="commbank.grimlock.framework.Cell">Cell</a>[<span class="extype" name="shapeless.Nats._5">shapeless.Nat._5</span>]]</span>)</span><span class="result"> extends <a href="../framework/Matrix5D.html" class="extype" name="commbank.grimlock.framework.Matrix5D">framework.Matrix5D</a>[<a href="environment/Context$.html#U[A]=org.apache.spark.rdd.RDD[A]" class="extmbr" name="commbank.grimlock.spark.environment.Context.U">U</a>, <a href="environment/Context$.html#E[A]=A" class="extmbr" name="commbank.grimlock.spark.environment.Context.E">E</a>, <a href="environment/Context.html" class="extype" name="commbank.grimlock.spark.environment.Context">Context</a>] with <a href="Matrix.html" class="extype" name="commbank.grimlock.spark.Matrix">Matrix</a>[<span class="extype" name="shapeless.Nats._4">shapeless.Nat._4</span>, <span class="extype" name="shapeless.Nats._5">shapeless.Nat._5</span>] with <a href="ReducibleMatrix.html" class="extype" name="commbank.grimlock.spark.ReducibleMatrix">ReducibleMatrix</a>[<span class="extype" name="shapeless.Nats._4">shapeless.Nat._4</span>, <span class="extype" name="shapeless.Nats._5">shapeless.Nat._5</span>] with <a href="ReshapeableMatrix.html" class="extype" name="commbank.grimlock.spark.ReshapeableMatrix">ReshapeableMatrix</a>[<span class="extype" name="shapeless.Nats._4">shapeless.Nat._4</span>, <span class="extype" name="shapeless.Nats._5">shapeless.Nat._5</span>] with <a href="distribution/ApproximateDistribution.html" class="extype" name="commbank.grimlock.spark.distribution.ApproximateDistribution">ApproximateDistribution</a>[<span class="extype" name="shapeless.Nats._4">shapeless.Nat._4</span>, <span class="extype" name="shapeless.Nats._5">shapeless.Nat._5</span>] with <a href="distance/PairwiseDistance.html" class="extype" name="commbank.grimlock.spark.distance.PairwiseDistance">PairwiseDistance</a>[<span class="extype" name="shapeless.Nats._4">shapeless.Nat._4</span>, <span class="extype" name="shapeless.Nats._5">shapeless.Nat._5</span>] with <a href="statistics/Statistics.html" class="extype" name="commbank.grimlock.spark.statistics.Statistics">Statistics</a>[<span class="extype" name="shapeless.Nats._4">shapeless.Nat._4</span>, <span class="extype" name="shapeless.Nats._5">shapeless.Nat._5</span>] with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#commbank.grimlock.spark.package@Matrix5DextendsMatrix5D[commbank.grimlock.spark.environment.Context.U,commbank.grimlock.spark.environment.Context.E,commbank.grimlock.spark.environment.Context]withMatrix[shapeless.nat._4,shapeless.nat._5]withReducibleMatrix[shapeless.nat._4,shapeless.nat._5]withReshapeableMatrix[shapeless.nat._4,shapeless.nat._5]withApproximateDistribution[shapeless.nat._4,shapeless.nat._5]withPairwiseDistance[shapeless.nat._4,shapeless.nat._5]withStatistics[shapeless.nat._4,shapeless.nat._5]withProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Rich wrapper around a <code>RDD[Cell[_5]]</code>.</p>
+    </li><li name="commbank.grimlock.spark.Matrix6D" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Matrix6DextendsMatrix6D[commbank.grimlock.spark.environment.Context.U,commbank.grimlock.spark.environment.Context.E,commbank.grimlock.spark.environment.Context]withMatrix[shapeless.nat._5,shapeless.nat._6]withReducibleMatrix[shapeless.nat._5,shapeless.nat._6]withReshapeableMatrix[shapeless.nat._5,shapeless.nat._6]withApproximateDistribution[shapeless.nat._5,shapeless.nat._6]withPairwiseDistance[shapeless.nat._5,shapeless.nat._6]withStatistics[shapeless.nat._5,shapeless.nat._6]withProductwithSerializable"></a>
+      <a id="Matrix6D:Matrix6D"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Matrix6D.html"><span class="name">Matrix6D</span></a><span class="params">(<span name="context">context: <a href="environment/Context.html" class="extype" name="commbank.grimlock.spark.environment.Context">Context</a></span>, <span name="data">data: <a href="environment/Context$.html#U[A]=org.apache.spark.rdd.RDD[A]" class="extmbr" name="commbank.grimlock.spark.environment.Context.U">U</a>[<a href="../framework/Cell.html" class="extype" name="commbank.grimlock.framework.Cell">Cell</a>[<span class="extype" name="shapeless.Nats._6">shapeless.Nat._6</span>]]</span>)</span><span class="result"> extends <a href="../framework/Matrix6D.html" class="extype" name="commbank.grimlock.framework.Matrix6D">framework.Matrix6D</a>[<a href="environment/Context$.html#U[A]=org.apache.spark.rdd.RDD[A]" class="extmbr" name="commbank.grimlock.spark.environment.Context.U">U</a>, <a href="environment/Context$.html#E[A]=A" class="extmbr" name="commbank.grimlock.spark.environment.Context.E">E</a>, <a href="environment/Context.html" class="extype" name="commbank.grimlock.spark.environment.Context">Context</a>] with <a href="Matrix.html" class="extype" name="commbank.grimlock.spark.Matrix">Matrix</a>[<span class="extype" name="shapeless.Nats._5">shapeless.Nat._5</span>, <span class="extype" name="shapeless.Nats._6">shapeless.Nat._6</span>] with <a href="ReducibleMatrix.html" class="extype" name="commbank.grimlock.spark.ReducibleMatrix">ReducibleMatrix</a>[<span class="extype" name="shapeless.Nats._5">shapeless.Nat._5</span>, <span class="extype" name="shapeless.Nats._6">shapeless.Nat._6</span>] with <a href="ReshapeableMatrix.html" class="extype" name="commbank.grimlock.spark.ReshapeableMatrix">ReshapeableMatrix</a>[<span class="extype" name="shapeless.Nats._5">shapeless.Nat._5</span>, <span class="extype" name="shapeless.Nats._6">shapeless.Nat._6</span>] with <a href="distribution/ApproximateDistribution.html" class="extype" name="commbank.grimlock.spark.distribution.ApproximateDistribution">ApproximateDistribution</a>[<span class="extype" name="shapeless.Nats._5">shapeless.Nat._5</span>, <span class="extype" name="shapeless.Nats._6">shapeless.Nat._6</span>] with <a href="distance/PairwiseDistance.html" class="extype" name="commbank.grimlock.spark.distance.PairwiseDistance">PairwiseDistance</a>[<span class="extype" name="shapeless.Nats._5">shapeless.Nat._5</span>, <span class="extype" name="shapeless.Nats._6">shapeless.Nat._6</span>] with <a href="statistics/Statistics.html" class="extype" name="commbank.grimlock.spark.statistics.Statistics">Statistics</a>[<span class="extype" name="shapeless.Nats._5">shapeless.Nat._5</span>, <span class="extype" name="shapeless.Nats._6">shapeless.Nat._6</span>] with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#commbank.grimlock.spark.package@Matrix6DextendsMatrix6D[commbank.grimlock.spark.environment.Context.U,commbank.grimlock.spark.environment.Context.E,commbank.grimlock.spark.environment.Context]withMatrix[shapeless.nat._5,shapeless.nat._6]withReducibleMatrix[shapeless.nat._5,shapeless.nat._6]withReshapeableMatrix[shapeless.nat._5,shapeless.nat._6]withApproximateDistribution[shapeless.nat._5,shapeless.nat._6]withPairwiseDistance[shapeless.nat._5,shapeless.nat._6]withStatistics[shapeless.nat._5,shapeless.nat._6]withProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Rich wrapper around a <code>RDD[Cell[_6]]</code>.</p>
+    </li><li name="commbank.grimlock.spark.Matrix7D" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Matrix7DextendsMatrix7D[commbank.grimlock.spark.environment.Context.U,commbank.grimlock.spark.environment.Context.E,commbank.grimlock.spark.environment.Context]withMatrix[shapeless.nat._6,shapeless.nat._7]withReducibleMatrix[shapeless.nat._6,shapeless.nat._7]withReshapeableMatrix[shapeless.nat._6,shapeless.nat._7]withApproximateDistribution[shapeless.nat._6,shapeless.nat._7]withPairwiseDistance[shapeless.nat._6,shapeless.nat._7]withStatistics[shapeless.nat._6,shapeless.nat._7]withProductwithSerializable"></a>
+      <a id="Matrix7D:Matrix7D"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Matrix7D.html"><span class="name">Matrix7D</span></a><span class="params">(<span name="context">context: <a href="environment/Context.html" class="extype" name="commbank.grimlock.spark.environment.Context">Context</a></span>, <span name="data">data: <a href="environment/Context$.html#U[A]=org.apache.spark.rdd.RDD[A]" class="extmbr" name="commbank.grimlock.spark.environment.Context.U">U</a>[<a href="../framework/Cell.html" class="extype" name="commbank.grimlock.framework.Cell">Cell</a>[<span class="extype" name="shapeless.Nats._7">shapeless.Nat._7</span>]]</span>)</span><span class="result"> extends <a href="../framework/Matrix7D.html" class="extype" name="commbank.grimlock.framework.Matrix7D">framework.Matrix7D</a>[<a href="environment/Context$.html#U[A]=org.apache.spark.rdd.RDD[A]" class="extmbr" name="commbank.grimlock.spark.environment.Context.U">U</a>, <a href="environment/Context$.html#E[A]=A" class="extmbr" name="commbank.grimlock.spark.environment.Context.E">E</a>, <a href="environment/Context.html" class="extype" name="commbank.grimlock.spark.environment.Context">Context</a>] with <a href="Matrix.html" class="extype" name="commbank.grimlock.spark.Matrix">Matrix</a>[<span class="extype" name="shapeless.Nats._6">shapeless.Nat._6</span>, <span class="extype" name="shapeless.Nats._7">shapeless.Nat._7</span>] with <a href="ReducibleMatrix.html" class="extype" name="commbank.grimlock.spark.ReducibleMatrix">ReducibleMatrix</a>[<span class="extype" name="shapeless.Nats._6">shapeless.Nat._6</span>, <span class="extype" name="shapeless.Nats._7">shapeless.Nat._7</span>] with <a href="ReshapeableMatrix.html" class="extype" name="commbank.grimlock.spark.ReshapeableMatrix">ReshapeableMatrix</a>[<span class="extype" name="shapeless.Nats._6">shapeless.Nat._6</span>, <span class="extype" name="shapeless.Nats._7">shapeless.Nat._7</span>] with <a href="distribution/ApproximateDistribution.html" class="extype" name="commbank.grimlock.spark.distribution.ApproximateDistribution">ApproximateDistribution</a>[<span class="extype" name="shapeless.Nats._6">shapeless.Nat._6</span>, <span class="extype" name="shapeless.Nats._7">shapeless.Nat._7</span>] with <a href="distance/PairwiseDistance.html" class="extype" name="commbank.grimlock.spark.distance.PairwiseDistance">PairwiseDistance</a>[<span class="extype" name="shapeless.Nats._6">shapeless.Nat._6</span>, <span class="extype" name="shapeless.Nats._7">shapeless.Nat._7</span>] with <a href="statistics/Statistics.html" class="extype" name="commbank.grimlock.spark.statistics.Statistics">Statistics</a>[<span class="extype" name="shapeless.Nats._6">shapeless.Nat._6</span>, <span class="extype" name="shapeless.Nats._7">shapeless.Nat._7</span>] with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#commbank.grimlock.spark.package@Matrix7DextendsMatrix7D[commbank.grimlock.spark.environment.Context.U,commbank.grimlock.spark.environment.Context.E,commbank.grimlock.spark.environment.Context]withMatrix[shapeless.nat._6,shapeless.nat._7]withReducibleMatrix[shapeless.nat._6,shapeless.nat._7]withReshapeableMatrix[shapeless.nat._6,shapeless.nat._7]withApproximateDistribution[shapeless.nat._6,shapeless.nat._7]withPairwiseDistance[shapeless.nat._6,shapeless.nat._7]withStatistics[shapeless.nat._6,shapeless.nat._7]withProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Rich wrapper around a <code>RDD[Cell[_7]]</code>.</p>
+    </li><li name="commbank.grimlock.spark.Matrix8D" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Matrix8DextendsMatrix8D[commbank.grimlock.spark.environment.Context.U,commbank.grimlock.spark.environment.Context.E,commbank.grimlock.spark.environment.Context]withMatrix[shapeless.nat._7,shapeless.nat._8]withReducibleMatrix[shapeless.nat._7,shapeless.nat._8]withReshapeableMatrix[shapeless.nat._7,shapeless.nat._8]withApproximateDistribution[shapeless.nat._7,shapeless.nat._8]withPairwiseDistance[shapeless.nat._7,shapeless.nat._8]withStatistics[shapeless.nat._7,shapeless.nat._8]withProductwithSerializable"></a>
+      <a id="Matrix8D:Matrix8D"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Matrix8D.html"><span class="name">Matrix8D</span></a><span class="params">(<span name="context">context: <a href="environment/Context.html" class="extype" name="commbank.grimlock.spark.environment.Context">Context</a></span>, <span name="data">data: <a href="environment/Context$.html#U[A]=org.apache.spark.rdd.RDD[A]" class="extmbr" name="commbank.grimlock.spark.environment.Context.U">U</a>[<a href="../framework/Cell.html" class="extype" name="commbank.grimlock.framework.Cell">Cell</a>[<span class="extype" name="shapeless.Nats._8">shapeless.Nat._8</span>]]</span>)</span><span class="result"> extends <a href="../framework/Matrix8D.html" class="extype" name="commbank.grimlock.framework.Matrix8D">framework.Matrix8D</a>[<a href="environment/Context$.html#U[A]=org.apache.spark.rdd.RDD[A]" class="extmbr" name="commbank.grimlock.spark.environment.Context.U">U</a>, <a href="environment/Context$.html#E[A]=A" class="extmbr" name="commbank.grimlock.spark.environment.Context.E">E</a>, <a href="environment/Context.html" class="extype" name="commbank.grimlock.spark.environment.Context">Context</a>] with <a href="Matrix.html" class="extype" name="commbank.grimlock.spark.Matrix">Matrix</a>[<span class="extype" name="shapeless.Nats._7">shapeless.Nat._7</span>, <span class="extype" name="shapeless.Nats._8">shapeless.Nat._8</span>] with <a href="ReducibleMatrix.html" class="extype" name="commbank.grimlock.spark.ReducibleMatrix">ReducibleMatrix</a>[<span class="extype" name="shapeless.Nats._7">shapeless.Nat._7</span>, <span class="extype" name="shapeless.Nats._8">shapeless.Nat._8</span>] with <a href="ReshapeableMatrix.html" class="extype" name="commbank.grimlock.spark.ReshapeableMatrix">ReshapeableMatrix</a>[<span class="extype" name="shapeless.Nats._7">shapeless.Nat._7</span>, <span class="extype" name="shapeless.Nats._8">shapeless.Nat._8</span>] with <a href="distribution/ApproximateDistribution.html" class="extype" name="commbank.grimlock.spark.distribution.ApproximateDistribution">ApproximateDistribution</a>[<span class="extype" name="shapeless.Nats._7">shapeless.Nat._7</span>, <span class="extype" name="shapeless.Nats._8">shapeless.Nat._8</span>] with <a href="distance/PairwiseDistance.html" class="extype" name="commbank.grimlock.spark.distance.PairwiseDistance">PairwiseDistance</a>[<span class="extype" name="shapeless.Nats._7">shapeless.Nat._7</span>, <span class="extype" name="shapeless.Nats._8">shapeless.Nat._8</span>] with <a href="statistics/Statistics.html" class="extype" name="commbank.grimlock.spark.statistics.Statistics">Statistics</a>[<span class="extype" name="shapeless.Nats._7">shapeless.Nat._7</span>, <span class="extype" name="shapeless.Nats._8">shapeless.Nat._8</span>] with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#commbank.grimlock.spark.package@Matrix8DextendsMatrix8D[commbank.grimlock.spark.environment.Context.U,commbank.grimlock.spark.environment.Context.E,commbank.grimlock.spark.environment.Context]withMatrix[shapeless.nat._7,shapeless.nat._8]withReducibleMatrix[shapeless.nat._7,shapeless.nat._8]withReshapeableMatrix[shapeless.nat._7,shapeless.nat._8]withApproximateDistribution[shapeless.nat._7,shapeless.nat._8]withPairwiseDistance[shapeless.nat._7,shapeless.nat._8]withStatistics[shapeless.nat._7,shapeless.nat._8]withProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Rich wrapper around a <code>RDD[Cell[_8]]</code>.</p>
+    </li><li name="commbank.grimlock.spark.Matrix9D" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Matrix9DextendsMatrix9D[commbank.grimlock.spark.environment.Context.U,commbank.grimlock.spark.environment.Context.E,commbank.grimlock.spark.environment.Context]withMatrix[shapeless.nat._8,shapeless.nat._9]withReducibleMatrix[shapeless.nat._8,shapeless.nat._9]withApproximateDistribution[shapeless.nat._8,shapeless.nat._9]withPairwiseDistance[shapeless.nat._8,shapeless.nat._9]withStatistics[shapeless.nat._8,shapeless.nat._9]withProductwithSerializable"></a>
+      <a id="Matrix9D:Matrix9D"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Matrix9D.html"><span class="name">Matrix9D</span></a><span class="params">(<span name="context">context: <a href="environment/Context.html" class="extype" name="commbank.grimlock.spark.environment.Context">Context</a></span>, <span name="data">data: <a href="environment/Context$.html#U[A]=org.apache.spark.rdd.RDD[A]" class="extmbr" name="commbank.grimlock.spark.environment.Context.U">U</a>[<a href="../framework/Cell.html" class="extype" name="commbank.grimlock.framework.Cell">Cell</a>[<span class="extype" name="shapeless.Nats._9">shapeless.Nat._9</span>]]</span>)</span><span class="result"> extends <a href="../framework/Matrix9D.html" class="extype" name="commbank.grimlock.framework.Matrix9D">framework.Matrix9D</a>[<a href="environment/Context$.html#U[A]=org.apache.spark.rdd.RDD[A]" class="extmbr" name="commbank.grimlock.spark.environment.Context.U">U</a>, <a href="environment/Context$.html#E[A]=A" class="extmbr" name="commbank.grimlock.spark.environment.Context.E">E</a>, <a href="environment/Context.html" class="extype" name="commbank.grimlock.spark.environment.Context">Context</a>] with <a href="Matrix.html" class="extype" name="commbank.grimlock.spark.Matrix">Matrix</a>[<span class="extype" name="shapeless.Nats._8">shapeless.Nat._8</span>, <span class="extype" name="shapeless.Nats._9">shapeless.Nat._9</span>] with <a href="ReducibleMatrix.html" class="extype" name="commbank.grimlock.spark.ReducibleMatrix">ReducibleMatrix</a>[<span class="extype" name="shapeless.Nats._8">shapeless.Nat._8</span>, <span class="extype" name="shapeless.Nats._9">shapeless.Nat._9</span>] with <a href="distribution/ApproximateDistribution.html" class="extype" name="commbank.grimlock.spark.distribution.ApproximateDistribution">ApproximateDistribution</a>[<span class="extype" name="shapeless.Nats._8">shapeless.Nat._8</span>, <span class="extype" name="shapeless.Nats._9">shapeless.Nat._9</span>] with <a href="distance/PairwiseDistance.html" class="extype" name="commbank.grimlock.spark.distance.PairwiseDistance">PairwiseDistance</a>[<span class="extype" name="shapeless.Nats._8">shapeless.Nat._8</span>, <span class="extype" name="shapeless.Nats._9">shapeless.Nat._9</span>] with <a href="statistics/Statistics.html" class="extype" name="commbank.grimlock.spark.statistics.Statistics">Statistics</a>[<span class="extype" name="shapeless.Nats._8">shapeless.Nat._8</span>, <span class="extype" name="shapeless.Nats._9">shapeless.Nat._9</span>] with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#commbank.grimlock.spark.package@Matrix9DextendsMatrix9D[commbank.grimlock.spark.environment.Context.U,commbank.grimlock.spark.environment.Context.E,commbank.grimlock.spark.environment.Context]withMatrix[shapeless.nat._8,shapeless.nat._9]withReducibleMatrix[shapeless.nat._8,shapeless.nat._9]withApproximateDistribution[shapeless.nat._8,shapeless.nat._9]withPairwiseDistance[shapeless.nat._8,shapeless.nat._9]withStatistics[shapeless.nat._8,shapeless.nat._9]withProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Rich wrapper around a <code>RDD[Cell[_9]]</code>.</p>
+    </li><li name="commbank.grimlock.spark.Persist" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="Persist[X]extendsPersist[X,commbank.grimlock.spark.environment.Context.U,commbank.grimlock.spark.environment.Context.E,commbank.grimlock.spark.environment.Context]"></a>
+      <a id="Persist[X]:Persist[X]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Persist.html"><span class="name">Persist</span></a><span class="tparams">[<span name="X">X</span>]</span><span class="result"> extends <a href="../framework/Persist.html" class="extype" name="commbank.grimlock.framework.Persist">framework.Persist</a>[<span class="extype" name="commbank.grimlock.spark.Persist.X">X</span>, <a href="environment/Context$.html#U[A]=org.apache.spark.rdd.RDD[A]" class="extmbr" name="commbank.grimlock.spark.environment.Context.U">U</a>, <a href="environment/Context$.html#E[A]=A" class="extmbr" name="commbank.grimlock.spark.environment.Context.E">E</a>, <a href="environment/Context.html" class="extype" name="commbank.grimlock.spark.environment.Context">Context</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#commbank.grimlock.spark.package@Persist[X]extendsPersist[X,commbank.grimlock.spark.environment.Context.U,commbank.grimlock.spark.environment.Context.E,commbank.grimlock.spark.environment.Context]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Trait for peristing a <code>RDD</code>.</p>
+    </li><li name="commbank.grimlock.spark.ReducibleMatrix" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ReducibleMatrix[L&lt;:shapeless.Nat,P&lt;:shapeless.Nat]extendsReducibleMatrix[L,P,commbank.grimlock.spark.environment.Context.U,commbank.grimlock.spark.environment.Context.E,commbank.grimlock.spark.environment.Context]"></a>
+      <a id="ReducibleMatrix[L&lt;:Nat,P&lt;:Nat]:ReducibleMatrix[L,P]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="ReducibleMatrix.html"><span class="name">ReducibleMatrix</span></a><span class="tparams">[<span name="L">L &lt;: <span class="extype" name="shapeless.Nat">Nat</span></span>, <span name="P">P &lt;: <span class="extype" name="shapeless.Nat">Nat</span></span>]</span><span class="result"> extends <a href="../framework/ReducibleMatrix.html" class="extype" name="commbank.grimlock.framework.ReducibleMatrix">framework.ReducibleMatrix</a>[<span class="extype" name="commbank.grimlock.spark.ReducibleMatrix.L">L</span>, <span class="extype" name="commbank.grimlock.spark.ReducibleMatrix.P">P</span>, <a href="environment/Context$.html#U[A]=org.apache.spark.rdd.RDD[A]" class="extmbr" name="commbank.grimlock.spark.environment.Context.U">U</a>, <a href="environment/Context$.html#E[A]=A" class="extmbr" name="commbank.grimlock.spark.environment.Context.E">E</a>, <a href="environment/Context.html" class="extype" name="commbank.grimlock.spark.environment.Context">Context</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#commbank.grimlock.spark.package@ReducibleMatrix[L&lt;:shapeless.Nat,P&lt;:shapeless.Nat]extendsReducibleMatrix[L,P,commbank.grimlock.spark.environment.Context.U,commbank.grimlock.spark.environment.Context.E,commbank.grimlock.spark.environment.Context]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Trait for methods that reduce the number of dimensions or that can be filled using a <code>RDD[Cell[P]]</code>.</p>
+    </li><li name="commbank.grimlock.spark.ReshapeableMatrix" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ReshapeableMatrix[L&lt;:shapeless.Nat,P&lt;:shapeless.Nat]extendsReshapeableMatrix[L,P,commbank.grimlock.spark.environment.Context.U,commbank.grimlock.spark.environment.Context.E,commbank.grimlock.spark.environment.Context]"></a>
+      <a id="ReshapeableMatrix[L&lt;:Nat,P&lt;:Nat]:ReshapeableMatrix[L,P]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="ReshapeableMatrix.html"><span class="name">ReshapeableMatrix</span></a><span class="tparams">[<span name="L">L &lt;: <span class="extype" name="shapeless.Nat">Nat</span></span>, <span name="P">P &lt;: <span class="extype" name="shapeless.Nat">Nat</span></span>]</span><span class="result"> extends <a href="../framework/ReshapeableMatrix.html" class="extype" name="commbank.grimlock.framework.ReshapeableMatrix">framework.ReshapeableMatrix</a>[<span class="extype" name="commbank.grimlock.spark.ReshapeableMatrix.L">L</span>, <span class="extype" name="commbank.grimlock.spark.ReshapeableMatrix.P">P</span>, <a href="environment/Context$.html#U[A]=org.apache.spark.rdd.RDD[A]" class="extmbr" name="commbank.grimlock.spark.environment.Context.U">U</a>, <a href="environment/Context$.html#E[A]=A" class="extmbr" name="commbank.grimlock.spark.environment.Context.E">E</a>, <a href="environment/Context.html" class="extype" name="commbank.grimlock.spark.environment.Context">Context</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#commbank.grimlock.spark.package@ReshapeableMatrix[L&lt;:shapeless.Nat,P&lt;:shapeless.Nat]extendsReshapeableMatrix[L,P,commbank.grimlock.spark.environment.Context.U,commbank.grimlock.spark.environment.Context.E,commbank.grimlock.spark.environment.Context]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Trait for methods that reshapes the number of dimension of a matrix using a <code>RDD[Cell[P]]</code>.</p>
+    </li><li name="commbank.grimlock.spark.SaveStringsAsText" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SaveStringsAsTextextendsSaveStringsAsText[commbank.grimlock.spark.environment.Context.U,commbank.grimlock.spark.environment.Context.E,commbank.grimlock.spark.environment.Context]withPersist[String]withProductwithSerializable"></a>
+      <a id="SaveStringsAsText:SaveStringsAsText"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="SaveStringsAsText.html"><span class="name">SaveStringsAsText</span></a><span class="params">(<span name="context">context: <a href="environment/Context.html" class="extype" name="commbank.grimlock.spark.environment.Context">Context</a></span>, <span name="data">data: <a href="environment/Context$.html#U[A]=org.apache.spark.rdd.RDD[A]" class="extmbr" name="commbank.grimlock.spark.environment.Context.U">U</a>[<span class="extype" name="scala.Predef.String">String</span>]</span>)</span><span class="result"> extends <a href="../framework/SaveStringsAsText.html" class="extype" name="commbank.grimlock.framework.SaveStringsAsText">framework.SaveStringsAsText</a>[<a href="environment/Context$.html#U[A]=org.apache.spark.rdd.RDD[A]" class="extmbr" name="commbank.grimlock.spark.environment.Context.U">U</a>, <a href="environment/Context$.html#E[A]=A" class="extmbr" name="commbank.grimlock.spark.environment.Context.E">E</a>, <a href="environment/Context.html" class="extype" name="commbank.grimlock.spark.environment.Context">Context</a>] with <a href="Persist.html" class="extype" name="commbank.grimlock.spark.Persist">Persist</a>[<span class="extype" name="scala.Predef.String">String</span>] with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#commbank.grimlock.spark.package@SaveStringsAsTextextendsSaveStringsAsText[commbank.grimlock.spark.environment.Context.U,commbank.grimlock.spark.environment.Context.E,commbank.grimlock.spark.environment.Context]withPersist[String]withProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Case class that enriches a <code>RDD</code> of strings with saveAsText functionality.</p>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="commbank.grimlock.spark.content" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="content"></a>
+      <a id="content:content"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a href="content/package.html"><span class="name">content</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#commbank.grimlock.spark.package@content" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="commbank.grimlock.spark.distance" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="distance"></a>
+      <a id="distance:distance"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a href="distance/package.html"><span class="name">distance</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#commbank.grimlock.spark.package@distance" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="commbank.grimlock.spark.distribution" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="distribution"></a>
+      <a id="distribution:distribution"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a href="distribution/package.html"><span class="name">distribution</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#commbank.grimlock.spark.package@distribution" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="commbank.grimlock.spark.environment" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="environment"></a>
+      <a id="environment:environment"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a href="environment/package.html"><span class="name">environment</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#commbank.grimlock.spark.package@environment" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="commbank.grimlock.spark.examples" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="examples"></a>
+      <a id="examples:examples"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a href="examples/package.html"><span class="name">examples</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#commbank.grimlock.spark.package@examples" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="commbank.grimlock.spark.partition" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="partition"></a>
+      <a id="partition:partition"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a href="partition/package.html"><span class="name">partition</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#commbank.grimlock.spark.package@partition" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="commbank.grimlock.spark.position" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="position"></a>
+      <a id="position:position"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a href="position/package.html"><span class="name">position</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#commbank.grimlock.spark.package@position" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="commbank.grimlock.spark.statistics" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="statistics"></a>
+      <a id="statistics:statistics"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a href="statistics/package.html"><span class="name">statistics</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#commbank.grimlock.spark.package@statistics" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="commbank.grimlock.spark.transform" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="transform"></a>
+      <a id="transform:transform"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a href="transform/package.html"><span class="name">transform</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#commbank.grimlock.spark.package@transform" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>
