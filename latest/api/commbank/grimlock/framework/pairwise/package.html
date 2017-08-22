@@ -1,0 +1,291 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>pairwise - commbank.grimlock.framework.pairwise</title>
+          <meta name="description" content="pairwise - commbank.grimlock.framework.pairwise" />
+          <meta name="keywords" content="pairwise commbank.grimlock.framework.pairwise" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../index.html';
+            var hash = 'commbank.grimlock.framework.pairwise.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Package" src="../../../../lib/package_big.png" />
+        <p id="owner"><a href="../../../package.html" class="extype" name="commbank">commbank</a>.<a href="../../package.html" class="extype" name="commbank.grimlock">grimlock</a>.<a href="../package.html" class="extype" name="commbank.grimlock.framework">framework</a></p>
+        <h1>pairwise</h1><span class="permalink">
+      <a href="../../../../index.html#commbank.grimlock.framework.pairwise.package" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">pairwise</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        
+        
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="commbank.grimlock.framework.pairwise.Comparer" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ComparerextendsAnyRef"></a>
+      <a id="Comparer:Comparer"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Comparer.html"><span class="name">Comparer</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#commbank.grimlock.framework.pairwise.package@ComparerextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Trait for comparing two positions to determine if pairwise operation is to be applied.</p>
+    </li><li name="commbank.grimlock.framework.pairwise.Operator" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="Operator[P&lt;:shapeless.Nat,Q&lt;:shapeless.Nat]extendsOperatorWithValue[P,Q]"></a>
+      <a id="Operator[P&lt;:Nat,Q&lt;:Nat]:Operator[P,Q]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Operator.html"><span class="name">Operator</span></a><span class="tparams">[<span name="P">P &lt;: <span class="extype" name="shapeless.Nat">Nat</span></span>, <span name="Q">Q &lt;: <span class="extype" name="shapeless.Nat">Nat</span></span>]</span><span class="result"> extends <a href="OperatorWithValue.html" class="extype" name="commbank.grimlock.framework.pairwise.OperatorWithValue">OperatorWithValue</a>[<span class="extype" name="commbank.grimlock.framework.pairwise.Operator.P">P</span>, <span class="extype" name="commbank.grimlock.framework.pairwise.Operator.Q">Q</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#commbank.grimlock.framework.pairwise.package@Operator[P&lt;:shapeless.Nat,Q&lt;:shapeless.Nat]extendsOperatorWithValue[P,Q]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Trait for computing pairwise values.</p>
+    </li><li name="commbank.grimlock.framework.pairwise.OperatorWithValue" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="OperatorWithValue[P&lt;:shapeless.Nat,Q&lt;:shapeless.Nat]extendsSerializable"></a>
+      <a id="OperatorWithValue[P&lt;:Nat,Q&lt;:Nat]:OperatorWithValue[P,Q]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="OperatorWithValue.html"><span class="name">OperatorWithValue</span></a><span class="tparams">[<span name="P">P &lt;: <span class="extype" name="shapeless.Nat">Nat</span></span>, <span name="Q">Q &lt;: <span class="extype" name="shapeless.Nat">Nat</span></span>]</span><span class="result"> extends <span class="extype" name="java.io.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#commbank.grimlock.framework.pairwise.package@OperatorWithValue[P&lt;:shapeless.Nat,Q&lt;:shapeless.Nat]extendsSerializable" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Trait for computing pairwise values with a user provided value.</p>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="commbank.grimlock.framework.pairwise.All" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="All"></a>
+      <a id="All:All"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="All$.html"><span class="name">All</span></a><span class="result"> extends <a href="Comparer.html" class="extype" name="commbank.grimlock.framework.pairwise.Comparer">Comparer</a> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#commbank.grimlock.framework.pairwise.package@All" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Case object for computing all pairwise combinations.</p>
+    </li><li name="commbank.grimlock.framework.pairwise.Diagonal" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="Diagonal"></a>
+      <a id="Diagonal:Diagonal"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Diagonal$.html"><span class="name">Diagonal</span></a><span class="result"> extends <a href="Comparer.html" class="extype" name="commbank.grimlock.framework.pairwise.Comparer">Comparer</a> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#commbank.grimlock.framework.pairwise.package@Diagonal" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Case object for computing diagonal pairwise combinations (i.e.</p><div class="fullcomment"><div class="comment cmt"><p>Case object for computing diagonal pairwise combinations (i.e. left == right).</p></div></div>
+    </li><li name="commbank.grimlock.framework.pairwise.Lower" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="Lower"></a>
+      <a id="Lower:Lower"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Lower$.html"><span class="name">Lower</span></a><span class="result"> extends <a href="Comparer.html" class="extype" name="commbank.grimlock.framework.pairwise.Comparer">Comparer</a> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#commbank.grimlock.framework.pairwise.package@Lower" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Case object for computing lower triangular pairwise combinations (i.e.</p><div class="fullcomment"><div class="comment cmt"><p>Case object for computing lower triangular pairwise combinations (i.e. left &gt; right).</p></div></div>
+    </li><li name="commbank.grimlock.framework.pairwise.LowerDiagonal" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="LowerDiagonal"></a>
+      <a id="LowerDiagonal:LowerDiagonal"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="LowerDiagonal$.html"><span class="name">LowerDiagonal</span></a><span class="result"> extends <a href="Comparer.html" class="extype" name="commbank.grimlock.framework.pairwise.Comparer">Comparer</a> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#commbank.grimlock.framework.pairwise.package@LowerDiagonal" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Case object for computing lower triangular or diagonal pairwise combinations (i.e.</p><div class="fullcomment"><div class="comment cmt"><p>Case object for computing lower triangular or diagonal pairwise combinations (i.e. left &gt;= right).</p></div></div>
+    </li><li name="commbank.grimlock.framework.pairwise.Operator" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Operator"></a>
+      <a id="Operator:Operator"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Operator$.html"><span class="name">Operator</span></a><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#commbank.grimlock.framework.pairwise.package@Operator" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Companion object for the <code>Operator</code> trait.</p>
+    </li><li name="commbank.grimlock.framework.pairwise.OperatorWithValue" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="OperatorWithValue"></a>
+      <a id="OperatorWithValue:OperatorWithValue"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="OperatorWithValue$.html"><span class="name">OperatorWithValue</span></a><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#commbank.grimlock.framework.pairwise.package@OperatorWithValue" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Companion object for the <code>OperatorWithValue</code> trait.</p>
+    </li><li name="commbank.grimlock.framework.pairwise.Upper" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="Upper"></a>
+      <a id="Upper:Upper"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Upper$.html"><span class="name">Upper</span></a><span class="result"> extends <a href="Comparer.html" class="extype" name="commbank.grimlock.framework.pairwise.Comparer">Comparer</a> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#commbank.grimlock.framework.pairwise.package@Upper" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Case object for computing upper triangular pairwise combinations (i.e.</p><div class="fullcomment"><div class="comment cmt"><p>Case object for computing upper triangular pairwise combinations (i.e. right &gt; left).</p></div></div>
+    </li><li name="commbank.grimlock.framework.pairwise.UpperDiagonal" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="UpperDiagonal"></a>
+      <a id="UpperDiagonal:UpperDiagonal"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="UpperDiagonal$.html"><span class="name">UpperDiagonal</span></a><span class="result"> extends <a href="Comparer.html" class="extype" name="commbank.grimlock.framework.pairwise.Comparer">Comparer</a> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#commbank.grimlock.framework.pairwise.package@UpperDiagonal" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Case object for computing upper triangular or diagonal pairwise combinations (i.e.</p><div class="fullcomment"><div class="comment cmt"><p>Case object for computing upper triangular or diagonal pairwise combinations (i.e. right &gt;= left).</p></div></div>
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>
