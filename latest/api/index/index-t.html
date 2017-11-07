@@ -1,0 +1,614 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title></title>
+          <meta name="description" content="" />
+          <meta name="keywords" content="" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../lib/ref-index.css" media="screen" type="text/css" rel="stylesheet" />
+      <script type="text/javascript" src="../lib/jquery.js"></script>
+    
+        </head>
+        <body><div class="entry">
+      <div class="name">T</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/aggregate/AggregatorWithValue.html" class="extype" name="commbank.grimlock.framework.aggregate.AggregatorWithValue">AggregatorWithValue</a> <a href="../commbank/grimlock/framework/squash/SquasherWithValue.html" class="extype" name="commbank.grimlock.framework.squash.SquasherWithValue">SquasherWithValue</a> <a href="../commbank/grimlock/framework/window/WindowWithValue.html" class="extype" name="commbank.grimlock.framework.window.WindowWithValue">WindowWithValue</a> <a href="../commbank/grimlock/library/aggregate/CountMapHistogram.html" class="extype" name="commbank.grimlock.library.aggregate.CountMapHistogram">CountMapHistogram</a> <a href="../commbank/grimlock/library/aggregate/CountMapQuantiles.html" class="extype" name="commbank.grimlock.library.aggregate.CountMapQuantiles">CountMapQuantiles</a> <a href="../commbank/grimlock/library/aggregate/Counts.html" class="extype" name="commbank.grimlock.library.aggregate.Counts">Counts</a> <a href="../commbank/grimlock/library/aggregate/DistinctCounts.html" class="extype" name="commbank.grimlock.library.aggregate.DistinctCounts">DistinctCounts</a> <a href="../commbank/grimlock/library/aggregate/Entropy.html" class="extype" name="commbank.grimlock.library.aggregate.Entropy">Entropy</a> <a href="../commbank/grimlock/library/aggregate/FrequencyRatio.html" class="extype" name="commbank.grimlock.library.aggregate.FrequencyRatio">FrequencyRatio</a> <a href="../commbank/grimlock/library/aggregate/Kurtosis.html" class="extype" name="commbank.grimlock.library.aggregate.Kurtosis">Kurtosis</a> <a href="../commbank/grimlock/library/aggregate/Limits.html" class="extype" name="commbank.grimlock.library.aggregate.Limits">Limits</a> <a href="../commbank/grimlock/library/aggregate/Maximum.html" class="extype" name="commbank.grimlock.library.aggregate.Maximum">Maximum</a> <a href="../commbank/grimlock/library/aggregate/MaximumAbsolute.html" class="extype" name="commbank.grimlock.library.aggregate.MaximumAbsolute">MaximumAbsolute</a> <a href="../commbank/grimlock/library/aggregate/Mean.html" class="extype" name="commbank.grimlock.library.aggregate.Mean">Mean</a> <a href="../commbank/grimlock/library/aggregate/Minimum.html" class="extype" name="commbank.grimlock.library.aggregate.Minimum">Minimum</a> <a href="../commbank/grimlock/library/aggregate/Moments.html" class="extype" name="commbank.grimlock.library.aggregate.Moments">Moments</a> <a href="../commbank/grimlock/library/aggregate/PredicateCounts.html" class="extype" name="commbank.grimlock.library.aggregate.PredicateCounts">PredicateCounts</a> <a href="../commbank/grimlock/library/aggregate/Skewness.html" class="extype" name="commbank.grimlock.library.aggregate.Skewness">Skewness</a> <a href="../commbank/grimlock/library/aggregate/StandardDeviation.html" class="extype" name="commbank.grimlock.library.aggregate.StandardDeviation">StandardDeviation</a> <a href="../commbank/grimlock/library/aggregate/Sums.html" class="extype" name="commbank.grimlock.library.aggregate.Sums">Sums</a> <a href="../commbank/grimlock/library/aggregate/TDigestQuantiles.html" class="extype" name="commbank.grimlock.library.aggregate.TDigestQuantiles">TDigestQuantiles</a> <a href="../commbank/grimlock/library/aggregate/UniformQuantiles.html" class="extype" name="commbank.grimlock.library.aggregate.UniformQuantiles">UniformQuantiles</a> <a href="../commbank/grimlock/library/aggregate/WeightedSums.html" class="extype" name="commbank.grimlock.library.aggregate.WeightedSums">WeightedSums</a> <a href="../commbank/grimlock/library/squash/KeepSlice.html" class="extype" name="commbank.grimlock.library.squash.KeepSlice">KeepSlice</a> <a href="../commbank/grimlock/library/squash/PreservingMaximumPosition.html" class="extype" name="commbank.grimlock.library.squash.PreservingMaximumPosition">PreservingMaximumPosition</a> <a href="../commbank/grimlock/library/squash/PreservingMinimumPosition.html" class="extype" name="commbank.grimlock.library.squash.PreservingMinimumPosition">PreservingMinimumPosition</a> <a href="../commbank/grimlock/library/window/BinaryOperator.html" class="extype" name="commbank.grimlock.library.window.BinaryOperator">BinaryOperator</a> <a href="../commbank/grimlock/library/window/CenteredMovingAverage.html" class="extype" name="commbank.grimlock.library.window.CenteredMovingAverage">CenteredMovingAverage</a> <a href="../commbank/grimlock/library/window/CumulativeMovingAverage.html" class="extype" name="commbank.grimlock.library.window.CumulativeMovingAverage">CumulativeMovingAverage</a> <a href="../commbank/grimlock/library/window/CumulativeSums.html" class="extype" name="commbank.grimlock.library.window.CumulativeSums">CumulativeSums</a> <a href="../commbank/grimlock/library/window/ExponentialMovingAverage.html" class="extype" name="commbank.grimlock.library.window.ExponentialMovingAverage">ExponentialMovingAverage</a> <a href="../commbank/grimlock/library/window/SimpleMovingAverage.html" class="extype" name="commbank.grimlock.library.window.SimpleMovingAverage">SimpleMovingAverage</a> <a href="../commbank/grimlock/library/window/WeightedMovingAverage.html" class="extype" name="commbank.grimlock.library.window.WeightedMovingAverage">WeightedMovingAverage</a> <a href="../commbank/grimlock/scalding/examples/Gradient.html" class="extype" name="commbank.grimlock.scalding.examples.Gradient">Gradient</a> <a href="../commbank/grimlock/spark/examples/Gradient.html" class="extype" name="commbank.grimlock.spark.examples.Gradient">Gradient</a> </div>
+    </div><div class="entry">
+      <div class="name">TDigestQuantiles</div>
+      <div class="occurrences"><a href="../commbank/grimlock/library/aggregate/package.html" class="extype" name="commbank.grimlock.library.aggregate">aggregate</a> </div>
+    </div><div class="entry">
+      <div class="name">TDigestQuantilesTuner</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/distribution/ApproximateDistribution$.html" class="extype" name="commbank.grimlock.framework.distribution.ApproximateDistribution">ApproximateDistribution</a> </div>
+    </div><div class="entry">
+      <div class="name">TableDecoder</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/package.html" class="extype" name="commbank.grimlock.framework">framework</a> </div>
+    </div><div class="entry">
+      <div class="name">Ternary</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/environment/tuner/package.html" class="extype" name="commbank.grimlock.framework.environment.tuner">tuner</a> </div>
+    </div><div class="entry">
+      <div class="name">TernaryDateSplit</div>
+      <div class="occurrences"><a href="../commbank/grimlock/library/partition/package.html" class="extype" name="commbank.grimlock.library.partition">partition</a> </div>
+    </div><div class="entry">
+      <div class="name">TernaryHashSplit</div>
+      <div class="occurrences"><a href="../commbank/grimlock/library/partition/package.html" class="extype" name="commbank.grimlock.library.partition">partition</a> </div>
+    </div><div class="entry">
+      <div class="name">TestScalding1</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/package.html" class="extype" name="commbank.grimlock.test">test</a> </div>
+    </div><div class="entry">
+      <div class="name">TestScalding10</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/package.html" class="extype" name="commbank.grimlock.test">test</a> </div>
+    </div><div class="entry">
+      <div class="name">TestScalding11</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/package.html" class="extype" name="commbank.grimlock.test">test</a> </div>
+    </div><div class="entry">
+      <div class="name">TestScalding12</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/package.html" class="extype" name="commbank.grimlock.test">test</a> </div>
+    </div><div class="entry">
+      <div class="name">TestScalding13</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/package.html" class="extype" name="commbank.grimlock.test">test</a> </div>
+    </div><div class="entry">
+      <div class="name">TestScalding14</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/package.html" class="extype" name="commbank.grimlock.test">test</a> </div>
+    </div><div class="entry">
+      <div class="name">TestScalding15</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/package.html" class="extype" name="commbank.grimlock.test">test</a> </div>
+    </div><div class="entry">
+      <div class="name">TestScalding16</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/package.html" class="extype" name="commbank.grimlock.test">test</a> </div>
+    </div><div class="entry">
+      <div class="name">TestScalding17</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/package.html" class="extype" name="commbank.grimlock.test">test</a> </div>
+    </div><div class="entry">
+      <div class="name">TestScalding18</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/package.html" class="extype" name="commbank.grimlock.test">test</a> </div>
+    </div><div class="entry">
+      <div class="name">TestScalding19</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/package.html" class="extype" name="commbank.grimlock.test">test</a> </div>
+    </div><div class="entry">
+      <div class="name">TestScalding2</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/package.html" class="extype" name="commbank.grimlock.test">test</a> </div>
+    </div><div class="entry">
+      <div class="name">TestScalding20</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/package.html" class="extype" name="commbank.grimlock.test">test</a> </div>
+    </div><div class="entry">
+      <div class="name">TestScalding21</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/package.html" class="extype" name="commbank.grimlock.test">test</a> </div>
+    </div><div class="entry">
+      <div class="name">TestScalding22</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/package.html" class="extype" name="commbank.grimlock.test">test</a> </div>
+    </div><div class="entry">
+      <div class="name">TestScalding23</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/package.html" class="extype" name="commbank.grimlock.test">test</a> </div>
+    </div><div class="entry">
+      <div class="name">TestScalding24</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/package.html" class="extype" name="commbank.grimlock.test">test</a> </div>
+    </div><div class="entry">
+      <div class="name">TestScalding25</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/package.html" class="extype" name="commbank.grimlock.test">test</a> </div>
+    </div><div class="entry">
+      <div class="name">TestScalding26</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/package.html" class="extype" name="commbank.grimlock.test">test</a> </div>
+    </div><div class="entry">
+      <div class="name">TestScalding27</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/package.html" class="extype" name="commbank.grimlock.test">test</a> </div>
+    </div><div class="entry">
+      <div class="name">TestScalding28</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/package.html" class="extype" name="commbank.grimlock.test">test</a> </div>
+    </div><div class="entry">
+      <div class="name">TestScalding29</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/package.html" class="extype" name="commbank.grimlock.test">test</a> </div>
+    </div><div class="entry">
+      <div class="name">TestScalding3</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/package.html" class="extype" name="commbank.grimlock.test">test</a> </div>
+    </div><div class="entry">
+      <div class="name">TestScalding30</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/package.html" class="extype" name="commbank.grimlock.test">test</a> </div>
+    </div><div class="entry">
+      <div class="name">TestScalding31</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/package.html" class="extype" name="commbank.grimlock.test">test</a> </div>
+    </div><div class="entry">
+      <div class="name">TestScalding32</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/package.html" class="extype" name="commbank.grimlock.test">test</a> </div>
+    </div><div class="entry">
+      <div class="name">TestScalding33</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/package.html" class="extype" name="commbank.grimlock.test">test</a> </div>
+    </div><div class="entry">
+      <div class="name">TestScalding4</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/package.html" class="extype" name="commbank.grimlock.test">test</a> </div>
+    </div><div class="entry">
+      <div class="name">TestScalding5</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/package.html" class="extype" name="commbank.grimlock.test">test</a> </div>
+    </div><div class="entry">
+      <div class="name">TestScalding6</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/package.html" class="extype" name="commbank.grimlock.test">test</a> </div>
+    </div><div class="entry">
+      <div class="name">TestScalding7</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/package.html" class="extype" name="commbank.grimlock.test">test</a> </div>
+    </div><div class="entry">
+      <div class="name">TestScalding8</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/package.html" class="extype" name="commbank.grimlock.test">test</a> </div>
+    </div><div class="entry">
+      <div class="name">TestScalding9</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/package.html" class="extype" name="commbank.grimlock.test">test</a> </div>
+    </div><div class="entry">
+      <div class="name">TestScaldingReader</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/package.html" class="extype" name="commbank.grimlock.test">test</a> </div>
+    </div><div class="entry">
+      <div class="name">TestSpark1</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/package.html" class="extype" name="commbank.grimlock.test">test</a> </div>
+    </div><div class="entry">
+      <div class="name">TestSpark10</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/package.html" class="extype" name="commbank.grimlock.test">test</a> </div>
+    </div><div class="entry">
+      <div class="name">TestSpark11</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/package.html" class="extype" name="commbank.grimlock.test">test</a> </div>
+    </div><div class="entry">
+      <div class="name">TestSpark12</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/package.html" class="extype" name="commbank.grimlock.test">test</a> </div>
+    </div><div class="entry">
+      <div class="name">TestSpark13</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/package.html" class="extype" name="commbank.grimlock.test">test</a> </div>
+    </div><div class="entry">
+      <div class="name">TestSpark14</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/package.html" class="extype" name="commbank.grimlock.test">test</a> </div>
+    </div><div class="entry">
+      <div class="name">TestSpark15</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/package.html" class="extype" name="commbank.grimlock.test">test</a> </div>
+    </div><div class="entry">
+      <div class="name">TestSpark16</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/package.html" class="extype" name="commbank.grimlock.test">test</a> </div>
+    </div><div class="entry">
+      <div class="name">TestSpark17</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/package.html" class="extype" name="commbank.grimlock.test">test</a> </div>
+    </div><div class="entry">
+      <div class="name">TestSpark18</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/package.html" class="extype" name="commbank.grimlock.test">test</a> </div>
+    </div><div class="entry">
+      <div class="name">TestSpark19</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/package.html" class="extype" name="commbank.grimlock.test">test</a> </div>
+    </div><div class="entry">
+      <div class="name">TestSpark2</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/package.html" class="extype" name="commbank.grimlock.test">test</a> </div>
+    </div><div class="entry">
+      <div class="name">TestSpark20</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/package.html" class="extype" name="commbank.grimlock.test">test</a> </div>
+    </div><div class="entry">
+      <div class="name">TestSpark21</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/package.html" class="extype" name="commbank.grimlock.test">test</a> </div>
+    </div><div class="entry">
+      <div class="name">TestSpark22</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/package.html" class="extype" name="commbank.grimlock.test">test</a> </div>
+    </div><div class="entry">
+      <div class="name">TestSpark23</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/package.html" class="extype" name="commbank.grimlock.test">test</a> </div>
+    </div><div class="entry">
+      <div class="name">TestSpark24</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/package.html" class="extype" name="commbank.grimlock.test">test</a> </div>
+    </div><div class="entry">
+      <div class="name">TestSpark25</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/package.html" class="extype" name="commbank.grimlock.test">test</a> </div>
+    </div><div class="entry">
+      <div class="name">TestSpark26</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/package.html" class="extype" name="commbank.grimlock.test">test</a> </div>
+    </div><div class="entry">
+      <div class="name">TestSpark27</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/package.html" class="extype" name="commbank.grimlock.test">test</a> </div>
+    </div><div class="entry">
+      <div class="name">TestSpark28</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/package.html" class="extype" name="commbank.grimlock.test">test</a> </div>
+    </div><div class="entry">
+      <div class="name">TestSpark29</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/package.html" class="extype" name="commbank.grimlock.test">test</a> </div>
+    </div><div class="entry">
+      <div class="name">TestSpark3</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/package.html" class="extype" name="commbank.grimlock.test">test</a> </div>
+    </div><div class="entry">
+      <div class="name">TestSpark30</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/package.html" class="extype" name="commbank.grimlock.test">test</a> </div>
+    </div><div class="entry">
+      <div class="name">TestSpark31</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/package.html" class="extype" name="commbank.grimlock.test">test</a> </div>
+    </div><div class="entry">
+      <div class="name">TestSpark32</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/package.html" class="extype" name="commbank.grimlock.test">test</a> </div>
+    </div><div class="entry">
+      <div class="name">TestSpark33</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/package.html" class="extype" name="commbank.grimlock.test">test</a> </div>
+    </div><div class="entry">
+      <div class="name">TestSpark4</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/package.html" class="extype" name="commbank.grimlock.test">test</a> </div>
+    </div><div class="entry">
+      <div class="name">TestSpark5</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/package.html" class="extype" name="commbank.grimlock.test">test</a> </div>
+    </div><div class="entry">
+      <div class="name">TestSpark6</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/package.html" class="extype" name="commbank.grimlock.test">test</a> </div>
+    </div><div class="entry">
+      <div class="name">TestSpark7</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/package.html" class="extype" name="commbank.grimlock.test">test</a> </div>
+    </div><div class="entry">
+      <div class="name">TestSpark8</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/package.html" class="extype" name="commbank.grimlock.test">test</a> </div>
+    </div><div class="entry">
+      <div class="name">TestSpark9</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/package.html" class="extype" name="commbank.grimlock.test">test</a> </div>
+    </div><div class="entry">
+      <div class="name">TestSparkReader</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/package.html" class="extype" name="commbank.grimlock.test">test</a> </div>
+    </div><div class="entry">
+      <div class="name">TextParseConstraints</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/encoding/Codec$.html" class="extype" name="commbank.grimlock.framework.encoding.Codec">Codec</a> <a href="../commbank/grimlock/framework/metadata/Schema$.html" class="extype" name="commbank.grimlock.framework.metadata.Schema">Schema</a> <a href="../commbank/grimlock/framework/metadata/Type$.html" class="extype" name="commbank.grimlock.framework.metadata.Type">Type</a> <a href="../commbank/grimlock/framework/position/Position$.html" class="extype" name="commbank.grimlock.framework.position.Position">Position</a> </div>
+    </div><div class="entry">
+      <div class="name">TextParser</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/Persist$.html" class="extype" name="commbank.grimlock.framework.Persist">Persist</a> </div>
+    </div><div class="entry">
+      <div class="name">TextWriter</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/Persist$.html" class="extype" name="commbank.grimlock.framework.Persist">Persist</a> </div>
+    </div><div class="entry">
+      <div class="name">TextWriterByPosition</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/Persist$.html" class="extype" name="commbank.grimlock.framework.Persist">Persist</a> </div>
+    </div><div class="entry">
+      <div class="name">TfIdf</div>
+      <div class="occurrences"><a href="../commbank/grimlock/library/transform/package.html" class="extype" name="commbank.grimlock.library.transform">transform</a> </div>
+    </div><div class="entry">
+      <div class="name">Times</div>
+      <div class="occurrences"><a href="../commbank/grimlock/library/pairwise/package.html" class="extype" name="commbank.grimlock.library.pairwise">pairwise</a> </div>
+    </div><div class="entry">
+      <div class="name">Transformer</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/transform/package.html" class="extype" name="commbank.grimlock.framework.transform">transform</a> </div>
+    </div><div class="entry">
+      <div class="name">TransformerWithValue</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/transform/package.html" class="extype" name="commbank.grimlock.framework.transform">transform</a> </div>
+    </div><div class="entry">
+      <div class="name">Tuner</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/environment/tuner/package.html" class="extype" name="commbank.grimlock.framework.environment.tuner">tuner</a> </div>
+    </div><div class="entry">
+      <div class="name">Type</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/metadata/package.html" class="extype" name="commbank.grimlock.framework.metadata">metadata</a> </div>
+    </div><div class="entry">
+      <div class="name">Type1</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/distribution/Quantiles$.html" class="extype" name="commbank.grimlock.framework.distribution.Quantiles">Quantiles</a> </div>
+    </div><div class="entry">
+      <div class="name">Type2</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/distribution/Quantiles$.html" class="extype" name="commbank.grimlock.framework.distribution.Quantiles">Quantiles</a> </div>
+    </div><div class="entry">
+      <div class="name">Type3</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/distribution/Quantiles$.html" class="extype" name="commbank.grimlock.framework.distribution.Quantiles">Quantiles</a> </div>
+    </div><div class="entry">
+      <div class="name">Type4</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/distribution/Quantiles$.html" class="extype" name="commbank.grimlock.framework.distribution.Quantiles">Quantiles</a> </div>
+    </div><div class="entry">
+      <div class="name">Type5</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/distribution/Quantiles$.html" class="extype" name="commbank.grimlock.framework.distribution.Quantiles">Quantiles</a> </div>
+    </div><div class="entry">
+      <div class="name">Type6</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/distribution/Quantiles$.html" class="extype" name="commbank.grimlock.framework.distribution.Quantiles">Quantiles</a> </div>
+    </div><div class="entry">
+      <div class="name">Type7</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/distribution/Quantiles$.html" class="extype" name="commbank.grimlock.framework.distribution.Quantiles">Quantiles</a> </div>
+    </div><div class="entry">
+      <div class="name">Type8</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/distribution/Quantiles$.html" class="extype" name="commbank.grimlock.framework.distribution.Quantiles">Quantiles</a> </div>
+    </div><div class="entry">
+      <div class="name">Type9</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/distribution/Quantiles$.html" class="extype" name="commbank.grimlock.framework.distribution.Quantiles">Quantiles</a> </div>
+    </div><div class="entry">
+      <div class="name">TypeCodec</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/encoding/package.html" class="extype" name="commbank.grimlock.framework.encoding">encoding</a> </div>
+    </div><div class="entry">
+      <div class="name">TypeValue</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/encoding/package.html" class="extype" name="commbank.grimlock.framework.encoding">encoding</a> </div>
+    </div><div class="entry">
+      <div class="name">TypesTuner</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/Matrix$.html" class="extype" name="commbank.grimlock.framework.Matrix">Matrix</a> </div>
+    </div><div class="entry">
+      <div class="name">tDigestQuantiles</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/distribution/ApproximateDistribution.html" class="extype" name="commbank.grimlock.framework.distribution.ApproximateDistribution">ApproximateDistribution</a> <a href="../commbank/grimlock/scalding/distribution/ApproximateDistribution.html" class="extype" name="commbank.grimlock.scalding.distribution.ApproximateDistribution">ApproximateDistribution</a> <a href="../commbank/grimlock/spark/distribution/ApproximateDistribution.html" class="extype" name="commbank.grimlock.spark.distribution.ApproximateDistribution">ApproximateDistribution</a> </div>
+    </div><div class="entry">
+      <div class="name">tTag</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/aggregate/AggregatorWithValue.html" class="extype" name="commbank.grimlock.framework.aggregate.AggregatorWithValue">AggregatorWithValue</a> <a href="../commbank/grimlock/framework/squash/SquasherWithValue.html" class="extype" name="commbank.grimlock.framework.squash.SquasherWithValue">SquasherWithValue</a> <a href="../commbank/grimlock/library/aggregate/CountMapHistogram.html" class="extype" name="commbank.grimlock.library.aggregate.CountMapHistogram">CountMapHistogram</a> <a href="../commbank/grimlock/library/aggregate/CountMapQuantiles.html" class="extype" name="commbank.grimlock.library.aggregate.CountMapQuantiles">CountMapQuantiles</a> <a href="../commbank/grimlock/library/aggregate/Counts.html" class="extype" name="commbank.grimlock.library.aggregate.Counts">Counts</a> <a href="../commbank/grimlock/library/aggregate/DistinctCounts.html" class="extype" name="commbank.grimlock.library.aggregate.DistinctCounts">DistinctCounts</a> <a href="../commbank/grimlock/library/aggregate/Entropy.html" class="extype" name="commbank.grimlock.library.aggregate.Entropy">Entropy</a> <a href="../commbank/grimlock/library/aggregate/FrequencyRatio.html" class="extype" name="commbank.grimlock.library.aggregate.FrequencyRatio">FrequencyRatio</a> <a href="../commbank/grimlock/library/aggregate/Kurtosis.html" class="extype" name="commbank.grimlock.library.aggregate.Kurtosis">Kurtosis</a> <a href="../commbank/grimlock/library/aggregate/Limits.html" class="extype" name="commbank.grimlock.library.aggregate.Limits">Limits</a> <a href="../commbank/grimlock/library/aggregate/Maximum.html" class="extype" name="commbank.grimlock.library.aggregate.Maximum">Maximum</a> <a href="../commbank/grimlock/library/aggregate/MaximumAbsolute.html" class="extype" name="commbank.grimlock.library.aggregate.MaximumAbsolute">MaximumAbsolute</a> <a href="../commbank/grimlock/library/aggregate/Mean.html" class="extype" name="commbank.grimlock.library.aggregate.Mean">Mean</a> <a href="../commbank/grimlock/library/aggregate/Minimum.html" class="extype" name="commbank.grimlock.library.aggregate.Minimum">Minimum</a> <a href="../commbank/grimlock/library/aggregate/Moments.html" class="extype" name="commbank.grimlock.library.aggregate.Moments">Moments</a> <a href="../commbank/grimlock/library/aggregate/PredicateCounts.html" class="extype" name="commbank.grimlock.library.aggregate.PredicateCounts">PredicateCounts</a> <a href="../commbank/grimlock/library/aggregate/Skewness.html" class="extype" name="commbank.grimlock.library.aggregate.Skewness">Skewness</a> <a href="../commbank/grimlock/library/aggregate/StandardDeviation.html" class="extype" name="commbank.grimlock.library.aggregate.StandardDeviation">StandardDeviation</a> <a href="../commbank/grimlock/library/aggregate/Sums.html" class="extype" name="commbank.grimlock.library.aggregate.Sums">Sums</a> <a href="../commbank/grimlock/library/aggregate/TDigestQuantiles.html" class="extype" name="commbank.grimlock.library.aggregate.TDigestQuantiles">TDigestQuantiles</a> <a href="../commbank/grimlock/library/aggregate/UniformQuantiles.html" class="extype" name="commbank.grimlock.library.aggregate.UniformQuantiles">UniformQuantiles</a> <a href="../commbank/grimlock/library/aggregate/WeightedSums.html" class="extype" name="commbank.grimlock.library.aggregate.WeightedSums">WeightedSums</a> <a href="../commbank/grimlock/library/squash/KeepSlice.html" class="extype" name="commbank.grimlock.library.squash.KeepSlice">KeepSlice</a> <a href="../commbank/grimlock/library/squash/PreservingMaximumPosition.html" class="extype" name="commbank.grimlock.library.squash.PreservingMaximumPosition">PreservingMaximumPosition</a> <a href="../commbank/grimlock/library/squash/PreservingMinimumPosition.html" class="extype" name="commbank.grimlock.library.squash.PreservingMinimumPosition">PreservingMinimumPosition</a> </div>
+    </div><div class="entry">
+      <div class="name">tToListPosition</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/position/Position$.html" class="extype" name="commbank.grimlock.framework.position.Position">Position</a> </div>
+    </div><div class="entry">
+      <div class="name">tToPosition</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/position/Position$.html" class="extype" name="commbank.grimlock.framework.position.Position">Position</a> </div>
+    </div><div class="entry">
+      <div class="name">tToU</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/environment/PositionImplicits.html" class="extype" name="commbank.grimlock.framework.environment.PositionImplicits">PositionImplicits</a> <a href="../commbank/grimlock/scalding/environment/PositionImplicits.html" class="extype" name="commbank.grimlock.scalding.environment.PositionImplicits">PositionImplicits</a> <a href="../commbank/grimlock/spark/environment/PositionImplicits.html" class="extype" name="commbank.grimlock.spark.environment.PositionImplicits">PositionImplicits</a> </div>
+    </div><div class="entry">
+      <div class="name">tableParser</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/Cell$.html" class="extype" name="commbank.grimlock.framework.Cell">Cell</a> </div>
+    </div><div class="entry">
+      <div class="name">test</div>
+      <div class="occurrences"><a href="../commbank/grimlock/package.html" class="extype" name="commbank.grimlock">grimlock</a> </div>
+    </div><div class="entry">
+      <div class="name">test1</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/Shared$.html" class="extype" name="commbank.grimlock.test.Shared">Shared</a> </div>
+    </div><div class="entry">
+      <div class="name">test10</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/Shared$.html" class="extype" name="commbank.grimlock.test.Shared">Shared</a> </div>
+    </div><div class="entry">
+      <div class="name">test11</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/Shared$.html" class="extype" name="commbank.grimlock.test.Shared">Shared</a> </div>
+    </div><div class="entry">
+      <div class="name">test12</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/Shared$.html" class="extype" name="commbank.grimlock.test.Shared">Shared</a> </div>
+    </div><div class="entry">
+      <div class="name">test13</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/Shared$.html" class="extype" name="commbank.grimlock.test.Shared">Shared</a> </div>
+    </div><div class="entry">
+      <div class="name">test14</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/Shared$.html" class="extype" name="commbank.grimlock.test.Shared">Shared</a> </div>
+    </div><div class="entry">
+      <div class="name">test15</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/Shared$.html" class="extype" name="commbank.grimlock.test.Shared">Shared</a> </div>
+    </div><div class="entry">
+      <div class="name">test16</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/Shared$.html" class="extype" name="commbank.grimlock.test.Shared">Shared</a> </div>
+    </div><div class="entry">
+      <div class="name">test17</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/Shared$.html" class="extype" name="commbank.grimlock.test.Shared">Shared</a> </div>
+    </div><div class="entry">
+      <div class="name">test18</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/Shared$.html" class="extype" name="commbank.grimlock.test.Shared">Shared</a> </div>
+    </div><div class="entry">
+      <div class="name">test19</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/Shared$.html" class="extype" name="commbank.grimlock.test.Shared">Shared</a> </div>
+    </div><div class="entry">
+      <div class="name">test2</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/Shared$.html" class="extype" name="commbank.grimlock.test.Shared">Shared</a> </div>
+    </div><div class="entry">
+      <div class="name">test20</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/Shared$.html" class="extype" name="commbank.grimlock.test.Shared">Shared</a> </div>
+    </div><div class="entry">
+      <div class="name">test21</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/Shared$.html" class="extype" name="commbank.grimlock.test.Shared">Shared</a> </div>
+    </div><div class="entry">
+      <div class="name">test22</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/Shared$.html" class="extype" name="commbank.grimlock.test.Shared">Shared</a> </div>
+    </div><div class="entry">
+      <div class="name">test23</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/Shared$.html" class="extype" name="commbank.grimlock.test.Shared">Shared</a> </div>
+    </div><div class="entry">
+      <div class="name">test24</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/Shared$.html" class="extype" name="commbank.grimlock.test.Shared">Shared</a> </div>
+    </div><div class="entry">
+      <div class="name">test25</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/Shared$.html" class="extype" name="commbank.grimlock.test.Shared">Shared</a> </div>
+    </div><div class="entry">
+      <div class="name">test26</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/Shared$.html" class="extype" name="commbank.grimlock.test.Shared">Shared</a> </div>
+    </div><div class="entry">
+      <div class="name">test27</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/Shared$.html" class="extype" name="commbank.grimlock.test.Shared">Shared</a> </div>
+    </div><div class="entry">
+      <div class="name">test28</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/Shared$.html" class="extype" name="commbank.grimlock.test.Shared">Shared</a> </div>
+    </div><div class="entry">
+      <div class="name">test29</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/Shared$.html" class="extype" name="commbank.grimlock.test.Shared">Shared</a> </div>
+    </div><div class="entry">
+      <div class="name">test3</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/Shared$.html" class="extype" name="commbank.grimlock.test.Shared">Shared</a> </div>
+    </div><div class="entry">
+      <div class="name">test30</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/Shared$.html" class="extype" name="commbank.grimlock.test.Shared">Shared</a> </div>
+    </div><div class="entry">
+      <div class="name">test31</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/Shared$.html" class="extype" name="commbank.grimlock.test.Shared">Shared</a> </div>
+    </div><div class="entry">
+      <div class="name">test32</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/Shared$.html" class="extype" name="commbank.grimlock.test.Shared">Shared</a> </div>
+    </div><div class="entry">
+      <div class="name">test33</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/Shared$.html" class="extype" name="commbank.grimlock.test.Shared">Shared</a> </div>
+    </div><div class="entry">
+      <div class="name">test4</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/Shared$.html" class="extype" name="commbank.grimlock.test.Shared">Shared</a> </div>
+    </div><div class="entry">
+      <div class="name">test5</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/Shared$.html" class="extype" name="commbank.grimlock.test.Shared">Shared</a> </div>
+    </div><div class="entry">
+      <div class="name">test6</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/Shared$.html" class="extype" name="commbank.grimlock.test.Shared">Shared</a> </div>
+    </div><div class="entry">
+      <div class="name">test7</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/Shared$.html" class="extype" name="commbank.grimlock.test.Shared">Shared</a> </div>
+    </div><div class="entry">
+      <div class="name">test8</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/Shared$.html" class="extype" name="commbank.grimlock.test.Shared">Shared</a> </div>
+    </div><div class="entry">
+      <div class="name">test9</div>
+      <div class="occurrences"><a href="../commbank/grimlock/test/Shared$.html" class="extype" name="commbank.grimlock.test.Shared">Shared</a> </div>
+    </div><div class="entry">
+      <div class="name">textParseConstraints</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/position/Position$$TextParseConstraints$.html" class="extype" name="commbank.grimlock.framework.position.Position.TextParseConstraints">TextParseConstraints</a> </div>
+    </div><div class="entry">
+      <div class="name">tf</div>
+      <div class="occurrences"><a href="../commbank/grimlock/scalding/examples/InstanceCentricTfIdf.html" class="extype" name="commbank.grimlock.scalding.examples.InstanceCentricTfIdf">InstanceCentricTfIdf</a> </div>
+    </div><div class="entry">
+      <div class="name">third</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/environment/tuner/Ternary.html" class="extype" name="commbank.grimlock.framework.environment.tuner.Ternary">Ternary</a> </div>
+    </div><div class="entry">
+      <div class="name">threshold</div>
+      <div class="occurrences"><a href="../commbank/grimlock/library/transform/Standardise.html" class="extype" name="commbank.grimlock.library.transform.Standardise">Standardise</a> </div>
+    </div><div class="entry">
+      <div class="name">toContents</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/environment/ContentImplicits.html" class="extype" name="commbank.grimlock.framework.environment.ContentImplicits">ContentImplicits</a> <a href="../commbank/grimlock/scalding/environment/ContentImplicits.html" class="extype" name="commbank.grimlock.scalding.environment.ContentImplicits">ContentImplicits</a> <a href="../commbank/grimlock/spark/environment/ContentImplicits.html" class="extype" name="commbank.grimlock.spark.environment.ContentImplicits">ContentImplicits</a> </div>
+    </div><div class="entry">
+      <div class="name">toIndexed</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/environment/ContentImplicits.html" class="extype" name="commbank.grimlock.framework.environment.ContentImplicits">ContentImplicits</a> <a href="../commbank/grimlock/scalding/environment/ContentImplicits.html" class="extype" name="commbank.grimlock.scalding.environment.ContentImplicits">ContentImplicits</a> <a href="../commbank/grimlock/spark/environment/ContentImplicits.html" class="extype" name="commbank.grimlock.spark.environment.ContentImplicits">ContentImplicits</a> </div>
+    </div><div class="entry">
+      <div class="name">toJSON</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/Cell.html" class="extype" name="commbank.grimlock.framework.Cell">Cell</a> <a href="../commbank/grimlock/framework/content/Content.html" class="extype" name="commbank.grimlock.framework.content.Content">Content</a> <a href="../commbank/grimlock/framework/content/IndexedContents$.html" class="extype" name="commbank.grimlock.framework.content.IndexedContents">IndexedContents</a> <a href="../commbank/grimlock/framework/partition/Partitions$.html" class="extype" name="commbank.grimlock.framework.partition.Partitions">Partitions</a> <a href="../commbank/grimlock/framework/position/Position.html" class="extype" name="commbank.grimlock.framework.position.Position">Position</a> </div>
+    </div><div class="entry">
+      <div class="name">toMap</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/Matrix$$Compact.html" class="extype" name="commbank.grimlock.framework.Matrix.Compact">Compact</a> </div>
+    </div><div class="entry">
+      <div class="name">toMatrix</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.framework.environment.MatrixImplicits">MatrixImplicits</a> <a href="../commbank/grimlock/scalding/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.scalding.environment.MatrixImplicits">MatrixImplicits</a> <a href="../commbank/grimlock/spark/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.spark.environment.MatrixImplicits">MatrixImplicits</a> </div>
+    </div><div class="entry">
+      <div class="name">toMatrix1D</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.framework.environment.MatrixImplicits">MatrixImplicits</a> <a href="../commbank/grimlock/scalding/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.scalding.environment.MatrixImplicits">MatrixImplicits</a> <a href="../commbank/grimlock/spark/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.spark.environment.MatrixImplicits">MatrixImplicits</a> </div>
+    </div><div class="entry">
+      <div class="name">toMatrix2D</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.framework.environment.MatrixImplicits">MatrixImplicits</a> <a href="../commbank/grimlock/scalding/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.scalding.environment.MatrixImplicits">MatrixImplicits</a> <a href="../commbank/grimlock/spark/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.spark.environment.MatrixImplicits">MatrixImplicits</a> </div>
+    </div><div class="entry">
+      <div class="name">toMatrix3D</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.framework.environment.MatrixImplicits">MatrixImplicits</a> <a href="../commbank/grimlock/scalding/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.scalding.environment.MatrixImplicits">MatrixImplicits</a> <a href="../commbank/grimlock/spark/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.spark.environment.MatrixImplicits">MatrixImplicits</a> </div>
+    </div><div class="entry">
+      <div class="name">toMatrix4D</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.framework.environment.MatrixImplicits">MatrixImplicits</a> <a href="../commbank/grimlock/scalding/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.scalding.environment.MatrixImplicits">MatrixImplicits</a> <a href="../commbank/grimlock/spark/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.spark.environment.MatrixImplicits">MatrixImplicits</a> </div>
+    </div><div class="entry">
+      <div class="name">toMatrix5D</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.framework.environment.MatrixImplicits">MatrixImplicits</a> <a href="../commbank/grimlock/scalding/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.scalding.environment.MatrixImplicits">MatrixImplicits</a> <a href="../commbank/grimlock/spark/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.spark.environment.MatrixImplicits">MatrixImplicits</a> </div>
+    </div><div class="entry">
+      <div class="name">toMatrix6D</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.framework.environment.MatrixImplicits">MatrixImplicits</a> <a href="../commbank/grimlock/scalding/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.scalding.environment.MatrixImplicits">MatrixImplicits</a> <a href="../commbank/grimlock/spark/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.spark.environment.MatrixImplicits">MatrixImplicits</a> </div>
+    </div><div class="entry">
+      <div class="name">toMatrix7D</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.framework.environment.MatrixImplicits">MatrixImplicits</a> <a href="../commbank/grimlock/scalding/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.scalding.environment.MatrixImplicits">MatrixImplicits</a> <a href="../commbank/grimlock/spark/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.spark.environment.MatrixImplicits">MatrixImplicits</a> </div>
+    </div><div class="entry">
+      <div class="name">toMatrix8D</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.framework.environment.MatrixImplicits">MatrixImplicits</a> <a href="../commbank/grimlock/scalding/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.scalding.environment.MatrixImplicits">MatrixImplicits</a> <a href="../commbank/grimlock/spark/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.spark.environment.MatrixImplicits">MatrixImplicits</a> </div>
+    </div><div class="entry">
+      <div class="name">toMatrix9D</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.framework.environment.MatrixImplicits">MatrixImplicits</a> <a href="../commbank/grimlock/scalding/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.scalding.environment.MatrixImplicits">MatrixImplicits</a> <a href="../commbank/grimlock/spark/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.spark.environment.MatrixImplicits">MatrixImplicits</a> </div>
+    </div><div class="entry">
+      <div class="name">toMultiDimensionMatrix</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.framework.environment.MatrixImplicits">MatrixImplicits</a> <a href="../commbank/grimlock/scalding/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.scalding.environment.MatrixImplicits">MatrixImplicits</a> <a href="../commbank/grimlock/spark/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.spark.environment.MatrixImplicits">MatrixImplicits</a> </div>
+    </div><div class="entry">
+      <div class="name">toOption</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/content/Content.html" class="extype" name="commbank.grimlock.framework.content.Content">Content</a> <a href="../commbank/grimlock/framework/position/Position.html" class="extype" name="commbank.grimlock.framework.position.Position">Position</a> </div>
+    </div><div class="entry">
+      <div class="name">toPartitions</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/environment/PartitionImplicits.html" class="extype" name="commbank.grimlock.framework.environment.PartitionImplicits">PartitionImplicits</a> <a href="../commbank/grimlock/scalding/environment/PartitionImplicits.html" class="extype" name="commbank.grimlock.scalding.environment.PartitionImplicits">PartitionImplicits</a> <a href="../commbank/grimlock/spark/environment/PartitionImplicits.html" class="extype" name="commbank.grimlock.spark.environment.PartitionImplicits">PartitionImplicits</a> </div>
+    </div><div class="entry">
+      <div class="name">toPositions</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/environment/PositionImplicits.html" class="extype" name="commbank.grimlock.framework.environment.PositionImplicits">PositionImplicits</a> <a href="../commbank/grimlock/scalding/environment/PositionImplicits.html" class="extype" name="commbank.grimlock.scalding.environment.PositionImplicits">PositionImplicits</a> <a href="../commbank/grimlock/spark/environment/PositionImplicits.html" class="extype" name="commbank.grimlock.spark.environment.PositionImplicits">PositionImplicits</a> </div>
+    </div><div class="entry">
+      <div class="name">toSequence</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/Matrix.html" class="extype" name="commbank.grimlock.framework.Matrix">Matrix</a> <a href="../commbank/grimlock/scalding/Matrix.html" class="extype" name="commbank.grimlock.scalding.Matrix">Matrix</a> <a href="../commbank/grimlock/spark/Matrix.html" class="extype" name="commbank.grimlock.spark.Matrix">Matrix</a> </div>
+    </div><div class="entry">
+      <div class="name">toShortString</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/Cell.html" class="extype" name="commbank.grimlock.framework.Cell">Cell</a> <a href="../commbank/grimlock/framework/content/Content.html" class="extype" name="commbank.grimlock.framework.content.Content">Content</a> <a href="../commbank/grimlock/framework/content/IndexedContents$.html" class="extype" name="commbank.grimlock.framework.content.IndexedContents">IndexedContents</a> <a href="../commbank/grimlock/framework/encoding/BooleanCodec$.html" class="extype" name="commbank.grimlock.framework.encoding.BooleanCodec">BooleanCodec</a> <a href="../commbank/grimlock/framework/encoding/Codec.html" class="extype" name="commbank.grimlock.framework.encoding.Codec">Codec</a> <a href="../commbank/grimlock/framework/encoding/DateCodec.html" class="extype" name="commbank.grimlock.framework.encoding.DateCodec">DateCodec</a> <a href="../commbank/grimlock/framework/encoding/DoubleCodec$.html" class="extype" name="commbank.grimlock.framework.encoding.DoubleCodec">DoubleCodec</a> <a href="../commbank/grimlock/framework/encoding/IntCodec$.html" class="extype" name="commbank.grimlock.framework.encoding.IntCodec">IntCodec</a> <a href="../commbank/grimlock/framework/encoding/LongCodec$.html" class="extype" name="commbank.grimlock.framework.encoding.LongCodec">LongCodec</a> <a href="../commbank/grimlock/framework/encoding/StringCodec$.html" class="extype" name="commbank.grimlock.framework.encoding.StringCodec">StringCodec</a> <a href="../commbank/grimlock/framework/encoding/TypeCodec$.html" class="extype" name="commbank.grimlock.framework.encoding.TypeCodec">TypeCodec</a> <a href="../commbank/grimlock/framework/encoding/Value.html" class="extype" name="commbank.grimlock.framework.encoding.Value">Value</a> <a href="../commbank/grimlock/framework/metadata/CategoricalType.html" class="extype" name="commbank.grimlock.framework.metadata.CategoricalType">CategoricalType</a> <a href="../commbank/grimlock/framework/metadata/ContinuousType$.html" class="extype" name="commbank.grimlock.framework.metadata.ContinuousType">ContinuousType</a> <a href="../commbank/grimlock/framework/metadata/DateType$.html" class="extype" name="commbank.grimlock.framework.metadata.DateType">DateType</a> <a href="../commbank/grimlock/framework/metadata/DiscreteType$.html" class="extype" name="commbank.grimlock.framework.metadata.DiscreteType">DiscreteType</a> <a href="../commbank/grimlock/framework/metadata/MixedType$.html" class="extype" name="commbank.grimlock.framework.metadata.MixedType">MixedType</a> <a href="../commbank/grimlock/framework/metadata/NominalType$.html" class="extype" name="commbank.grimlock.framework.metadata.NominalType">NominalType</a> <a href="../commbank/grimlock/framework/metadata/NumericType.html" class="extype" name="commbank.grimlock.framework.metadata.NumericType">NumericType</a> <a href="../commbank/grimlock/framework/metadata/OrdinalType$.html" class="extype" name="commbank.grimlock.framework.metadata.OrdinalType">OrdinalType</a> <a href="../commbank/grimlock/framework/metadata/Schema.html" class="extype" name="commbank.grimlock.framework.metadata.Schema">Schema</a> <a href="../commbank/grimlock/framework/metadata/Type.html" class="extype" name="commbank.grimlock.framework.metadata.Type">Type</a> <a href="../commbank/grimlock/framework/partition/Partitions$.html" class="extype" name="commbank.grimlock.framework.partition.Partitions">Partitions</a> <a href="../commbank/grimlock/framework/position/Position.html" class="extype" name="commbank.grimlock.framework.position.Position">Position</a> <a href="../commbank/grimlock/scalding/examples/ExampleEventCodec$.html" class="extype" name="commbank.grimlock.scalding.examples.ExampleEventCodec">ExampleEventCodec</a> <a href="../commbank/grimlock/scalding/examples/ExampleEventType$.html" class="extype" name="commbank.grimlock.scalding.examples.ExampleEventType">ExampleEventType</a> <a href="../commbank/grimlock/spark/examples/ExampleEventCodec$.html" class="extype" name="commbank.grimlock.spark.examples.ExampleEventCodec">ExampleEventCodec</a> <a href="../commbank/grimlock/spark/examples/ExampleEventType$.html" class="extype" name="commbank.grimlock.spark.examples.ExampleEventType">ExampleEventType</a> </div>
+    </div><div class="entry">
+      <div class="name">toString</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/content/Content.html" class="extype" name="commbank.grimlock.framework.content.Content">Content</a> <a href="../commbank/grimlock/framework/metadata/Schema.html" class="extype" name="commbank.grimlock.framework.metadata.Schema">Schema</a> <a href="../commbank/grimlock/framework/metadata/Type.html" class="extype" name="commbank.grimlock.framework.metadata.Type">Type</a> </div>
+    </div><div class="entry">
+      <div class="name">toText</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/Matrix.html" class="extype" name="commbank.grimlock.framework.Matrix">Matrix</a> <a href="../commbank/grimlock/scalding/Matrix.html" class="extype" name="commbank.grimlock.scalding.Matrix">Matrix</a> <a href="../commbank/grimlock/spark/Matrix.html" class="extype" name="commbank.grimlock.spark.Matrix">Matrix</a> </div>
+    </div><div class="entry">
+      <div class="name">toTraversableOnce</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/aggregate/Multiple.html" class="extype" name="commbank.grimlock.framework.aggregate.Multiple">Multiple</a> <a href="../commbank/grimlock/framework/aggregate/Result.html" class="extype" name="commbank.grimlock.framework.aggregate.Result">Result</a> <a href="../commbank/grimlock/framework/aggregate/Single.html" class="extype" name="commbank.grimlock.framework.aggregate.Single">Single</a> </div>
+    </div><div class="entry">
+      <div class="name">toUnit</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/Persist.html" class="extype" name="commbank.grimlock.framework.Persist">Persist</a> </div>
+    </div><div class="entry">
+      <div class="name">toVector</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/Matrix.html" class="extype" name="commbank.grimlock.framework.Matrix">Matrix</a> <a href="../commbank/grimlock/scalding/Matrix.html" class="extype" name="commbank.grimlock.scalding.Matrix">Matrix</a> <a href="../commbank/grimlock/spark/Matrix.html" class="extype" name="commbank.grimlock.spark.Matrix">Matrix</a> </div>
+    </div><div class="entry">
+      <div class="name">train</div>
+      <div class="occurrences"><a href="../commbank/grimlock/scalding/examples/PipelineDataPreparation.html" class="extype" name="commbank.grimlock.scalding.examples.PipelineDataPreparation">PipelineDataPreparation</a> </div>
+    </div><div class="entry">
+      <div class="name">trainAndScore</div>
+      <div class="occurrences"><a href="../commbank/grimlock/scalding/examples/Ensemble.html" class="extype" name="commbank.grimlock.scalding.examples.Ensemble">Ensemble</a> </div>
+    </div><div class="entry">
+      <div class="name">transform</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/Matrix.html" class="extype" name="commbank.grimlock.framework.Matrix">Matrix</a> <a href="../commbank/grimlock/framework/package.html" class="extype" name="commbank.grimlock.framework">framework</a> <a href="../commbank/grimlock/library/package.html" class="extype" name="commbank.grimlock.library">library</a> <a href="../commbank/grimlock/scalding/Matrix.html" class="extype" name="commbank.grimlock.scalding.Matrix">Matrix</a> <a href="../commbank/grimlock/scalding/package.html" class="extype" name="commbank.grimlock.scalding">scalding</a> <a href="../commbank/grimlock/spark/Matrix.html" class="extype" name="commbank.grimlock.spark.Matrix">Matrix</a> <a href="../commbank/grimlock/spark/package.html" class="extype" name="commbank.grimlock.spark">spark</a> </div>
+    </div><div class="entry">
+      <div class="name">transformWithValue</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/Matrix.html" class="extype" name="commbank.grimlock.framework.Matrix">Matrix</a> <a href="../commbank/grimlock/scalding/Matrix.html" class="extype" name="commbank.grimlock.scalding.Matrix">Matrix</a> <a href="../commbank/grimlock/spark/Matrix.html" class="extype" name="commbank.grimlock.spark.Matrix">Matrix</a> </div>
+    </div><div class="entry">
+      <div class="name">tuner</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/environment/package.html" class="extype" name="commbank.grimlock.framework.environment">environment</a> </div>
+    </div><div class="entry">
+      <div class="name">tuple1ToMatrix</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.framework.environment.MatrixImplicits">MatrixImplicits</a> <a href="../commbank/grimlock/scalding/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.scalding.environment.MatrixImplicits">MatrixImplicits</a> <a href="../commbank/grimlock/spark/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.spark.environment.MatrixImplicits">MatrixImplicits</a> </div>
+    </div><div class="entry">
+      <div class="name">tuple1ToMatrix1D</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.framework.environment.MatrixImplicits">MatrixImplicits</a> <a href="../commbank/grimlock/scalding/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.scalding.environment.MatrixImplicits">MatrixImplicits</a> <a href="../commbank/grimlock/spark/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.spark.environment.MatrixImplicits">MatrixImplicits</a> </div>
+    </div><div class="entry">
+      <div class="name">tuple2ToMatrix</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.framework.environment.MatrixImplicits">MatrixImplicits</a> <a href="../commbank/grimlock/scalding/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.scalding.environment.MatrixImplicits">MatrixImplicits</a> <a href="../commbank/grimlock/spark/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.spark.environment.MatrixImplicits">MatrixImplicits</a> </div>
+    </div><div class="entry">
+      <div class="name">tuple2ToMatrix2D</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.framework.environment.MatrixImplicits">MatrixImplicits</a> <a href="../commbank/grimlock/scalding/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.scalding.environment.MatrixImplicits">MatrixImplicits</a> <a href="../commbank/grimlock/spark/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.spark.environment.MatrixImplicits">MatrixImplicits</a> </div>
+    </div><div class="entry">
+      <div class="name">tuple2ToMultiDimensionMatrix</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.framework.environment.MatrixImplicits">MatrixImplicits</a> <a href="../commbank/grimlock/scalding/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.scalding.environment.MatrixImplicits">MatrixImplicits</a> <a href="../commbank/grimlock/spark/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.spark.environment.MatrixImplicits">MatrixImplicits</a> </div>
+    </div><div class="entry">
+      <div class="name">tuple3ToMatrix</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.framework.environment.MatrixImplicits">MatrixImplicits</a> <a href="../commbank/grimlock/scalding/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.scalding.environment.MatrixImplicits">MatrixImplicits</a> <a href="../commbank/grimlock/spark/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.spark.environment.MatrixImplicits">MatrixImplicits</a> </div>
+    </div><div class="entry">
+      <div class="name">tuple3ToMatrix3D</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.framework.environment.MatrixImplicits">MatrixImplicits</a> <a href="../commbank/grimlock/scalding/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.scalding.environment.MatrixImplicits">MatrixImplicits</a> <a href="../commbank/grimlock/spark/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.spark.environment.MatrixImplicits">MatrixImplicits</a> </div>
+    </div><div class="entry">
+      <div class="name">tuple3ToMultiDimensionMatrix</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.framework.environment.MatrixImplicits">MatrixImplicits</a> <a href="../commbank/grimlock/scalding/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.scalding.environment.MatrixImplicits">MatrixImplicits</a> <a href="../commbank/grimlock/spark/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.spark.environment.MatrixImplicits">MatrixImplicits</a> </div>
+    </div><div class="entry">
+      <div class="name">tuple4ToMatrix</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.framework.environment.MatrixImplicits">MatrixImplicits</a> <a href="../commbank/grimlock/scalding/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.scalding.environment.MatrixImplicits">MatrixImplicits</a> <a href="../commbank/grimlock/spark/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.spark.environment.MatrixImplicits">MatrixImplicits</a> </div>
+    </div><div class="entry">
+      <div class="name">tuple4ToMatrix4D</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.framework.environment.MatrixImplicits">MatrixImplicits</a> <a href="../commbank/grimlock/scalding/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.scalding.environment.MatrixImplicits">MatrixImplicits</a> <a href="../commbank/grimlock/spark/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.spark.environment.MatrixImplicits">MatrixImplicits</a> </div>
+    </div><div class="entry">
+      <div class="name">tuple4ToMultiDimensionMatrix</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.framework.environment.MatrixImplicits">MatrixImplicits</a> <a href="../commbank/grimlock/scalding/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.scalding.environment.MatrixImplicits">MatrixImplicits</a> <a href="../commbank/grimlock/spark/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.spark.environment.MatrixImplicits">MatrixImplicits</a> </div>
+    </div><div class="entry">
+      <div class="name">tuple5ToMatrix</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.framework.environment.MatrixImplicits">MatrixImplicits</a> <a href="../commbank/grimlock/scalding/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.scalding.environment.MatrixImplicits">MatrixImplicits</a> <a href="../commbank/grimlock/spark/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.spark.environment.MatrixImplicits">MatrixImplicits</a> </div>
+    </div><div class="entry">
+      <div class="name">tuple5ToMatrix5D</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.framework.environment.MatrixImplicits">MatrixImplicits</a> <a href="../commbank/grimlock/scalding/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.scalding.environment.MatrixImplicits">MatrixImplicits</a> <a href="../commbank/grimlock/spark/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.spark.environment.MatrixImplicits">MatrixImplicits</a> </div>
+    </div><div class="entry">
+      <div class="name">tuple5ToMultiDimensionMatrix</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.framework.environment.MatrixImplicits">MatrixImplicits</a> <a href="../commbank/grimlock/scalding/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.scalding.environment.MatrixImplicits">MatrixImplicits</a> <a href="../commbank/grimlock/spark/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.spark.environment.MatrixImplicits">MatrixImplicits</a> </div>
+    </div><div class="entry">
+      <div class="name">tuple6ToMatrix</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.framework.environment.MatrixImplicits">MatrixImplicits</a> <a href="../commbank/grimlock/scalding/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.scalding.environment.MatrixImplicits">MatrixImplicits</a> <a href="../commbank/grimlock/spark/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.spark.environment.MatrixImplicits">MatrixImplicits</a> </div>
+    </div><div class="entry">
+      <div class="name">tuple6ToMatrix6D</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.framework.environment.MatrixImplicits">MatrixImplicits</a> <a href="../commbank/grimlock/scalding/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.scalding.environment.MatrixImplicits">MatrixImplicits</a> <a href="../commbank/grimlock/spark/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.spark.environment.MatrixImplicits">MatrixImplicits</a> </div>
+    </div><div class="entry">
+      <div class="name">tuple6ToMultiDimensionMatrix</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.framework.environment.MatrixImplicits">MatrixImplicits</a> <a href="../commbank/grimlock/scalding/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.scalding.environment.MatrixImplicits">MatrixImplicits</a> <a href="../commbank/grimlock/spark/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.spark.environment.MatrixImplicits">MatrixImplicits</a> </div>
+    </div><div class="entry">
+      <div class="name">tuple7ToMatrix</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.framework.environment.MatrixImplicits">MatrixImplicits</a> <a href="../commbank/grimlock/scalding/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.scalding.environment.MatrixImplicits">MatrixImplicits</a> <a href="../commbank/grimlock/spark/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.spark.environment.MatrixImplicits">MatrixImplicits</a> </div>
+    </div><div class="entry">
+      <div class="name">tuple7ToMatrix7D</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.framework.environment.MatrixImplicits">MatrixImplicits</a> <a href="../commbank/grimlock/scalding/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.scalding.environment.MatrixImplicits">MatrixImplicits</a> <a href="../commbank/grimlock/spark/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.spark.environment.MatrixImplicits">MatrixImplicits</a> </div>
+    </div><div class="entry">
+      <div class="name">tuple7ToMultiDimensionMatrix</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.framework.environment.MatrixImplicits">MatrixImplicits</a> <a href="../commbank/grimlock/scalding/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.scalding.environment.MatrixImplicits">MatrixImplicits</a> <a href="../commbank/grimlock/spark/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.spark.environment.MatrixImplicits">MatrixImplicits</a> </div>
+    </div><div class="entry">
+      <div class="name">tuple8ToMatrix</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.framework.environment.MatrixImplicits">MatrixImplicits</a> <a href="../commbank/grimlock/scalding/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.scalding.environment.MatrixImplicits">MatrixImplicits</a> <a href="../commbank/grimlock/spark/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.spark.environment.MatrixImplicits">MatrixImplicits</a> </div>
+    </div><div class="entry">
+      <div class="name">tuple8ToMatrix8D</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.framework.environment.MatrixImplicits">MatrixImplicits</a> <a href="../commbank/grimlock/scalding/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.scalding.environment.MatrixImplicits">MatrixImplicits</a> <a href="../commbank/grimlock/spark/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.spark.environment.MatrixImplicits">MatrixImplicits</a> </div>
+    </div><div class="entry">
+      <div class="name">tuple8ToMultiDimensionMatrix</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.framework.environment.MatrixImplicits">MatrixImplicits</a> <a href="../commbank/grimlock/scalding/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.scalding.environment.MatrixImplicits">MatrixImplicits</a> <a href="../commbank/grimlock/spark/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.spark.environment.MatrixImplicits">MatrixImplicits</a> </div>
+    </div><div class="entry">
+      <div class="name">tuple9ToMatrix</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.framework.environment.MatrixImplicits">MatrixImplicits</a> <a href="../commbank/grimlock/scalding/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.scalding.environment.MatrixImplicits">MatrixImplicits</a> <a href="../commbank/grimlock/spark/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.spark.environment.MatrixImplicits">MatrixImplicits</a> </div>
+    </div><div class="entry">
+      <div class="name">tuple9ToMatrix9D</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.framework.environment.MatrixImplicits">MatrixImplicits</a> <a href="../commbank/grimlock/scalding/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.scalding.environment.MatrixImplicits">MatrixImplicits</a> <a href="../commbank/grimlock/spark/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.spark.environment.MatrixImplicits">MatrixImplicits</a> </div>
+    </div><div class="entry">
+      <div class="name">tuple9ToMultiDimensionMatrix</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.framework.environment.MatrixImplicits">MatrixImplicits</a> <a href="../commbank/grimlock/scalding/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.scalding.environment.MatrixImplicits">MatrixImplicits</a> <a href="../commbank/grimlock/spark/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.spark.environment.MatrixImplicits">MatrixImplicits</a> </div>
+    </div><div class="entry">
+      <div class="name">tupleToParseErrors</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.framework.environment.MatrixImplicits">MatrixImplicits</a> </div>
+    </div><div class="entry">
+      <div class="name">typeTextParseConstraints</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/metadata/Type$.html" class="extype" name="commbank.grimlock.framework.metadata.Type">Type</a> </div>
+    </div><div class="entry">
+      <div class="name">types</div>
+      <div class="occurrences"><a href="../commbank/grimlock/framework/Matrix.html" class="extype" name="commbank.grimlock.framework.Matrix">Matrix</a> <a href="../commbank/grimlock/scalding/Matrix.html" class="extype" name="commbank.grimlock.scalding.Matrix">Matrix</a> <a href="../commbank/grimlock/spark/Matrix.html" class="extype" name="commbank.grimlock.spark.Matrix">Matrix</a> </div>
+    </div></body>
+      </html>
