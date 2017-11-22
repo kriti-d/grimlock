@@ -1,0 +1,280 @@
+// Copyright 2014,2015,2016,2017 Commonwealth Bank of Australia
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+// http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+package commbank.grimlock.test
+
+import commbank.grimlock.framework.Cell
+import commbank.grimlock.framework.content.Content
+import commbank.grimlock.framework.encoding.{ DateCodec, DateValue, DoubleCodec, LongCodec, StringCodec, Value }
+import commbank.grimlock.framework.environment.implicits._
+import commbank.grimlock.framework.metadata.{ ContinuousSchema, NominalSchema }
+import commbank.grimlock.framework.position.{ Coordinates3, Position }
+
+import commbank.grimlock.scalding.environment.Context
+import commbank.grimlock.scalding.environment.implicits._
+import commbank.grimlock.scalding.transform.CutRules
+
+import com.twitter.scalding.{ Args, Job, TypedPsv }
+import com.twitter.scalding.TDsl.sourceToTypedPipe
+
+import java.util.Date
+
+object TestScaldingReader {
+  def load4TupleDataAddDate(
+    ctx: Context,
+    file: String
+  ): ctx.U[Cell[Coordinates3[String, String, Date]]] = TypedPsv[(String, String, String, String)](file)
+    .flatMap { case (i, f, e, v) =>
+      val content = e match {
+        case "string" => StringCodec.decode(v).map(c => Content(NominalSchema[String](), c))
+        case _ => scala.util.Try(v.toLong).toOption match {
+          case Some(_) => LongCodec.decode(v).map(c => Content(ContinuousSchema[Long](), c))
+          case None => DoubleCodec.decode(v).map(c => Content(ContinuousSchema[Double](), c))
+        }
+      }
+
+      val id: Value[String] = i
+      val name: Value[String] = f
+
+      content.map(c => Cell(Position(id, name, hashDate(v)), c))
+    }
+
+  private def hashDate(v: String): Value[Date] = {
+    val cal = java.util.Calendar.getInstance()
+
+    cal.setTime((new java.text.SimpleDateFormat("yyyy-MM-dd")).parse("2014-05-14"))
+    cal.add(java.util.Calendar.DATE, -(v.hashCode % 21)) // Generate 3 week window prior to date
+
+    DateValue(cal.getTime(), DateCodec())
+  }
+}
+
+class TestScalding1(args : Args) extends Job(args) {
+  val ctx = Context()
+  val path = args("path")
+
+  Shared.test1(ctx, TestScaldingReader.load4TupleDataAddDate(ctx, path + "/someInputfile3.txt"), path, "scalding")
+}
+
+class TestScalding2(args : Args) extends Job(args) {
+  val ctx = Context()
+  val path = args("path")
+
+  Shared.test2(ctx, TestScaldingReader.load4TupleDataAddDate(ctx, path + "/someInputfile3.txt"), path, "scalding")
+}
+
+class TestScalding3(args : Args) extends Job(args) {
+  val ctx = Context()
+  val path = args("path")
+
+  Shared.test3(ctx, TestScaldingReader.load4TupleDataAddDate(ctx, path + "/someInputfile3.txt"), path, "scalding")
+}
+
+class TestScalding4(args : Args) extends Job(args) {
+  val ctx = Context()
+  val path = args("path")
+
+  Shared.test4(ctx, TestScaldingReader.load4TupleDataAddDate(ctx, path + "/someInputfile3.txt"), path, "scalding")
+}
+
+class TestScalding5(args : Args) extends Job(args) {
+  val ctx = Context()
+  val path = args("path")
+
+  Shared.test5(ctx, TestScaldingReader.load4TupleDataAddDate(ctx, path + "/someInputfile3.txt"), path, "scalding")
+}
+
+class TestScalding6(args : Args) extends Job(args) {
+  val ctx = Context()
+  val path = args("path")
+
+  Shared.test6(ctx, TestScaldingReader.load4TupleDataAddDate(ctx, path + "/someInputfile3.txt"), path, "scalding")
+}
+
+class TestScalding7(args : Args) extends Job(args) {
+  val ctx = Context()
+  val path = args("path")
+
+  Shared.test7(ctx, TestScaldingReader.load4TupleDataAddDate(ctx, path + "/someInputfile3.txt"), path, "scalding")
+}
+
+class TestScalding8(args : Args) extends Job(args) {
+  val ctx = Context()
+  val path = args("path")
+
+  Shared.test8(ctx, TestScaldingReader.load4TupleDataAddDate(ctx, path + "/someInputfile3.txt"), path, "scalding")
+}
+
+class TestScalding9(args : Args) extends Job(args) {
+  val ctx = Context()
+  val path = args("path")
+
+  Shared.test9(ctx, TestScaldingReader.load4TupleDataAddDate(ctx, path + "/someInputfile3.txt"), path, "scalding")
+}
+
+class TestScalding10(args : Args) extends Job(args) {
+  val ctx = Context()
+  val path = args("path")
+
+  Shared.test10(ctx, TestScaldingReader.load4TupleDataAddDate(ctx, path + "/someInputfile3.txt"), path, "scalding")
+}
+
+class TestScalding11(args : Args) extends Job(args) {
+  val ctx = Context()
+  val path = args("path")
+
+  Shared.test11(ctx, TestScaldingReader.load4TupleDataAddDate(ctx, path + "/someInputfile3.txt"), path, "scalding")
+}
+
+class TestScalding12(args : Args) extends Job(args) {
+  val ctx = Context()
+  val path = args("path")
+
+  Shared.test12(ctx, TestScaldingReader.load4TupleDataAddDate(ctx, path + "/someInputfile3.txt"), path, "scalding")
+}
+
+class TestScalding13(args : Args) extends Job(args) {
+  val ctx = Context()
+  val path = args("path")
+
+  Shared.test13(ctx, TestScaldingReader.load4TupleDataAddDate(ctx, path + "/someInputfile3.txt"), path, "scalding")
+}
+
+class TestScalding14(args : Args) extends Job(args) {
+  val ctx = Context()
+  val path = args("path")
+
+  Shared.test14(ctx, TestScaldingReader.load4TupleDataAddDate(ctx, path + "/someInputfile3.txt"), path, "scalding")
+}
+
+class TestScalding15(args : Args) extends Job(args) {
+  val ctx = Context()
+  val path = args("path")
+
+  Shared.test15(ctx, TestScaldingReader.load4TupleDataAddDate(ctx, path + "/someInputfile3.txt"), path, "scalding")
+}
+
+class TestScalding16(args : Args) extends Job(args) {
+  val ctx = Context()
+  val path = args("path")
+
+  Shared.test16(ctx, TestScaldingReader.load4TupleDataAddDate(ctx, path + "/someInputfile3.txt"), path, "scalding")
+}
+
+class TestScalding17(args : Args) extends Job(args) {
+  val ctx = Context()
+  val path = args("path")
+
+  Shared.test17(ctx, TestScaldingReader.load4TupleDataAddDate(ctx, path + "/someInputfile3.txt"), path, "scalding")
+}
+
+class TestScalding18(args : Args) extends Job(args) {
+  val ctx = Context()
+  val path = args("path")
+
+  Shared.test18(ctx, TestScaldingReader.load4TupleDataAddDate(ctx, path + "/someInputfile3.txt"), path, "scalding")
+}
+
+class TestScalding19(args : Args) extends Job(args) {
+  val ctx = Context()
+  val path = args("path")
+
+  Shared.test19(ctx, TestScaldingReader.load4TupleDataAddDate(ctx, path + "/someInputfile3.txt"), path, "scalding")
+}
+
+class TestScalding20(args : Args) extends Job(args) {
+  val ctx = Context()
+
+  Shared.test20(ctx, args("path"), "scalding")
+}
+
+class TestScalding21(args : Args) extends Job(args) {
+  val ctx = Context()
+  val path = args("path")
+
+  Shared.test21(ctx, TestScaldingReader.load4TupleDataAddDate(ctx, path + "/someInputfile3.txt"), path, "scalding")
+}
+
+class TestScalding22(args : Args) extends Job(args) {
+  val ctx = Context()
+
+  Shared.test22(ctx, args("path"), "scalding")
+}
+
+class TestScalding23(args : Args) extends Job(args) {
+  val ctx = Context()
+
+  Shared.test23(ctx, args("path"), "scalding")
+}
+
+class TestScalding24(args: Args) extends Job(args) {
+  val ctx = Context()
+
+  Shared.test24(ctx, args("path"), "scalding")
+}
+
+class TestScalding25(args: Args) extends Job(args) {
+  val ctx = Context()
+
+  Shared.test25(ctx, args("path"), "scalding")
+}
+
+class TestScalding26(args: Args) extends Job(args) {
+  val ctx = Context()
+
+  Shared.test26(ctx, args("path"), "scalding")
+}
+
+class TestScalding27(args: Args) extends Job(args) {
+  val ctx = Context()
+
+  Shared.test27(ctx, args("path"), "scalding")
+}
+
+class TestScalding28(args: Args) extends Job(args) {
+  val ctx = Context()
+
+  Shared.test28[Context](ctx, CutRules, "scalding")
+}
+
+class TestScalding29(args: Args) extends Job(args) {
+  val ctx = Context()
+
+  Shared.test29(ctx, "scalding")
+}
+
+class TestScalding30(args: Args) extends Job(args) {
+  val ctx = Context()
+
+  Shared.test30(ctx, args("path"), "scalding")
+}
+
+class TestScalding31(args: Args) extends Job(args) {
+  val ctx = Context()
+
+  Shared.test31(ctx, "scalding")
+}
+
+class TestScalding32(args: Args) extends Job(args) {
+  val ctx = Context()
+
+  Shared.test32(ctx, "scalding")
+}
+
+class TestScalding33(args: Args) extends Job(args) {
+  val ctx = Context()
+
+  Shared.test33(ctx, "scalding")
+}
+
