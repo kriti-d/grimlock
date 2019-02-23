@@ -1,0 +1,510 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>position - commbank.grimlock.framework.position</title>
+          <meta name="description" content="position - commbank.grimlock.framework.position" />
+          <meta name="keywords" content="position commbank.grimlock.framework.position" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../index.html';
+            var hash = 'commbank.grimlock.framework.position.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Package" src="../../../../lib/package_big.png" />
+        <p id="owner"><a href="../../../package.html" class="extype" name="commbank">commbank</a>.<a href="../../package.html" class="extype" name="commbank.grimlock">grimlock</a>.<a href="../package.html" class="extype" name="commbank.grimlock.framework">framework</a></p>
+        <h1>position</h1><span class="permalink">
+      <a href="../../../../index.html#commbank.grimlock.framework.position.package" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">position</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/CommBank/grimlock/blob/master//grimlock-core/src/main/scala/commbank/grimlock/framework/package.scala" target="_blank">package.scala</a></dd></dl><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+        </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By Inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="commbank.grimlock.framework.position"><span>position</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show All</span></li>
+            </ol>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="commbank.grimlock.framework.position.Along" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="Along[P&lt;:shapeless.HList,D&lt;:shapeless.Nat,V&lt;:commbank.grimlock.framework.encoding.Value[_],Q&lt;:shapeless.HList]extendsSlice[P,Q,shapeless.::[V,shapeless.HNil]]withProductwithSerializable"></a>
+      <a id="Along[P&lt;:HList,D&lt;:Nat,V&lt;:Value[_],Q&lt;:HList]:Along[P,D,V,Q]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Along.html"><span class="name">Along</span></a><span class="tparams">[<span name="P">P &lt;: <span class="extype" name="shapeless.HList">HList</span></span>, <span name="D">D &lt;: <span class="extype" name="shapeless.Nat">Nat</span></span>, <span name="V">V &lt;: <a href="../encoding/Value.html" class="extype" name="commbank.grimlock.framework.encoding.Value">Value</a>[_]</span>, <span name="Q">Q &lt;: <span class="extype" name="shapeless.HList">HList</span></span>]</span><span class="params">(<span name="dimension">dimension: <span class="extype" name="commbank.grimlock.framework.position.Along.D">D</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="ev1">ev1: <a href="Position$$IndexConstraints$.html#Aux[P&lt;:shapeless.HList,D&lt;:shapeless.Nat,OUT&lt;:commbank.grimlock.framework.encoding.Value[_]]=commbank.grimlock.framework.position.Position.IndexConstraints[P,D]{typeV=OUT}" class="extmbr" name="commbank.grimlock.framework.position.Position.IndexConstraints.Aux">Aux</a>[<span class="extype" name="commbank.grimlock.framework.position.Along.P">P</span>, <span class="extype" name="commbank.grimlock.framework.position.Along.D">D</span>, <span class="extype" name="commbank.grimlock.framework.position.Along.V">V</span>]</span>, <span name="ev2">ev2: <a href="Position$$RemoveConstraints$.html#Aux[P&lt;:shapeless.HList,D&lt;:shapeless.Nat,OUT&lt;:shapeless.HList]=commbank.grimlock.framework.position.Position.RemoveConstraints[P,D]{typeQ=OUT}" class="extmbr" name="commbank.grimlock.framework.position.Position.RemoveConstraints.Aux">Aux</a>[<span class="extype" name="commbank.grimlock.framework.position.Along.P">P</span>, <span class="extype" name="commbank.grimlock.framework.position.Along.D">D</span>, <span class="extype" name="commbank.grimlock.framework.position.Along.Q">Q</span>]</span>)</span><span class="result"> extends <a href="Slice.html" class="extype" name="commbank.grimlock.framework.position.Slice">Slice</a>[<span class="extype" name="commbank.grimlock.framework.position.Along.P">P</span>, <span class="extype" name="commbank.grimlock.framework.position.Along.Q">Q</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.framework.position.Along.V">V</span>, <span class="extype" name="shapeless.HNil">HNil</span>]] with <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#commbank.grimlock.framework.position.package@Along[P&lt;:shapeless.HList,D&lt;:shapeless.Nat,V&lt;:commbank.grimlock.framework.encoding.Value[_],Q&lt;:shapeless.HList]extendsSlice[P,Q,shapeless.::[V,shapeless.HNil]]withProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Indicates that the selected coordinates are all except the one indexed by <code>dimension</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Indicates that the selected coordinates are all except the one indexed by <code>dimension</code>. In other words, when a
+groupBy is performed, it is performed using a <code>Position</code> consisting of all coordinates except that at index
+<code>dimension</code>.
+</p></div><dl class="paramcmts block"><dt class="param">dimension</dt><dd class="cmt"><p>Dimension of the coordinate to exclude.</p></dd></dl></div>
+    </li><li name="commbank.grimlock.framework.position.Coordinates1" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Coordinates1[T1]=shapeless.::[commbank.grimlock.framework.encoding.Value[T1],shapeless.HNil]"></a>
+      <a id="Coordinates1[T1]:Coordinates1[T1]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Coordinates1</span><span class="tparams">[<span name="T1">T1</span>]</span><span class="result"> = <span class="extype" name="shapeless.::">::</span>[<a href="../encoding/Value.html" class="extype" name="commbank.grimlock.framework.encoding.Value">Value</a>[<span class="extype" name="commbank.grimlock.framework.position.Coordinates1.T1">T1</span>], <span class="extype" name="shapeless.HNil">HNil</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#commbank.grimlock.framework.position.package@Coordinates1[T1]=shapeless.::[commbank.grimlock.framework.encoding.Value[T1],shapeless.HNil]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Short hand for 1 coordinate.</p>
+    </li><li name="commbank.grimlock.framework.position.Coordinates2" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Coordinates2[T1,T2]=shapeless.::[commbank.grimlock.framework.encoding.Value[T1],shapeless.::[commbank.grimlock.framework.encoding.Value[T2],shapeless.HNil]]"></a>
+      <a id="Coordinates2[T1,T2]:Coordinates2[T1,T2]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Coordinates2</span><span class="tparams">[<span name="T1">T1</span>, <span name="T2">T2</span>]</span><span class="result"> = <span class="extype" name="shapeless.::">::</span>[<a href="../encoding/Value.html" class="extype" name="commbank.grimlock.framework.encoding.Value">Value</a>[<span class="extype" name="commbank.grimlock.framework.position.Coordinates2.T1">T1</span>], <span class="extype" name="shapeless.::">::</span>[<a href="../encoding/Value.html" class="extype" name="commbank.grimlock.framework.encoding.Value">Value</a>[<span class="extype" name="commbank.grimlock.framework.position.Coordinates2.T2">T2</span>], <span class="extype" name="shapeless.HNil">HNil</span>]]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#commbank.grimlock.framework.position.package@Coordinates2[T1,T2]=shapeless.::[commbank.grimlock.framework.encoding.Value[T1],shapeless.::[commbank.grimlock.framework.encoding.Value[T2],shapeless.HNil]]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Short hand for 2 coordinates.</p>
+    </li><li name="commbank.grimlock.framework.position.Coordinates3" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Coordinates3[T1,T2,T3]=shapeless.::[commbank.grimlock.framework.encoding.Value[T1],shapeless.::[commbank.grimlock.framework.encoding.Value[T2],shapeless.::[commbank.grimlock.framework.encoding.Value[T3],shapeless.HNil]]]"></a>
+      <a id="Coordinates3[T1,T2,T3]:Coordinates3[T1,T2,T3]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Coordinates3</span><span class="tparams">[<span name="T1">T1</span>, <span name="T2">T2</span>, <span name="T3">T3</span>]</span><span class="result"> = <span class="extype" name="shapeless.::">::</span>[<a href="../encoding/Value.html" class="extype" name="commbank.grimlock.framework.encoding.Value">Value</a>[<span class="extype" name="commbank.grimlock.framework.position.Coordinates3.T1">T1</span>], <span class="extype" name="shapeless.::">::</span>[<a href="../encoding/Value.html" class="extype" name="commbank.grimlock.framework.encoding.Value">Value</a>[<span class="extype" name="commbank.grimlock.framework.position.Coordinates3.T2">T2</span>], <span class="extype" name="shapeless.::">::</span>[<a href="../encoding/Value.html" class="extype" name="commbank.grimlock.framework.encoding.Value">Value</a>[<span class="extype" name="commbank.grimlock.framework.position.Coordinates3.T3">T3</span>], <span class="extype" name="shapeless.HNil">HNil</span>]]]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#commbank.grimlock.framework.position.package@Coordinates3[T1,T2,T3]=shapeless.::[commbank.grimlock.framework.encoding.Value[T1],shapeless.::[commbank.grimlock.framework.encoding.Value[T2],shapeless.::[commbank.grimlock.framework.encoding.Value[T3],shapeless.HNil]]]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Short hand for 3 coordinates.</p>
+    </li><li name="commbank.grimlock.framework.position.Coordinates4" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Coordinates4[T1,T2,T3,T4]=shapeless.::[commbank.grimlock.framework.encoding.Value[T1],shapeless.::[commbank.grimlock.framework.encoding.Value[T2],shapeless.::[commbank.grimlock.framework.encoding.Value[T3],shapeless.::[commbank.grimlock.framework.encoding.Value[T4],shapeless.HNil]]]]"></a>
+      <a id="Coordinates4[T1,T2,T3,T4]:Coordinates4[T1,T2,T3,T4]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Coordinates4</span><span class="tparams">[<span name="T1">T1</span>, <span name="T2">T2</span>, <span name="T3">T3</span>, <span name="T4">T4</span>]</span><span class="result"> = <span class="extype" name="shapeless.::">::</span>[<a href="../encoding/Value.html" class="extype" name="commbank.grimlock.framework.encoding.Value">Value</a>[<span class="extype" name="commbank.grimlock.framework.position.Coordinates4.T1">T1</span>], <span class="extype" name="shapeless.::">::</span>[<a href="../encoding/Value.html" class="extype" name="commbank.grimlock.framework.encoding.Value">Value</a>[<span class="extype" name="commbank.grimlock.framework.position.Coordinates4.T2">T2</span>], <span class="extype" name="shapeless.::">::</span>[<a href="../encoding/Value.html" class="extype" name="commbank.grimlock.framework.encoding.Value">Value</a>[<span class="extype" name="commbank.grimlock.framework.position.Coordinates4.T3">T3</span>], <span class="extype" name="shapeless.::">::</span>[<a href="../encoding/Value.html" class="extype" name="commbank.grimlock.framework.encoding.Value">Value</a>[<span class="extype" name="commbank.grimlock.framework.position.Coordinates4.T4">T4</span>], <span class="extype" name="shapeless.HNil">HNil</span>]]]]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#commbank.grimlock.framework.position.package@Coordinates4[T1,T2,T3,T4]=shapeless.::[commbank.grimlock.framework.encoding.Value[T1],shapeless.::[commbank.grimlock.framework.encoding.Value[T2],shapeless.::[commbank.grimlock.framework.encoding.Value[T3],shapeless.::[commbank.grimlock.framework.encoding.Value[T4],shapeless.HNil]]]]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Short hand for 4 coordinates.</p>
+    </li><li name="commbank.grimlock.framework.position.Coordinates5" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Coordinates5[T1,T2,T3,T4,T5]=shapeless.::[commbank.grimlock.framework.encoding.Value[T1],shapeless.::[commbank.grimlock.framework.encoding.Value[T2],shapeless.::[commbank.grimlock.framework.encoding.Value[T3],shapeless.::[commbank.grimlock.framework.encoding.Value[T4],shapeless.::[commbank.grimlock.framework.encoding.Value[T5],shapeless.HNil]]]]]"></a>
+      <a id="Coordinates5[T1,T2,T3,T4,T5]:Coordinates5[T1,T2,T3,T4,T5]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Coordinates5</span><span class="tparams">[<span name="T1">T1</span>, <span name="T2">T2</span>, <span name="T3">T3</span>, <span name="T4">T4</span>, <span name="T5">T5</span>]</span><span class="result"> = <span class="extype" name="shapeless.::">::</span>[<a href="../encoding/Value.html" class="extype" name="commbank.grimlock.framework.encoding.Value">Value</a>[<span class="extype" name="commbank.grimlock.framework.position.Coordinates5.T1">T1</span>], <span class="extype" name="shapeless.::">::</span>[<a href="../encoding/Value.html" class="extype" name="commbank.grimlock.framework.encoding.Value">Value</a>[<span class="extype" name="commbank.grimlock.framework.position.Coordinates5.T2">T2</span>], <span class="extype" name="shapeless.::">::</span>[<a href="../encoding/Value.html" class="extype" name="commbank.grimlock.framework.encoding.Value">Value</a>[<span class="extype" name="commbank.grimlock.framework.position.Coordinates5.T3">T3</span>], <span class="extype" name="shapeless.::">::</span>[<a href="../encoding/Value.html" class="extype" name="commbank.grimlock.framework.encoding.Value">Value</a>[<span class="extype" name="commbank.grimlock.framework.position.Coordinates5.T4">T4</span>], <span class="extype" name="shapeless.::">::</span>[<a href="../encoding/Value.html" class="extype" name="commbank.grimlock.framework.encoding.Value">Value</a>[<span class="extype" name="commbank.grimlock.framework.position.Coordinates5.T5">T5</span>], <span class="extype" name="shapeless.HNil">HNil</span>]]]]]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#commbank.grimlock.framework.position.package@Coordinates5[T1,T2,T3,T4,T5]=shapeless.::[commbank.grimlock.framework.encoding.Value[T1],shapeless.::[commbank.grimlock.framework.encoding.Value[T2],shapeless.::[commbank.grimlock.framework.encoding.Value[T3],shapeless.::[commbank.grimlock.framework.encoding.Value[T4],shapeless.::[commbank.grimlock.framework.encoding.Value[T5],shapeless.HNil]]]]]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Short hand for 5 coordinates.</p>
+    </li><li name="commbank.grimlock.framework.position.Coordinates6" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Coordinates6[T1,T2,T3,T4,T5,T6]=shapeless.::[commbank.grimlock.framework.encoding.Value[T1],shapeless.::[commbank.grimlock.framework.encoding.Value[T2],shapeless.::[commbank.grimlock.framework.encoding.Value[T3],shapeless.::[commbank.grimlock.framework.encoding.Value[T4],shapeless.::[commbank.grimlock.framework.encoding.Value[T5],shapeless.::[commbank.grimlock.framework.encoding.Value[T6],shapeless.HNil]]]]]]"></a>
+      <a id="Coordinates6[T1,T2,T3,T4,T5,T6]:Coordinates6[T1,T2,T3,T4,T5,T6]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Coordinates6</span><span class="tparams">[<span name="T1">T1</span>, <span name="T2">T2</span>, <span name="T3">T3</span>, <span name="T4">T4</span>, <span name="T5">T5</span>, <span name="T6">T6</span>]</span><span class="result"> = <span class="extype" name="shapeless.::">::</span>[<a href="../encoding/Value.html" class="extype" name="commbank.grimlock.framework.encoding.Value">Value</a>[<span class="extype" name="commbank.grimlock.framework.position.Coordinates6.T1">T1</span>], <span class="extype" name="shapeless.::">::</span>[<a href="../encoding/Value.html" class="extype" name="commbank.grimlock.framework.encoding.Value">Value</a>[<span class="extype" name="commbank.grimlock.framework.position.Coordinates6.T2">T2</span>], <span class="extype" name="shapeless.::">::</span>[<a href="../encoding/Value.html" class="extype" name="commbank.grimlock.framework.encoding.Value">Value</a>[<span class="extype" name="commbank.grimlock.framework.position.Coordinates6.T3">T3</span>], <span class="extype" name="shapeless.::">::</span>[<a href="../encoding/Value.html" class="extype" name="commbank.grimlock.framework.encoding.Value">Value</a>[<span class="extype" name="commbank.grimlock.framework.position.Coordinates6.T4">T4</span>], <span class="extype" name="shapeless.::">::</span>[<a href="../encoding/Value.html" class="extype" name="commbank.grimlock.framework.encoding.Value">Value</a>[<span class="extype" name="commbank.grimlock.framework.position.Coordinates6.T5">T5</span>], <span class="extype" name="shapeless.::">::</span>[<a href="../encoding/Value.html" class="extype" name="commbank.grimlock.framework.encoding.Value">Value</a>[<span class="extype" name="commbank.grimlock.framework.position.Coordinates6.T6">T6</span>], <span class="extype" name="shapeless.HNil">HNil</span>]]]]]]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#commbank.grimlock.framework.position.package@Coordinates6[T1,T2,T3,T4,T5,T6]=shapeless.::[commbank.grimlock.framework.encoding.Value[T1],shapeless.::[commbank.grimlock.framework.encoding.Value[T2],shapeless.::[commbank.grimlock.framework.encoding.Value[T3],shapeless.::[commbank.grimlock.framework.encoding.Value[T4],shapeless.::[commbank.grimlock.framework.encoding.Value[T5],shapeless.::[commbank.grimlock.framework.encoding.Value[T6],shapeless.HNil]]]]]]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Short hand for 6 coordinates.</p>
+    </li><li name="commbank.grimlock.framework.position.Coordinates7" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Coordinates7[T1,T2,T3,T4,T5,T6,T7]=shapeless.::[commbank.grimlock.framework.encoding.Value[T1],shapeless.::[commbank.grimlock.framework.encoding.Value[T2],shapeless.::[commbank.grimlock.framework.encoding.Value[T3],shapeless.::[commbank.grimlock.framework.encoding.Value[T4],shapeless.::[commbank.grimlock.framework.encoding.Value[T5],shapeless.::[commbank.grimlock.framework.encoding.Value[T6],shapeless.::[commbank.grimlock.framework.encoding.Value[T7],shapeless.HNil]]]]]]]"></a>
+      <a id="Coordinates7[T1,T2,T3,T4,T5,T6,T7]:Coordinates7[T1,T2,T3,T4,T5,T6,T7]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Coordinates7</span><span class="tparams">[<span name="T1">T1</span>, <span name="T2">T2</span>, <span name="T3">T3</span>, <span name="T4">T4</span>, <span name="T5">T5</span>, <span name="T6">T6</span>, <span name="T7">T7</span>]</span><span class="result"> = <span class="extype" name="shapeless.::">::</span>[<a href="../encoding/Value.html" class="extype" name="commbank.grimlock.framework.encoding.Value">Value</a>[<span class="extype" name="commbank.grimlock.framework.position.Coordinates7.T1">T1</span>], <span class="extype" name="shapeless.::">::</span>[<a href="../encoding/Value.html" class="extype" name="commbank.grimlock.framework.encoding.Value">Value</a>[<span class="extype" name="commbank.grimlock.framework.position.Coordinates7.T2">T2</span>], <span class="extype" name="shapeless.::">::</span>[<a href="../encoding/Value.html" class="extype" name="commbank.grimlock.framework.encoding.Value">Value</a>[<span class="extype" name="commbank.grimlock.framework.position.Coordinates7.T3">T3</span>], <span class="extype" name="shapeless.::">::</span>[<a href="../encoding/Value.html" class="extype" name="commbank.grimlock.framework.encoding.Value">Value</a>[<span class="extype" name="commbank.grimlock.framework.position.Coordinates7.T4">T4</span>], <span class="extype" name="shapeless.::">::</span>[<a href="../encoding/Value.html" class="extype" name="commbank.grimlock.framework.encoding.Value">Value</a>[<span class="extype" name="commbank.grimlock.framework.position.Coordinates7.T5">T5</span>], <span class="extype" name="shapeless.::">::</span>[<a href="../encoding/Value.html" class="extype" name="commbank.grimlock.framework.encoding.Value">Value</a>[<span class="extype" name="commbank.grimlock.framework.position.Coordinates7.T6">T6</span>], <span class="extype" name="shapeless.::">::</span>[<a href="../encoding/Value.html" class="extype" name="commbank.grimlock.framework.encoding.Value">Value</a>[<span class="extype" name="commbank.grimlock.framework.position.Coordinates7.T7">T7</span>], <span class="extype" name="shapeless.HNil">HNil</span>]]]]]]]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#commbank.grimlock.framework.position.package@Coordinates7[T1,T2,T3,T4,T5,T6,T7]=shapeless.::[commbank.grimlock.framework.encoding.Value[T1],shapeless.::[commbank.grimlock.framework.encoding.Value[T2],shapeless.::[commbank.grimlock.framework.encoding.Value[T3],shapeless.::[commbank.grimlock.framework.encoding.Value[T4],shapeless.::[commbank.grimlock.framework.encoding.Value[T5],shapeless.::[commbank.grimlock.framework.encoding.Value[T6],shapeless.::[commbank.grimlock.framework.encoding.Value[T7],shapeless.HNil]]]]]]]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Short hand for 7 coordinates.</p>
+    </li><li name="commbank.grimlock.framework.position.Coordinates8" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Coordinates8[T1,T2,T3,T4,T5,T6,T7,T8]=shapeless.::[commbank.grimlock.framework.encoding.Value[T1],shapeless.::[commbank.grimlock.framework.encoding.Value[T2],shapeless.::[commbank.grimlock.framework.encoding.Value[T3],shapeless.::[commbank.grimlock.framework.encoding.Value[T4],shapeless.::[commbank.grimlock.framework.encoding.Value[T5],shapeless.::[commbank.grimlock.framework.encoding.Value[T6],shapeless.::[commbank.grimlock.framework.encoding.Value[T7],shapeless.::[commbank.grimlock.framework.encoding.Value[T8],shapeless.HNil]]]]]]]]"></a>
+      <a id="Coordinates8[T1,T2,T3,T4,T5,T6,T7,T8]:Coordinates8[T1,T2,T3,T4,T5,T6,T7,T8]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Coordinates8</span><span class="tparams">[<span name="T1">T1</span>, <span name="T2">T2</span>, <span name="T3">T3</span>, <span name="T4">T4</span>, <span name="T5">T5</span>, <span name="T6">T6</span>, <span name="T7">T7</span>, <span name="T8">T8</span>]</span><span class="result"> = <span class="extype" name="shapeless.::">::</span>[<a href="../encoding/Value.html" class="extype" name="commbank.grimlock.framework.encoding.Value">Value</a>[<span class="extype" name="commbank.grimlock.framework.position.Coordinates8.T1">T1</span>], <span class="extype" name="shapeless.::">::</span>[<a href="../encoding/Value.html" class="extype" name="commbank.grimlock.framework.encoding.Value">Value</a>[<span class="extype" name="commbank.grimlock.framework.position.Coordinates8.T2">T2</span>], <span class="extype" name="shapeless.::">::</span>[<a href="../encoding/Value.html" class="extype" name="commbank.grimlock.framework.encoding.Value">Value</a>[<span class="extype" name="commbank.grimlock.framework.position.Coordinates8.T3">T3</span>], <span class="extype" name="shapeless.::">::</span>[<a href="../encoding/Value.html" class="extype" name="commbank.grimlock.framework.encoding.Value">Value</a>[<span class="extype" name="commbank.grimlock.framework.position.Coordinates8.T4">T4</span>], <span class="extype" name="shapeless.::">::</span>[<a href="../encoding/Value.html" class="extype" name="commbank.grimlock.framework.encoding.Value">Value</a>[<span class="extype" name="commbank.grimlock.framework.position.Coordinates8.T5">T5</span>], <span class="extype" name="shapeless.::">::</span>[<a href="../encoding/Value.html" class="extype" name="commbank.grimlock.framework.encoding.Value">Value</a>[<span class="extype" name="commbank.grimlock.framework.position.Coordinates8.T6">T6</span>], <span class="extype" name="shapeless.::">::</span>[<a href="../encoding/Value.html" class="extype" name="commbank.grimlock.framework.encoding.Value">Value</a>[<span class="extype" name="commbank.grimlock.framework.position.Coordinates8.T7">T7</span>], <span class="extype" name="shapeless.::">::</span>[<a href="../encoding/Value.html" class="extype" name="commbank.grimlock.framework.encoding.Value">Value</a>[<span class="extype" name="commbank.grimlock.framework.position.Coordinates8.T8">T8</span>], <span class="extype" name="shapeless.HNil">HNil</span>]]]]]]]]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#commbank.grimlock.framework.position.package@Coordinates8[T1,T2,T3,T4,T5,T6,T7,T8]=shapeless.::[commbank.grimlock.framework.encoding.Value[T1],shapeless.::[commbank.grimlock.framework.encoding.Value[T2],shapeless.::[commbank.grimlock.framework.encoding.Value[T3],shapeless.::[commbank.grimlock.framework.encoding.Value[T4],shapeless.::[commbank.grimlock.framework.encoding.Value[T5],shapeless.::[commbank.grimlock.framework.encoding.Value[T6],shapeless.::[commbank.grimlock.framework.encoding.Value[T7],shapeless.::[commbank.grimlock.framework.encoding.Value[T8],shapeless.HNil]]]]]]]]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Short hand for 8 coordinates.</p>
+    </li><li name="commbank.grimlock.framework.position.Coordinates9" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Coordinates9[T1,T2,T3,T4,T5,T6,T7,T8,T9]=shapeless.::[commbank.grimlock.framework.encoding.Value[T1],shapeless.::[commbank.grimlock.framework.encoding.Value[T2],shapeless.::[commbank.grimlock.framework.encoding.Value[T3],shapeless.::[commbank.grimlock.framework.encoding.Value[T4],shapeless.::[commbank.grimlock.framework.encoding.Value[T5],shapeless.::[commbank.grimlock.framework.encoding.Value[T6],shapeless.::[commbank.grimlock.framework.encoding.Value[T7],shapeless.::[commbank.grimlock.framework.encoding.Value[T8],shapeless.::[commbank.grimlock.framework.encoding.Value[T9],shapeless.HNil]]]]]]]]]"></a>
+      <a id="Coordinates9[T1,T2,T3,T4,T5,T6,T7,T8,T9]:Coordinates9[T1,T2,T3,T4,T5,T6,T7,T8,T9]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Coordinates9</span><span class="tparams">[<span name="T1">T1</span>, <span name="T2">T2</span>, <span name="T3">T3</span>, <span name="T4">T4</span>, <span name="T5">T5</span>, <span name="T6">T6</span>, <span name="T7">T7</span>, <span name="T8">T8</span>, <span name="T9">T9</span>]</span><span class="result"> = <span class="extype" name="shapeless.::">::</span>[<a href="../encoding/Value.html" class="extype" name="commbank.grimlock.framework.encoding.Value">Value</a>[<span class="extype" name="commbank.grimlock.framework.position.Coordinates9.T1">T1</span>], <span class="extype" name="shapeless.::">::</span>[<a href="../encoding/Value.html" class="extype" name="commbank.grimlock.framework.encoding.Value">Value</a>[<span class="extype" name="commbank.grimlock.framework.position.Coordinates9.T2">T2</span>], <span class="extype" name="shapeless.::">::</span>[<a href="../encoding/Value.html" class="extype" name="commbank.grimlock.framework.encoding.Value">Value</a>[<span class="extype" name="commbank.grimlock.framework.position.Coordinates9.T3">T3</span>], <span class="extype" name="shapeless.::">::</span>[<a href="../encoding/Value.html" class="extype" name="commbank.grimlock.framework.encoding.Value">Value</a>[<span class="extype" name="commbank.grimlock.framework.position.Coordinates9.T4">T4</span>], <span class="extype" name="shapeless.::">::</span>[<a href="../encoding/Value.html" class="extype" name="commbank.grimlock.framework.encoding.Value">Value</a>[<span class="extype" name="commbank.grimlock.framework.position.Coordinates9.T5">T5</span>], <span class="extype" name="shapeless.::">::</span>[<a href="../encoding/Value.html" class="extype" name="commbank.grimlock.framework.encoding.Value">Value</a>[<span class="extype" name="commbank.grimlock.framework.position.Coordinates9.T6">T6</span>], <span class="extype" name="shapeless.::">::</span>[<a href="../encoding/Value.html" class="extype" name="commbank.grimlock.framework.encoding.Value">Value</a>[<span class="extype" name="commbank.grimlock.framework.position.Coordinates9.T7">T7</span>], <span class="extype" name="shapeless.::">::</span>[<a href="../encoding/Value.html" class="extype" name="commbank.grimlock.framework.encoding.Value">Value</a>[<span class="extype" name="commbank.grimlock.framework.position.Coordinates9.T8">T8</span>], <span class="extype" name="shapeless.::">::</span>[<a href="../encoding/Value.html" class="extype" name="commbank.grimlock.framework.encoding.Value">Value</a>[<span class="extype" name="commbank.grimlock.framework.position.Coordinates9.T9">T9</span>], <span class="extype" name="shapeless.HNil">HNil</span>]]]]]]]]]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#commbank.grimlock.framework.position.package@Coordinates9[T1,T2,T3,T4,T5,T6,T7,T8,T9]=shapeless.::[commbank.grimlock.framework.encoding.Value[T1],shapeless.::[commbank.grimlock.framework.encoding.Value[T2],shapeless.::[commbank.grimlock.framework.encoding.Value[T3],shapeless.::[commbank.grimlock.framework.encoding.Value[T4],shapeless.::[commbank.grimlock.framework.encoding.Value[T5],shapeless.::[commbank.grimlock.framework.encoding.Value[T6],shapeless.::[commbank.grimlock.framework.encoding.Value[T7],shapeless.::[commbank.grimlock.framework.encoding.Value[T8],shapeless.::[commbank.grimlock.framework.encoding.Value[T9],shapeless.HNil]]]]]]]]]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Short hand for 9 coordinates.</p>
+    </li><li name="commbank.grimlock.framework.position.Over" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="Over[P&lt;:shapeless.HList,D&lt;:shapeless.Nat,V&lt;:commbank.grimlock.framework.encoding.Value[_],Q&lt;:shapeless.HList]extendsSlice[P,shapeless.::[V,shapeless.HNil],Q]withProductwithSerializable"></a>
+      <a id="Over[P&lt;:HList,D&lt;:Nat,V&lt;:Value[_],Q&lt;:HList]:Over[P,D,V,Q]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Over.html"><span class="name">Over</span></a><span class="tparams">[<span name="P">P &lt;: <span class="extype" name="shapeless.HList">HList</span></span>, <span name="D">D &lt;: <span class="extype" name="shapeless.Nat">Nat</span></span>, <span name="V">V &lt;: <a href="../encoding/Value.html" class="extype" name="commbank.grimlock.framework.encoding.Value">Value</a>[_]</span>, <span name="Q">Q &lt;: <span class="extype" name="shapeless.HList">HList</span></span>]</span><span class="params">(<span name="dimension">dimension: <span class="extype" name="commbank.grimlock.framework.position.Over.D">D</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="ev1">ev1: <a href="Position$$IndexConstraints$.html#Aux[P&lt;:shapeless.HList,D&lt;:shapeless.Nat,OUT&lt;:commbank.grimlock.framework.encoding.Value[_]]=commbank.grimlock.framework.position.Position.IndexConstraints[P,D]{typeV=OUT}" class="extmbr" name="commbank.grimlock.framework.position.Position.IndexConstraints.Aux">Aux</a>[<span class="extype" name="commbank.grimlock.framework.position.Over.P">P</span>, <span class="extype" name="commbank.grimlock.framework.position.Over.D">D</span>, <span class="extype" name="commbank.grimlock.framework.position.Over.V">V</span>]</span>, <span name="ev2">ev2: <a href="Position$$RemoveConstraints$.html#Aux[P&lt;:shapeless.HList,D&lt;:shapeless.Nat,OUT&lt;:shapeless.HList]=commbank.grimlock.framework.position.Position.RemoveConstraints[P,D]{typeQ=OUT}" class="extmbr" name="commbank.grimlock.framework.position.Position.RemoveConstraints.Aux">Aux</a>[<span class="extype" name="commbank.grimlock.framework.position.Over.P">P</span>, <span class="extype" name="commbank.grimlock.framework.position.Over.D">D</span>, <span class="extype" name="commbank.grimlock.framework.position.Over.Q">Q</span>]</span>)</span><span class="result"> extends <a href="Slice.html" class="extype" name="commbank.grimlock.framework.position.Slice">Slice</a>[<span class="extype" name="commbank.grimlock.framework.position.Over.P">P</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.framework.position.Over.V">V</span>, <span class="extype" name="shapeless.HNil">HNil</span>], <span class="extype" name="commbank.grimlock.framework.position.Over.Q">Q</span>] with <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#commbank.grimlock.framework.position.package@Over[P&lt;:shapeless.HList,D&lt;:shapeless.Nat,V&lt;:commbank.grimlock.framework.encoding.Value[_],Q&lt;:shapeless.HList]extendsSlice[P,shapeless.::[V,shapeless.HNil],Q]withProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Indicates that the selected coordinate is indexed by <code>dimension</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Indicates that the selected coordinate is indexed by <code>dimension</code>. In other words, when a groupBy is performed,
+it is performed using a <code>Position</code> consisting of the coordinate at index <code>dimension</code>.
+</p></div><dl class="paramcmts block"><dt class="param">dimension</dt><dd class="cmt"><p>Dimension of the selected coordinate.</p></dd></dl></div>
+    </li><li name="commbank.grimlock.framework.position.Position" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="Position[P&lt;:shapeless.HList]extendsProductwithSerializable"></a>
+      <a id="Position[P&lt;:HList]:Position[P]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Position.html"><span class="name">Position</span></a><span class="tparams">[<span name="P">P &lt;: <span class="extype" name="shapeless.HList">HList</span></span>]</span><span class="params">(<span name="coordinates">coordinates: <span class="extype" name="commbank.grimlock.framework.position.Position.P">P</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="ev">ev: <a href="Position$$ValueConstraints.html" class="extype" name="commbank.grimlock.framework.position.Position.ValueConstraints">ValueConstraints</a>[<span class="extype" name="commbank.grimlock.framework.position.Position.P">P</span>]</span>)</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#commbank.grimlock.framework.position.package@Position[P&lt;:shapeless.HList]extendsProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Case class for dealing with positions.</p><div class="fullcomment"><div class="comment cmt"><p>Case class for dealing with positions.
+</p></div><dl class="paramcmts block"><dt class="param">coordinates</dt><dd class="cmt"><p>List of coordinates of the position.</p></dd></dl></div>
+    </li><li name="commbank.grimlock.framework.position.Positions" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="Positions[P&lt;:shapeless.HList,C&lt;:commbank.grimlock.framework.environment.Context[C]]extendsPersist[commbank.grimlock.framework.position.Position[P],C]"></a>
+      <a id="Positions[P&lt;:HList,C&lt;:Context[C]]:Positions[P,C]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Positions.html"><span class="name">Positions</span></a><span class="tparams">[<span name="P">P &lt;: <span class="extype" name="shapeless.HList">HList</span></span>, <span name="C">C &lt;: <a href="../environment/Context.html" class="extype" name="commbank.grimlock.framework.environment.Context">Context</a>[<span class="extype" name="commbank.grimlock.framework.position.Positions.C">C</span>]</span>]</span><span class="result"> extends <a href="../Persist.html" class="extype" name="commbank.grimlock.framework.Persist">Persist</a>[<a href="Position.html" class="extype" name="commbank.grimlock.framework.position.Position">Position</a>[<span class="extype" name="commbank.grimlock.framework.position.Positions.P">P</span>], <span class="extype" name="commbank.grimlock.framework.position.Positions.C">C</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#commbank.grimlock.framework.position.package@Positions[P&lt;:shapeless.HList,C&lt;:commbank.grimlock.framework.environment.Context[C]]extendsPersist[commbank.grimlock.framework.position.Position[P],C]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Trait that represents the positions of a matrix.</p>
+    </li><li name="commbank.grimlock.framework.position.Slice" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="Slice[P&lt;:shapeless.HList,S&lt;:shapeless.HList,R&lt;:shapeless.HList]extendsAnyRef"></a>
+      <a id="Slice[P&lt;:HList,S&lt;:HList,R&lt;:HList]:Slice[P,S,R]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Slice.html"><span class="name">Slice</span></a><span class="tparams">[<span name="P">P &lt;: <span class="extype" name="shapeless.HList">HList</span></span>, <span name="S">S &lt;: <span class="extype" name="shapeless.HList">HList</span></span>, <span name="R">R &lt;: <span class="extype" name="shapeless.HList">HList</span></span>]</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#commbank.grimlock.framework.position.package@Slice[P&lt;:shapeless.HList,S&lt;:shapeless.HList,R&lt;:shapeless.HList]extendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Trait that encapsulates dimension on which to operate.</p>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="commbank.grimlock.framework.position.Along" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Along"></a>
+      <a id="Along:Along"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Along$.html"><span class="name">Along</span></a><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#commbank.grimlock.framework.position.package@Along" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Companion object to <code>Along</code> case class.</p>
+    </li><li name="commbank.grimlock.framework.position.DecodeString" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="DecodeString"></a>
+      <a id="DecodeString:DecodeString"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="DecodeString$.html"><span class="name">DecodeString</span></a><span class="result"> extends <span class="extype" name="shapeless.Poly1">Poly1</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#commbank.grimlock.framework.position.package@DecodeString" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Object with implicits needed to parse coordinates from string.</p>
+    </li><li name="commbank.grimlock.framework.position.GetAtIndex" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="GetAtIndex"></a>
+      <a id="GetAtIndex:GetAtIndex"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="GetAtIndex$.html"><span class="name">GetAtIndex</span></a><span class="result"> extends <span class="extype" name="shapeless.Poly1">Poly1</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#commbank.grimlock.framework.position.package@GetAtIndex" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Object with implicits needed to match strings and coordinates; used form parsing coordinates from string.</p>
+    </li><li name="commbank.grimlock.framework.position.IsEmpty" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="IsEmpty"></a>
+      <a id="IsEmpty:IsEmpty"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="IsEmpty$.html"><span class="name">IsEmpty</span></a><span class="result"> extends <span class="extype" name="shapeless.Poly2">Poly2</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#commbank.grimlock.framework.position.package@IsEmpty" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Object with implicits needed to check if option is empty.</p>
+    </li><li name="commbank.grimlock.framework.position.Over" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Over"></a>
+      <a id="Over:Over"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Over$.html"><span class="name">Over</span></a><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#commbank.grimlock.framework.position.package@Over" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Companion object to <code>Over</code> case class.</p>
+    </li><li name="commbank.grimlock.framework.position.Position" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Position"></a>
+      <a id="Position:Position"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Position$.html"><span class="name">Position</span></a><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#commbank.grimlock.framework.position.package@Position" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Companion object with constructor, implicits, etc.</p>
+    </li><li name="commbank.grimlock.framework.position.Positions" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Positions"></a>
+      <a id="Positions:Positions"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Positions$.html"><span class="name">Positions</span></a><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#commbank.grimlock.framework.position.package@Positions" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Companion object to <code>Positions</code> with types, implicits, etc.</p>
+    </li><li name="commbank.grimlock.framework.position.RemoveOption" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="RemoveOption"></a>
+      <a id="RemoveOption:RemoveOption"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="RemoveOption$.html"><span class="name">RemoveOption</span></a><span class="result"> extends <span class="extype" name="shapeless.Poly1">Poly1</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#commbank.grimlock.framework.position.package@RemoveOption" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Object with implicits needed to flatten options; used form parsing coordinates from string.</p>
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>
+            </div>
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>
