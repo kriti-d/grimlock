@@ -1,0 +1,677 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>Matrix5D - commbank.grimlock.scala.Matrix5D</title>
+          <meta name="description" content="Matrix5D - commbank.grimlock.scala.Matrix5D" />
+          <meta name="keywords" content="Matrix5D commbank.grimlock.scala.Matrix5D" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../index.html';
+            var hash = 'commbank.grimlock.scala.Matrix5D';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="type">
+      <div id="definition">
+        <img alt="Class" src="../../../lib/class_big.png" />
+        <p id="owner"><a href="../../package.html" class="extype" name="commbank">commbank</a>.<a href="../package.html" class="extype" name="commbank.grimlock">grimlock</a>.<a href="package.html" class="extype" name="commbank.grimlock.scala">scala</a></p>
+        <h1>Matrix5D</h1><h3><span class="morelinks"><div>Related Doc:
+            <a href="package.html" class="extype" name="commbank.grimlock.scala">package scala</a>
+          </div></span></h3><span class="permalink">
+      <a href="../../../index.html#commbank.grimlock.scala.Matrix5D" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Matrix5D</span><span class="tparams">[<span name="V1">V1 &lt;: <a href="../framework/encoding/Value.html" class="extype" name="commbank.grimlock.framework.encoding.Value">Value</a>[_]</span>, <span name="V2">V2 &lt;: <a href="../framework/encoding/Value.html" class="extype" name="commbank.grimlock.framework.encoding.Value">Value</a>[_]</span>, <span name="V3">V3 &lt;: <a href="../framework/encoding/Value.html" class="extype" name="commbank.grimlock.framework.encoding.Value">Value</a>[_]</span>, <span name="V4">V4 &lt;: <a href="../framework/encoding/Value.html" class="extype" name="commbank.grimlock.framework.encoding.Value">Value</a>[_]</span>, <span name="V5">V5 &lt;: <a href="../framework/encoding/Value.html" class="extype" name="commbank.grimlock.framework.encoding.Value">Value</a>[_]</span>]</span><span class="params">(<span name="data">data: <a href="environment/Context$.html#U[A]=List[A]" class="extmbr" name="commbank.grimlock.scala.environment.Context.U">U</a>[<a href="../framework/Cell.html" class="extype" name="commbank.grimlock.framework.Cell">Cell</a>[<span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V1">V1</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V2">V2</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V3">V3</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V4">V4</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V5">V5</span>, <span class="extype" name="shapeless.HNil">HNil</span>]]]]]]]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="ev1">ev1: <a href="../framework/position/Position$$IndexConstraints$.html#Aux[P&lt;:shapeless.HList,D&lt;:shapeless.Nat,OUT&lt;:commbank.grimlock.framework.encoding.Value[_]]=commbank.grimlock.framework.position.Position.IndexConstraints[P,D]{typeV=OUT}" class="extmbr" name="commbank.grimlock.framework.position.Position.IndexConstraints.Aux">Aux</a>[<span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V1">V1</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V2">V2</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V3">V3</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V4">V4</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V5">V5</span>, <span class="extype" name="shapeless.HNil">HNil</span>]]]]], <span class="extype" name="shapeless.Nat._0">_0</span>, <span class="extype" name="commbank.grimlock.scala.Matrix5D.V1">V1</span>]</span>, <span name="ev2">ev2: <a href="../framework/position/Position$$IndexConstraints$.html#Aux[P&lt;:shapeless.HList,D&lt;:shapeless.Nat,OUT&lt;:commbank.grimlock.framework.encoding.Value[_]]=commbank.grimlock.framework.position.Position.IndexConstraints[P,D]{typeV=OUT}" class="extmbr" name="commbank.grimlock.framework.position.Position.IndexConstraints.Aux">Aux</a>[<span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V1">V1</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V2">V2</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V3">V3</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V4">V4</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V5">V5</span>, <span class="extype" name="shapeless.HNil">HNil</span>]]]]], <span class="extype" name="shapeless.Nats._1">shapeless.Nat._1</span>, <span class="extype" name="commbank.grimlock.scala.Matrix5D.V2">V2</span>]</span>, <span name="ev3">ev3: <a href="../framework/position/Position$$IndexConstraints$.html#Aux[P&lt;:shapeless.HList,D&lt;:shapeless.Nat,OUT&lt;:commbank.grimlock.framework.encoding.Value[_]]=commbank.grimlock.framework.position.Position.IndexConstraints[P,D]{typeV=OUT}" class="extmbr" name="commbank.grimlock.framework.position.Position.IndexConstraints.Aux">Aux</a>[<span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V1">V1</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V2">V2</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V3">V3</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V4">V4</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V5">V5</span>, <span class="extype" name="shapeless.HNil">HNil</span>]]]]], <span class="extype" name="shapeless.Nats._2">shapeless.Nat._2</span>, <span class="extype" name="commbank.grimlock.scala.Matrix5D.V3">V3</span>]</span>, <span name="ev4">ev4: <a href="../framework/position/Position$$IndexConstraints$.html#Aux[P&lt;:shapeless.HList,D&lt;:shapeless.Nat,OUT&lt;:commbank.grimlock.framework.encoding.Value[_]]=commbank.grimlock.framework.position.Position.IndexConstraints[P,D]{typeV=OUT}" class="extmbr" name="commbank.grimlock.framework.position.Position.IndexConstraints.Aux">Aux</a>[<span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V1">V1</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V2">V2</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V3">V3</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V4">V4</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V5">V5</span>, <span class="extype" name="shapeless.HNil">HNil</span>]]]]], <span class="extype" name="shapeless.Nats._3">shapeless.Nat._3</span>, <span class="extype" name="commbank.grimlock.scala.Matrix5D.V4">V4</span>]</span>, <span name="ev5">ev5: <a href="../framework/position/Position$$IndexConstraints$.html#Aux[P&lt;:shapeless.HList,D&lt;:shapeless.Nat,OUT&lt;:commbank.grimlock.framework.encoding.Value[_]]=commbank.grimlock.framework.position.Position.IndexConstraints[P,D]{typeV=OUT}" class="extmbr" name="commbank.grimlock.framework.position.Position.IndexConstraints.Aux">Aux</a>[<span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V1">V1</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V2">V2</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V3">V3</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V4">V4</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V5">V5</span>, <span class="extype" name="shapeless.HNil">HNil</span>]]]]], <span class="extype" name="shapeless.Nats._4">shapeless.Nat._4</span>, <span class="extype" name="commbank.grimlock.scala.Matrix5D.V5">V5</span>]</span>)</span><span class="result"> extends <a href="../framework/Matrix5D.html" class="extype" name="commbank.grimlock.framework.Matrix5D">framework.Matrix5D</a>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V1">V1</span>, <span class="extype" name="commbank.grimlock.scala.Matrix5D.V2">V2</span>, <span class="extype" name="commbank.grimlock.scala.Matrix5D.V3">V3</span>, <span class="extype" name="commbank.grimlock.scala.Matrix5D.V4">V4</span>, <span class="extype" name="commbank.grimlock.scala.Matrix5D.V5">V5</span>, <a href="environment/Context.html" class="extype" name="commbank.grimlock.scala.environment.Context">Context</a>] with <a href="MatrixXD.html" class="extype" name="commbank.grimlock.scala.MatrixXD">MatrixXD</a>[<span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V1">V1</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V2">V2</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V3">V3</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V4">V4</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V5">V5</span>, <span class="extype" name="shapeless.HNil">HNil</span>]]]]]] with <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Rich wrapper around a <code>List[Cell[V1 :: V2 :: V3 :: V4 :: V5 :: HNil]]</code>.</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/CommBank/grimlock/blob/master//grimlock-core/src/main/scala/commbank/grimlock/scala/Matrix.scala" target="_blank">Matrix.scala</a></dd></dl><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Serializable" class="extype" target="_top">Serializable</a>, <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Product" class="extype" target="_top">Product</a>, <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Equals" class="extype" target="_top">Equals</a>, <a href="MatrixXD.html" class="extype" name="commbank.grimlock.scala.MatrixXD">MatrixXD</a>[<span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V1">V1</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V2">V2</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V3">V3</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V4">V4</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V5">V5</span>, <span class="extype" name="shapeless.HNil">HNil</span>]]]]]], <a href="Persist.html" class="extype" name="commbank.grimlock.scala.Persist">Persist</a>[<a href="../framework/Cell.html" class="extype" name="commbank.grimlock.framework.Cell">Cell</a>[<span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V1">V1</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V2">V2</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V3">V3</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V4">V4</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V5">V5</span>, <span class="extype" name="shapeless.HNil">HNil</span>]]]]]]], <a href="../framework/Matrix5D.html" class="extype" name="commbank.grimlock.framework.Matrix5D">framework.Matrix5D</a>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V1">V1</span>, <span class="extype" name="commbank.grimlock.scala.Matrix5D.V2">V2</span>, <span class="extype" name="commbank.grimlock.scala.Matrix5D.V3">V3</span>, <span class="extype" name="commbank.grimlock.scala.Matrix5D.V4">V4</span>, <span class="extype" name="commbank.grimlock.scala.Matrix5D.V5">V5</span>, <a href="environment/Context.html" class="extype" name="commbank.grimlock.scala.environment.Context">Context</a>], <a href="../framework/SetDimensionMatrix.html" class="extype" name="commbank.grimlock.framework.SetDimensionMatrix">SetDimensionMatrix</a>[<span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V1">V1</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V2">V2</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V3">V3</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V4">V4</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V5">V5</span>, <span class="extype" name="shapeless.HNil">HNil</span>]]]]], <a href="environment/Context.html" class="extype" name="commbank.grimlock.scala.environment.Context">Context</a>], <a href="../framework/Persist.html" class="extype" name="commbank.grimlock.framework.Persist">framework.Persist</a>[<a href="../framework/Cell.html" class="extype" name="commbank.grimlock.framework.Cell">Cell</a>[<span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V1">V1</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V2">V2</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V3">V3</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V4">V4</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V5">V5</span>, <span class="extype" name="shapeless.HNil">HNil</span>]]]]]], <a href="environment/Context.html" class="extype" name="commbank.grimlock.scala.environment.Context">Context</a>], <span class="extype" name="java.io.Serializable">Serializable</span>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+        </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By Inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="commbank.grimlock.scala.Matrix5D"><span>Matrix5D</span></li><li class="in" name="scala.Serializable"><span>Serializable</span></li><li class="in" name="scala.Product"><span>Product</span></li><li class="in" name="scala.Equals"><span>Equals</span></li><li class="in" name="commbank.grimlock.scala.MatrixXD"><span>MatrixXD</span></li><li class="in" name="commbank.grimlock.scala.Persist"><span>Persist</span></li><li class="in" name="commbank.grimlock.framework.Matrix5D"><span>Matrix5D</span></li><li class="in" name="commbank.grimlock.framework.SetDimensionMatrix"><span>SetDimensionMatrix</span></li><li class="in" name="commbank.grimlock.framework.Persist"><span>Persist</span></li><li class="in" name="java.io.Serializable"><span>Serializable</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show All</span></li>
+            </ol>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        <div id="constructors" class="members">
+              <h3>Instance Constructors</h3>
+              <ol><li name="commbank.grimlock.scala.Matrix5D#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="&lt;init&gt;(data:commbank.grimlock.scala.environment.Context.U[commbank.grimlock.framework.Cell[shapeless.::[V1,shapeless.::[V2,shapeless.::[V3,shapeless.::[V4,shapeless.::[V5,shapeless.HNil]]]]]]])(implicitev1:commbank.grimlock.framework.position.Position.IndexConstraints.Aux[shapeless.::[V1,shapeless.::[V2,shapeless.::[V3,shapeless.::[V4,shapeless.::[V5,shapeless.HNil]]]]],shapeless.nat._0,V1],implicitev2:commbank.grimlock.framework.position.Position.IndexConstraints.Aux[shapeless.::[V1,shapeless.::[V2,shapeless.::[V3,shapeless.::[V4,shapeless.::[V5,shapeless.HNil]]]]],shapeless.nat._1,V2],implicitev3:commbank.grimlock.framework.position.Position.IndexConstraints.Aux[shapeless.::[V1,shapeless.::[V2,shapeless.::[V3,shapeless.::[V4,shapeless.::[V5,shapeless.HNil]]]]],shapeless.nat._2,V3],implicitev4:commbank.grimlock.framework.position.Position.IndexConstraints.Aux[shapeless.::[V1,shapeless.::[V2,shapeless.::[V3,shapeless.::[V4,shapeless.::[V5,shapeless.HNil]]]]],shapeless.nat._3,V4],implicitev5:commbank.grimlock.framework.position.Position.IndexConstraints.Aux[shapeless.::[V1,shapeless.::[V2,shapeless.::[V3,shapeless.::[V4,shapeless.::[V5,shapeless.HNil]]]]],shapeless.nat._4,V5]):commbank.grimlock.scala.Matrix5D[V1,V2,V3,V4,V5]"></a>
+      <a id="&lt;init&gt;:Matrix5D[V1,V2,V3,V4,V5]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">new</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Matrix5D</span><span class="params">(<span name="data">data: <a href="environment/Context$.html#U[A]=List[A]" class="extmbr" name="commbank.grimlock.scala.environment.Context.U">U</a>[<a href="../framework/Cell.html" class="extype" name="commbank.grimlock.framework.Cell">Cell</a>[<span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V1">V1</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V2">V2</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V3">V3</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V4">V4</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V5">V5</span>, <span class="extype" name="shapeless.HNil">HNil</span>]]]]]]]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="ev1">ev1: <a href="../framework/position/Position$$IndexConstraints$.html#Aux[P&lt;:shapeless.HList,D&lt;:shapeless.Nat,OUT&lt;:commbank.grimlock.framework.encoding.Value[_]]=commbank.grimlock.framework.position.Position.IndexConstraints[P,D]{typeV=OUT}" class="extmbr" name="commbank.grimlock.framework.position.Position.IndexConstraints.Aux">Aux</a>[<span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V1">V1</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V2">V2</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V3">V3</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V4">V4</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V5">V5</span>, <span class="extype" name="shapeless.HNil">HNil</span>]]]]], <span class="extype" name="shapeless.Nat._0">_0</span>, <span class="extype" name="commbank.grimlock.scala.Matrix5D.V1">V1</span>]</span>, <span name="ev2">ev2: <a href="../framework/position/Position$$IndexConstraints$.html#Aux[P&lt;:shapeless.HList,D&lt;:shapeless.Nat,OUT&lt;:commbank.grimlock.framework.encoding.Value[_]]=commbank.grimlock.framework.position.Position.IndexConstraints[P,D]{typeV=OUT}" class="extmbr" name="commbank.grimlock.framework.position.Position.IndexConstraints.Aux">Aux</a>[<span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V1">V1</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V2">V2</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V3">V3</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V4">V4</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V5">V5</span>, <span class="extype" name="shapeless.HNil">HNil</span>]]]]], <span class="extype" name="shapeless.Nats._1">shapeless.Nat._1</span>, <span class="extype" name="commbank.grimlock.scala.Matrix5D.V2">V2</span>]</span>, <span name="ev3">ev3: <a href="../framework/position/Position$$IndexConstraints$.html#Aux[P&lt;:shapeless.HList,D&lt;:shapeless.Nat,OUT&lt;:commbank.grimlock.framework.encoding.Value[_]]=commbank.grimlock.framework.position.Position.IndexConstraints[P,D]{typeV=OUT}" class="extmbr" name="commbank.grimlock.framework.position.Position.IndexConstraints.Aux">Aux</a>[<span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V1">V1</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V2">V2</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V3">V3</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V4">V4</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V5">V5</span>, <span class="extype" name="shapeless.HNil">HNil</span>]]]]], <span class="extype" name="shapeless.Nats._2">shapeless.Nat._2</span>, <span class="extype" name="commbank.grimlock.scala.Matrix5D.V3">V3</span>]</span>, <span name="ev4">ev4: <a href="../framework/position/Position$$IndexConstraints$.html#Aux[P&lt;:shapeless.HList,D&lt;:shapeless.Nat,OUT&lt;:commbank.grimlock.framework.encoding.Value[_]]=commbank.grimlock.framework.position.Position.IndexConstraints[P,D]{typeV=OUT}" class="extmbr" name="commbank.grimlock.framework.position.Position.IndexConstraints.Aux">Aux</a>[<span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V1">V1</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V2">V2</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V3">V3</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V4">V4</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V5">V5</span>, <span class="extype" name="shapeless.HNil">HNil</span>]]]]], <span class="extype" name="shapeless.Nats._3">shapeless.Nat._3</span>, <span class="extype" name="commbank.grimlock.scala.Matrix5D.V4">V4</span>]</span>, <span name="ev5">ev5: <a href="../framework/position/Position$$IndexConstraints$.html#Aux[P&lt;:shapeless.HList,D&lt;:shapeless.Nat,OUT&lt;:commbank.grimlock.framework.encoding.Value[_]]=commbank.grimlock.framework.position.Position.IndexConstraints[P,D]{typeV=OUT}" class="extmbr" name="commbank.grimlock.framework.position.Position.IndexConstraints.Aux">Aux</a>[<span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V1">V1</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V2">V2</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V3">V3</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V4">V4</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V5">V5</span>, <span class="extype" name="shapeless.HNil">HNil</span>]]]]], <span class="extype" name="shapeless.Nats._4">shapeless.Nat._4</span>, <span class="extype" name="commbank.grimlock.scala.Matrix5D.V5">V5</span>]</span>)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#commbank.grimlock.scala.Matrix5D@&lt;init&gt;(data:commbank.grimlock.scala.environment.Context.U[commbank.grimlock.framework.Cell[shapeless.::[V1,shapeless.::[V2,shapeless.::[V3,shapeless.::[V4,shapeless.::[V5,shapeless.HNil]]]]]]])(implicitev1:commbank.grimlock.framework.position.Position.IndexConstraints.Aux[shapeless.::[V1,shapeless.::[V2,shapeless.::[V3,shapeless.::[V4,shapeless.::[V5,shapeless.HNil]]]]],shapeless.nat._0,V1],implicitev2:commbank.grimlock.framework.position.Position.IndexConstraints.Aux[shapeless.::[V1,shapeless.::[V2,shapeless.::[V3,shapeless.::[V4,shapeless.::[V5,shapeless.HNil]]]]],shapeless.nat._1,V2],implicitev3:commbank.grimlock.framework.position.Position.IndexConstraints.Aux[shapeless.::[V1,shapeless.::[V2,shapeless.::[V3,shapeless.::[V4,shapeless.::[V5,shapeless.HNil]]]]],shapeless.nat._2,V3],implicitev4:commbank.grimlock.framework.position.Position.IndexConstraints.Aux[shapeless.::[V1,shapeless.::[V2,shapeless.::[V3,shapeless.::[V4,shapeless.::[V5,shapeless.HNil]]]]],shapeless.nat._3,V4],implicitev5:commbank.grimlock.framework.position.Position.IndexConstraints.Aux[shapeless.::[V1,shapeless.::[V2,shapeless.::[V3,shapeless.::[V4,shapeless.::[V5,shapeless.HNil]]]]],shapeless.nat._4,V5]):commbank.grimlock.scala.Matrix5D[V1,V2,V3,V4,V5]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="scala.AnyRef#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="!=(x$1:Any):Boolean"></a>
+      <a id="!=(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#commbank.grimlock.scala.Matrix5D@!=(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.AnyRef###" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="##():Int"></a>
+      <a id="##():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Int" class="extype" target="_top">Int</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#commbank.grimlock.scala.Matrix5D@##():Int" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.AnyRef#==" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="==(x$1:Any):Boolean"></a>
+      <a id="==(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#commbank.grimlock.scala.Matrix5D@==(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="asInstanceOf[T0]:T0"></a>
+      <a id="asInstanceOf[T0]:T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">asInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Any.asInstanceOf.T0">T0</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#commbank.grimlock.scala.Matrix5D@asInstanceOf[T0]:T0" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="scala.AnyRef#clone" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="clone():Object"></a>
+      <a id="clone():AnyRef"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">clone</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#commbank.grimlock.scala.Matrix5D@clone():Object" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.CloneNotSupportedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="commbank.grimlock.scala.MatrixXD#coordinates" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="coordinates[D&lt;:shapeless.Nat](dim:D,tuner:commbank.grimlock.framework.environment.tuner.Tuner)(implicitev:commbank.grimlock.framework.position.Position.IndexConstraints[P,D]):commbank.grimlock.scala.environment.Context.U[ev.V]"></a>
+      <a id="coordinates[D&lt;:Nat](D,Tuner)(IndexConstraints[::[V1,::[V2,::[V3,::[V4,::[V5,HNil]]]]],D]):U[V]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">coordinates</span><span class="tparams">[<span name="D">D &lt;: <span class="extype" name="shapeless.Nat">Nat</span></span>]</span><span class="params">(<span name="dim">dim: <span class="extype" name="commbank.grimlock.scala.MatrixXD.coordinates.D">D</span></span>, <span name="tuner">tuner: <a href="../framework/environment/tuner/Tuner.html" class="extype" name="commbank.grimlock.framework.environment.tuner.Tuner">Tuner</a></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="ev">ev: <a href="../framework/position/Position$$IndexConstraints.html" class="extype" name="commbank.grimlock.framework.position.Position.IndexConstraints">IndexConstraints</a>[<span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V1">V1</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V2">V2</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V3">V3</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V4">V4</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V5">V5</span>, <span class="extype" name="shapeless.HNil">HNil</span>]]]]], <span class="extype" name="commbank.grimlock.scala.MatrixXD.coordinates.D">D</span>]</span>)</span><span class="result">: <a href="environment/Context$.html#U[A]=List[A]" class="extmbr" name="commbank.grimlock.scala.environment.Context.U">U</a>[<a href="../framework/position/Position$$IndexConstraints.html#V&lt;:commbank.grimlock.framework.encoding.Value[_]" class="extmbr" name="commbank.grimlock.framework.position.Position.IndexConstraints.V">V</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#commbank.grimlock.scala.Matrix5D@coordinates[D&lt;:shapeless.Nat](dim:D,tuner:commbank.grimlock.framework.environment.tuner.Tuner)(implicitev:commbank.grimlock.framework.position.Position.IndexConstraints[P,D]):commbank.grimlock.scala.environment.Context.U[ev.V]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd><a href="MatrixXD.html" class="extype" name="commbank.grimlock.scala.MatrixXD">MatrixXD</a></dd></dl></div>
+    </li><li name="commbank.grimlock.scala.Matrix5D#data" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="data:commbank.grimlock.scala.environment.Context.U[commbank.grimlock.framework.Cell[shapeless.::[V1,shapeless.::[V2,shapeless.::[V3,shapeless.::[V4,shapeless.::[V5,shapeless.HNil]]]]]]]"></a>
+      <a id="data:U[Cell[::[V1,::[V2,::[V3,::[V4,::[V5,HNil]]]]]]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">data</span><span class="result">: <a href="environment/Context$.html#U[A]=List[A]" class="extmbr" name="commbank.grimlock.scala.environment.Context.U">U</a>[<a href="../framework/Cell.html" class="extype" name="commbank.grimlock.framework.Cell">Cell</a>[<span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V1">V1</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V2">V2</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V3">V3</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V4">V4</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V5">V5</span>, <span class="extype" name="shapeless.HNil">HNil</span>]]]]]]]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#commbank.grimlock.scala.Matrix5D@data:commbank.grimlock.scala.environment.Context.U[commbank.grimlock.framework.Cell[shapeless.::[V1,shapeless.::[V2,shapeless.::[V3,shapeless.::[V4,shapeless.::[V5,shapeless.HNil]]]]]]]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The underlying data.</p><div class="fullcomment"><div class="comment cmt"><p>The underlying data.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="commbank.grimlock.scala.Matrix5D">Matrix5D</a> → <a href="Persist.html" class="extype" name="commbank.grimlock.scala.Persist">Persist</a></dd></dl></div>
+    </li><li name="commbank.grimlock.scala.MatrixXD#domain" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="domain[T&lt;:commbank.grimlock.framework.environment.tuner.Tuner](tuner:T)(implicitev:commbank.grimlock.framework.Matrix.DomainTuner[commbank.grimlock.scala.environment.Context.U,T]):commbank.grimlock.scala.environment.Context.U[commbank.grimlock.framework.position.Position[P]]"></a>
+      <a id="domain[T&lt;:Tuner](T)(DomainTuner[U,T]):U[Position[::[V1,::[V2,::[V3,::[V4,::[V5,HNil]]]]]]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">domain</span><span class="tparams">[<span name="T">T &lt;: <a href="../framework/environment/tuner/Tuner.html" class="extype" name="commbank.grimlock.framework.environment.tuner.Tuner">Tuner</a></span>]</span><span class="params">(<span name="tuner">tuner: <span class="extype" name="commbank.grimlock.scala.MatrixXD.domain.T">T</span> = <span class="symbol"><span class="name"><a href="../../package.html">Default()</a></span></span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="ev">ev: <a href="../framework/Matrix$$DomainTuner.html" class="extype" name="commbank.grimlock.framework.Matrix.DomainTuner">DomainTuner</a>[<a href="environment/Context$.html#U[A]=List[A]" class="extmbr" name="commbank.grimlock.scala.environment.Context.U">U</a>, <span class="extype" name="commbank.grimlock.scala.MatrixXD.domain.T">T</span>]</span>)</span><span class="result">: <a href="environment/Context$.html#U[A]=List[A]" class="extmbr" name="commbank.grimlock.scala.environment.Context.U">U</a>[<a href="../framework/position/Position.html" class="extype" name="commbank.grimlock.framework.position.Position">Position</a>[<span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V1">V1</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V2">V2</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V3">V3</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V4">V4</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V5">V5</span>, <span class="extype" name="shapeless.HNil">HNil</span>]]]]]]]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#commbank.grimlock.scala.Matrix5D@domain[T&lt;:commbank.grimlock.framework.environment.tuner.Tuner](tuner:T)(implicitev:commbank.grimlock.framework.Matrix.DomainTuner[commbank.grimlock.scala.environment.Context.U,T]):commbank.grimlock.scala.environment.Context.U[commbank.grimlock.framework.position.Position[P]]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="MatrixXD.html" class="extype" name="commbank.grimlock.scala.MatrixXD">MatrixXD</a></dd></dl></div>
+    </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="eq(x$1:AnyRef):Boolean"></a>
+      <a id="eq(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">eq</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#commbank.grimlock.scala.Matrix5D@eq(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="commbank.grimlock.scala.MatrixXD#fillHeterogeneous" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="fillHeterogeneous[S&lt;:shapeless.HList,R&lt;:shapeless.HList,T&lt;:commbank.grimlock.framework.environment.tuner.Tuner](slice:commbank.grimlock.framework.position.Slice[P,S,R],tuner:T)(values:commbank.grimlock.scala.environment.Context.U[commbank.grimlock.framework.Cell[S]])(implicitev:commbank.grimlock.framework.Matrix.FillHeterogeneousTuner[commbank.grimlock.scala.environment.Context.U,T]):commbank.grimlock.scala.environment.Context.U[commbank.grimlock.framework.Cell[P]]"></a>
+      <a id="fillHeterogeneous[S&lt;:HList,R&lt;:HList,T&lt;:Tuner](Slice[::[V1,::[V2,::[V3,::[V4,::[V5,HNil]]]]],S,R],T)(U[Cell[S]])(FillHeterogeneousTuner[U,T]):U[Cell[::[V1,::[V2,::[V3,::[V4,::[V5,HNil]]]]]]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">fillHeterogeneous</span><span class="tparams">[<span name="S">S &lt;: <span class="extype" name="shapeless.HList">HList</span></span>, <span name="R">R &lt;: <span class="extype" name="shapeless.HList">HList</span></span>, <span name="T">T &lt;: <a href="../framework/environment/tuner/Tuner.html" class="extype" name="commbank.grimlock.framework.environment.tuner.Tuner">Tuner</a></span>]</span><span class="params">(<span name="slice">slice: <a href="../framework/position/Slice.html" class="extype" name="commbank.grimlock.framework.position.Slice">Slice</a>[<span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V1">V1</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V2">V2</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V3">V3</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V4">V4</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V5">V5</span>, <span class="extype" name="shapeless.HNil">HNil</span>]]]]], <span class="extype" name="commbank.grimlock.scala.MatrixXD.fillHeterogeneous.S">S</span>, <span class="extype" name="commbank.grimlock.scala.MatrixXD.fillHeterogeneous.R">R</span>]</span>, <span name="tuner">tuner: <span class="extype" name="commbank.grimlock.scala.MatrixXD.fillHeterogeneous.T">T</span> = <span class="symbol"><span class="name"><a href="../../package.html">Default()</a></span></span></span>)</span><span class="params">(<span name="values">values: <a href="environment/Context$.html#U[A]=List[A]" class="extmbr" name="commbank.grimlock.scala.environment.Context.U">U</a>[<a href="../framework/Cell.html" class="extype" name="commbank.grimlock.framework.Cell">Cell</a>[<span class="extype" name="commbank.grimlock.scala.MatrixXD.fillHeterogeneous.S">S</span>]]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="ev">ev: <a href="../framework/Matrix$$FillHeterogeneousTuner.html" class="extype" name="commbank.grimlock.framework.Matrix.FillHeterogeneousTuner">FillHeterogeneousTuner</a>[<a href="environment/Context$.html#U[A]=List[A]" class="extmbr" name="commbank.grimlock.scala.environment.Context.U">U</a>, <span class="extype" name="commbank.grimlock.scala.MatrixXD.fillHeterogeneous.T">T</span>]</span>)</span><span class="result">: <a href="environment/Context$.html#U[A]=List[A]" class="extmbr" name="commbank.grimlock.scala.environment.Context.U">U</a>[<a href="../framework/Cell.html" class="extype" name="commbank.grimlock.framework.Cell">Cell</a>[<span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V1">V1</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V2">V2</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V3">V3</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V4">V4</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V5">V5</span>, <span class="extype" name="shapeless.HNil">HNil</span>]]]]]]]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#commbank.grimlock.scala.Matrix5D@fillHeterogeneous[S&lt;:shapeless.HList,R&lt;:shapeless.HList,T&lt;:commbank.grimlock.framework.environment.tuner.Tuner](slice:commbank.grimlock.framework.position.Slice[P,S,R],tuner:T)(values:commbank.grimlock.scala.environment.Context.U[commbank.grimlock.framework.Cell[S]])(implicitev:commbank.grimlock.framework.Matrix.FillHeterogeneousTuner[commbank.grimlock.scala.environment.Context.U,T]):commbank.grimlock.scala.environment.Context.U[commbank.grimlock.framework.Cell[P]]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="MatrixXD.html" class="extype" name="commbank.grimlock.scala.MatrixXD">MatrixXD</a></dd></dl></div>
+    </li><li name="commbank.grimlock.scala.MatrixXD#fillHomogeneous" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="fillHomogeneous[T&lt;:commbank.grimlock.framework.environment.tuner.Tuner](value:commbank.grimlock.framework.content.Content,tuner:T)(implicitev:commbank.grimlock.framework.Matrix.FillHomogeneousTuner[commbank.grimlock.scala.environment.Context.U,T]):commbank.grimlock.scala.environment.Context.U[commbank.grimlock.framework.Cell[P]]"></a>
+      <a id="fillHomogeneous[T&lt;:Tuner](Content,T)(FillHomogeneousTuner[U,T]):U[Cell[::[V1,::[V2,::[V3,::[V4,::[V5,HNil]]]]]]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">fillHomogeneous</span><span class="tparams">[<span name="T">T &lt;: <a href="../framework/environment/tuner/Tuner.html" class="extype" name="commbank.grimlock.framework.environment.tuner.Tuner">Tuner</a></span>]</span><span class="params">(<span name="value">value: <a href="../framework/content/Content.html" class="extype" name="commbank.grimlock.framework.content.Content">Content</a></span>, <span name="tuner">tuner: <span class="extype" name="commbank.grimlock.scala.MatrixXD.fillHomogeneous.T">T</span> = <span class="symbol"><span class="name"><a href="../../package.html">Default()</a></span></span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="ev">ev: <a href="../framework/Matrix$$FillHomogeneousTuner.html" class="extype" name="commbank.grimlock.framework.Matrix.FillHomogeneousTuner">FillHomogeneousTuner</a>[<a href="environment/Context$.html#U[A]=List[A]" class="extmbr" name="commbank.grimlock.scala.environment.Context.U">U</a>, <span class="extype" name="commbank.grimlock.scala.MatrixXD.fillHomogeneous.T">T</span>]</span>)</span><span class="result">: <a href="environment/Context$.html#U[A]=List[A]" class="extmbr" name="commbank.grimlock.scala.environment.Context.U">U</a>[<a href="../framework/Cell.html" class="extype" name="commbank.grimlock.framework.Cell">Cell</a>[<span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V1">V1</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V2">V2</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V3">V3</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V4">V4</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V5">V5</span>, <span class="extype" name="shapeless.HNil">HNil</span>]]]]]]]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#commbank.grimlock.scala.Matrix5D@fillHomogeneous[T&lt;:commbank.grimlock.framework.environment.tuner.Tuner](value:commbank.grimlock.framework.content.Content,tuner:T)(implicitev:commbank.grimlock.framework.Matrix.FillHomogeneousTuner[commbank.grimlock.scala.environment.Context.U,T]):commbank.grimlock.scala.environment.Context.U[commbank.grimlock.framework.Cell[P]]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="MatrixXD.html" class="extype" name="commbank.grimlock.scala.MatrixXD">MatrixXD</a></dd></dl></div>
+    </li><li name="scala.AnyRef#finalize" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="finalize():Unit"></a>
+      <a id="finalize():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">finalize</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#commbank.grimlock.scala.Matrix5D@finalize():Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="symbol">classOf[java.lang.Throwable]</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#getClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getClass():Class[_]"></a>
+      <a id="getClass():Class[_]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getClass</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.Class">Class</span>[_]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#commbank.grimlock.scala.Matrix5D@getClass():Class[_]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="commbank.grimlock.scala.MatrixXD#getSaveAsIVTuners" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getSaveAsIVTuners(tuner:commbank.grimlock.framework.environment.tuner.Tuner):(commbank.grimlock.framework.environment.tuner.Tuner,commbank.grimlock.framework.environment.tuner.Tuner)"></a>
+      <a id="getSaveAsIVTuners(Tuner):(Tuner,Tuner)"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getSaveAsIVTuners</span><span class="params">(<span name="tuner">tuner: <a href="../framework/environment/tuner/Tuner.html" class="extype" name="commbank.grimlock.framework.environment.tuner.Tuner">Tuner</a></span>)</span><span class="result">: (<a href="../framework/environment/tuner/Tuner.html" class="extype" name="commbank.grimlock.framework.environment.tuner.Tuner">Tuner</a>, <a href="../framework/environment/tuner/Tuner.html" class="extype" name="commbank.grimlock.framework.environment.tuner.Tuner">Tuner</a>)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#commbank.grimlock.scala.Matrix5D@getSaveAsIVTuners(tuner:commbank.grimlock.framework.environment.tuner.Tuner):(commbank.grimlock.framework.environment.tuner.Tuner,commbank.grimlock.framework.environment.tuner.Tuner)" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd><a href="MatrixXD.html" class="extype" name="commbank.grimlock.scala.MatrixXD">MatrixXD</a></dd></dl></div>
+    </li><li name="scala.Any#isInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#commbank.grimlock.scala.Matrix5D@isInstanceOf[T0]:Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="commbank.grimlock.scala.Matrix5D#naturalDomain" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="naturalDomain(tuner:commbank.grimlock.framework.environment.tuner.Tuner):commbank.grimlock.scala.environment.Context.U[commbank.grimlock.framework.position.Position[shapeless.::[V1,shapeless.::[V2,shapeless.::[V3,shapeless.::[V4,shapeless.::[V5,shapeless.HNil]]]]]]]"></a>
+      <a id="naturalDomain(Tuner):U[Position[::[V1,::[V2,::[V3,::[V4,::[V5,HNil]]]]]]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">naturalDomain</span><span class="params">(<span name="tuner">tuner: <a href="../framework/environment/tuner/Tuner.html" class="extype" name="commbank.grimlock.framework.environment.tuner.Tuner">Tuner</a></span>)</span><span class="result">: <a href="environment/Context$.html#U[A]=List[A]" class="extmbr" name="commbank.grimlock.scala.environment.Context.U">U</a>[<a href="../framework/position/Position.html" class="extype" name="commbank.grimlock.framework.position.Position">Position</a>[<span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V1">V1</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V2">V2</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V3">V3</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V4">V4</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V5">V5</span>, <span class="extype" name="shapeless.HNil">HNil</span>]]]]]]]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#commbank.grimlock.scala.Matrix5D@naturalDomain(tuner:commbank.grimlock.framework.environment.tuner.Tuner):commbank.grimlock.scala.environment.Context.U[commbank.grimlock.framework.position.Position[shapeless.::[V1,shapeless.::[V2,shapeless.::[V3,shapeless.::[V4,shapeless.::[V5,shapeless.HNil]]]]]]]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd><a href="" class="extype" name="commbank.grimlock.scala.Matrix5D">Matrix5D</a> → <a href="MatrixXD.html" class="extype" name="commbank.grimlock.scala.MatrixXD">MatrixXD</a></dd></dl></div>
+    </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ne(x$1:AnyRef):Boolean"></a>
+      <a id="ne(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ne</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#commbank.grimlock.scala.Matrix5D@ne(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#notify" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notify():Unit"></a>
+      <a id="notify():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notify</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#commbank.grimlock.scala.Matrix5D@notify():Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#notifyAll" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notifyAll():Unit"></a>
+      <a id="notifyAll():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#commbank.grimlock.scala.Matrix5D@notifyAll():Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="commbank.grimlock.scala.Matrix5D#permute" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="permute[D1&lt;:shapeless.Nat,D2&lt;:shapeless.Nat,D3&lt;:shapeless.Nat,D4&lt;:shapeless.Nat,D5&lt;:shapeless.Nat,W1&lt;:commbank.grimlock.framework.encoding.Value[_],W2&lt;:commbank.grimlock.framework.encoding.Value[_],W3&lt;:commbank.grimlock.framework.encoding.Value[_],W4&lt;:commbank.grimlock.framework.encoding.Value[_],W5&lt;:commbank.grimlock.framework.encoding.Value[_]](dim1:D1,dim2:D2,dim3:D3,dim4:D4,dim5:D5)(implicitev1:commbank.grimlock.framework.position.Position.IndexConstraints.Aux[shapeless.::[V1,shapeless.::[V2,shapeless.::[V3,shapeless.::[V4,shapeless.::[V5,shapeless.HNil]]]]],D1,W1],implicitev2:commbank.grimlock.framework.position.Position.IndexConstraints.Aux[shapeless.::[V1,shapeless.::[V2,shapeless.::[V3,shapeless.::[V4,shapeless.::[V5,shapeless.HNil]]]]],D2,W2],implicitev3:commbank.grimlock.framework.position.Position.IndexConstraints.Aux[shapeless.::[V1,shapeless.::[V2,shapeless.::[V3,shapeless.::[V4,shapeless.::[V5,shapeless.HNil]]]]],D3,W3],implicitev4:commbank.grimlock.framework.position.Position.IndexConstraints.Aux[shapeless.::[V1,shapeless.::[V2,shapeless.::[V3,shapeless.::[V4,shapeless.::[V5,shapeless.HNil]]]]],D4,W4],implicitev5:commbank.grimlock.framework.position.Position.IndexConstraints.Aux[shapeless.::[V1,shapeless.::[V2,shapeless.::[V3,shapeless.::[V4,shapeless.::[V5,shapeless.HNil]]]]],D5,W5],implicitev6:shapeless.IsDistinctConstraint[shapeless.::[D1,shapeless.::[D2,shapeless.::[D3,shapeless.::[D4,shapeless.::[D5,shapeless.HNil]]]]]]):commbank.grimlock.scala.environment.Context.U[commbank.grimlock.framework.Cell[shapeless.::[W1,shapeless.::[W2,shapeless.::[W3,shapeless.::[W4,shapeless.::[W5,shapeless.HNil]]]]]]]"></a>
+      <a id="permute[D1&lt;:Nat,D2&lt;:Nat,D3&lt;:Nat,D4&lt;:Nat,D5&lt;:Nat,W1&lt;:Value[_],W2&lt;:Value[_],W3&lt;:Value[_],W4&lt;:Value[_],W5&lt;:Value[_]](D1,D2,D3,D4,D5)(Aux[::[V1,::[V2,::[V3,::[V4,::[V5,HNil]]]]],D1,W1],Aux[::[V1,::[V2,::[V3,::[V4,::[V5,HNil]]]]],D2,W2],Aux[::[V1,::[V2,::[V3,::[V4,::[V5,HNil]]]]],D3,W3],Aux[::[V1,::[V2,::[V3,::[V4,::[V5,HNil]]]]],D4,W4],Aux[::[V1,::[V2,::[V3,::[V4,::[V5,HNil]]]]],D5,W5],IsDistinctConstraint[::[D1,::[D2,::[D3,::[D4,::[D5,HNil]]]]]]):U[Cell[::[W1,::[W2,::[W3,::[W4,::[W5,HNil]]]]]]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">permute</span><span class="tparams">[<span name="D1">D1 &lt;: <span class="extype" name="shapeless.Nat">Nat</span></span>, <span name="D2">D2 &lt;: <span class="extype" name="shapeless.Nat">Nat</span></span>, <span name="D3">D3 &lt;: <span class="extype" name="shapeless.Nat">Nat</span></span>, <span name="D4">D4 &lt;: <span class="extype" name="shapeless.Nat">Nat</span></span>, <span name="D5">D5 &lt;: <span class="extype" name="shapeless.Nat">Nat</span></span>, <span name="W1">W1 &lt;: <a href="../framework/encoding/Value.html" class="extype" name="commbank.grimlock.framework.encoding.Value">Value</a>[_]</span>, <span name="W2">W2 &lt;: <a href="../framework/encoding/Value.html" class="extype" name="commbank.grimlock.framework.encoding.Value">Value</a>[_]</span>, <span name="W3">W3 &lt;: <a href="../framework/encoding/Value.html" class="extype" name="commbank.grimlock.framework.encoding.Value">Value</a>[_]</span>, <span name="W4">W4 &lt;: <a href="../framework/encoding/Value.html" class="extype" name="commbank.grimlock.framework.encoding.Value">Value</a>[_]</span>, <span name="W5">W5 &lt;: <a href="../framework/encoding/Value.html" class="extype" name="commbank.grimlock.framework.encoding.Value">Value</a>[_]</span>]</span><span class="params">(<span name="dim1">dim1: <span class="extype" name="commbank.grimlock.scala.Matrix5D.permute.D1">D1</span></span>, <span name="dim2">dim2: <span class="extype" name="commbank.grimlock.scala.Matrix5D.permute.D2">D2</span></span>, <span name="dim3">dim3: <span class="extype" name="commbank.grimlock.scala.Matrix5D.permute.D3">D3</span></span>, <span name="dim4">dim4: <span class="extype" name="commbank.grimlock.scala.Matrix5D.permute.D4">D4</span></span>, <span name="dim5">dim5: <span class="extype" name="commbank.grimlock.scala.Matrix5D.permute.D5">D5</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="ev1">ev1: <a href="../framework/position/Position$$IndexConstraints$.html#Aux[P&lt;:shapeless.HList,D&lt;:shapeless.Nat,OUT&lt;:commbank.grimlock.framework.encoding.Value[_]]=commbank.grimlock.framework.position.Position.IndexConstraints[P,D]{typeV=OUT}" class="extmbr" name="commbank.grimlock.framework.position.Position.IndexConstraints.Aux">Aux</a>[<span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V1">V1</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V2">V2</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V3">V3</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V4">V4</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V5">V5</span>, <span class="extype" name="shapeless.HNil">HNil</span>]]]]], <span class="extype" name="commbank.grimlock.scala.Matrix5D.permute.D1">D1</span>, <span class="extype" name="commbank.grimlock.scala.Matrix5D.permute.W1">W1</span>]</span>, <span name="ev2">ev2: <a href="../framework/position/Position$$IndexConstraints$.html#Aux[P&lt;:shapeless.HList,D&lt;:shapeless.Nat,OUT&lt;:commbank.grimlock.framework.encoding.Value[_]]=commbank.grimlock.framework.position.Position.IndexConstraints[P,D]{typeV=OUT}" class="extmbr" name="commbank.grimlock.framework.position.Position.IndexConstraints.Aux">Aux</a>[<span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V1">V1</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V2">V2</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V3">V3</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V4">V4</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V5">V5</span>, <span class="extype" name="shapeless.HNil">HNil</span>]]]]], <span class="extype" name="commbank.grimlock.scala.Matrix5D.permute.D2">D2</span>, <span class="extype" name="commbank.grimlock.scala.Matrix5D.permute.W2">W2</span>]</span>, <span name="ev3">ev3: <a href="../framework/position/Position$$IndexConstraints$.html#Aux[P&lt;:shapeless.HList,D&lt;:shapeless.Nat,OUT&lt;:commbank.grimlock.framework.encoding.Value[_]]=commbank.grimlock.framework.position.Position.IndexConstraints[P,D]{typeV=OUT}" class="extmbr" name="commbank.grimlock.framework.position.Position.IndexConstraints.Aux">Aux</a>[<span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V1">V1</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V2">V2</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V3">V3</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V4">V4</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V5">V5</span>, <span class="extype" name="shapeless.HNil">HNil</span>]]]]], <span class="extype" name="commbank.grimlock.scala.Matrix5D.permute.D3">D3</span>, <span class="extype" name="commbank.grimlock.scala.Matrix5D.permute.W3">W3</span>]</span>, <span name="ev4">ev4: <a href="../framework/position/Position$$IndexConstraints$.html#Aux[P&lt;:shapeless.HList,D&lt;:shapeless.Nat,OUT&lt;:commbank.grimlock.framework.encoding.Value[_]]=commbank.grimlock.framework.position.Position.IndexConstraints[P,D]{typeV=OUT}" class="extmbr" name="commbank.grimlock.framework.position.Position.IndexConstraints.Aux">Aux</a>[<span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V1">V1</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V2">V2</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V3">V3</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V4">V4</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V5">V5</span>, <span class="extype" name="shapeless.HNil">HNil</span>]]]]], <span class="extype" name="commbank.grimlock.scala.Matrix5D.permute.D4">D4</span>, <span class="extype" name="commbank.grimlock.scala.Matrix5D.permute.W4">W4</span>]</span>, <span name="ev5">ev5: <a href="../framework/position/Position$$IndexConstraints$.html#Aux[P&lt;:shapeless.HList,D&lt;:shapeless.Nat,OUT&lt;:commbank.grimlock.framework.encoding.Value[_]]=commbank.grimlock.framework.position.Position.IndexConstraints[P,D]{typeV=OUT}" class="extmbr" name="commbank.grimlock.framework.position.Position.IndexConstraints.Aux">Aux</a>[<span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V1">V1</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V2">V2</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V3">V3</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V4">V4</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V5">V5</span>, <span class="extype" name="shapeless.HNil">HNil</span>]]]]], <span class="extype" name="commbank.grimlock.scala.Matrix5D.permute.D5">D5</span>, <span class="extype" name="commbank.grimlock.scala.Matrix5D.permute.W5">W5</span>]</span>, <span name="ev6">ev6: <span class="extype" name="shapeless.IsDistinctConstraint">IsDistinctConstraint</span>[<span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.permute.D1">D1</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.permute.D2">D2</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.permute.D3">D3</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.permute.D4">D4</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.permute.D5">D5</span>, <span class="extype" name="shapeless.HNil">HNil</span>]]]]]]</span>)</span><span class="result">: <a href="environment/Context$.html#U[A]=List[A]" class="extmbr" name="commbank.grimlock.scala.environment.Context.U">U</a>[<a href="../framework/Cell.html" class="extype" name="commbank.grimlock.framework.Cell">Cell</a>[<span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.permute.W1">W1</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.permute.W2">W2</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.permute.W3">W3</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.permute.W4">W4</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.permute.W5">W5</span>, <span class="extype" name="shapeless.HNil">HNil</span>]]]]]]]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#commbank.grimlock.scala.Matrix5D@permute[D1&lt;:shapeless.Nat,D2&lt;:shapeless.Nat,D3&lt;:shapeless.Nat,D4&lt;:shapeless.Nat,D5&lt;:shapeless.Nat,W1&lt;:commbank.grimlock.framework.encoding.Value[_],W2&lt;:commbank.grimlock.framework.encoding.Value[_],W3&lt;:commbank.grimlock.framework.encoding.Value[_],W4&lt;:commbank.grimlock.framework.encoding.Value[_],W5&lt;:commbank.grimlock.framework.encoding.Value[_]](dim1:D1,dim2:D2,dim3:D3,dim4:D4,dim5:D5)(implicitev1:commbank.grimlock.framework.position.Position.IndexConstraints.Aux[shapeless.::[V1,shapeless.::[V2,shapeless.::[V3,shapeless.::[V4,shapeless.::[V5,shapeless.HNil]]]]],D1,W1],implicitev2:commbank.grimlock.framework.position.Position.IndexConstraints.Aux[shapeless.::[V1,shapeless.::[V2,shapeless.::[V3,shapeless.::[V4,shapeless.::[V5,shapeless.HNil]]]]],D2,W2],implicitev3:commbank.grimlock.framework.position.Position.IndexConstraints.Aux[shapeless.::[V1,shapeless.::[V2,shapeless.::[V3,shapeless.::[V4,shapeless.::[V5,shapeless.HNil]]]]],D3,W3],implicitev4:commbank.grimlock.framework.position.Position.IndexConstraints.Aux[shapeless.::[V1,shapeless.::[V2,shapeless.::[V3,shapeless.::[V4,shapeless.::[V5,shapeless.HNil]]]]],D4,W4],implicitev5:commbank.grimlock.framework.position.Position.IndexConstraints.Aux[shapeless.::[V1,shapeless.::[V2,shapeless.::[V3,shapeless.::[V4,shapeless.::[V5,shapeless.HNil]]]]],D5,W5],implicitev6:shapeless.IsDistinctConstraint[shapeless.::[D1,shapeless.::[D2,shapeless.::[D3,shapeless.::[D4,shapeless.::[D5,shapeless.HNil]]]]]]):commbank.grimlock.scala.environment.Context.U[commbank.grimlock.framework.Cell[shapeless.::[W1,shapeless.::[W2,shapeless.::[W3,shapeless.::[W4,shapeless.::[W5,shapeless.HNil]]]]]]]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Permute the order of the coordinates in a position.</p><div class="fullcomment"><div class="comment cmt"><p>Permute the order of the coordinates in a position.
+</p></div><dl class="paramcmts block"><dt class="param">dim1</dt><dd class="cmt"><p>Dimension to use for the first coordinate.</p></dd><dt class="param">dim2</dt><dd class="cmt"><p>Dimension to use for the second coordinate.</p></dd><dt class="param">dim3</dt><dd class="cmt"><p>Dimension to use for the third coordinate.</p></dd><dt class="param">dim4</dt><dd class="cmt"><p>Dimension to use for the fourth coordinate.</p></dd><dt class="param">dim5</dt><dd class="cmt"><p>Dimension to use for the fifth coordinate.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="commbank.grimlock.scala.Matrix5D">Matrix5D</a> → <a href="../framework/Matrix5D.html" class="extype" name="commbank.grimlock.framework.Matrix5D">Matrix5D</a></dd></dl></div>
+    </li><li name="commbank.grimlock.scala.Matrix5D#saveAsIV" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="saveAsIV[T&lt;:commbank.grimlock.framework.environment.tuner.Tuner](context:commbank.grimlock.scala.environment.Context,file:String,dictionary:String,separator:String,tuner:T)(implicitev:commbank.grimlock.framework.Matrix.SaveAsIVTuner[commbank.grimlock.scala.environment.Context.U,T]):commbank.grimlock.scala.environment.Context.U[commbank.grimlock.framework.Cell[shapeless.::[V1,shapeless.::[V2,shapeless.::[V3,shapeless.::[V4,shapeless.::[V5,shapeless.HNil]]]]]]]"></a>
+      <a id="saveAsIV[T&lt;:Tuner](Context,String,String,String,T)(SaveAsIVTuner[U,T]):U[Cell[::[V1,::[V2,::[V3,::[V4,::[V5,HNil]]]]]]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">saveAsIV</span><span class="tparams">[<span name="T">T &lt;: <a href="../framework/environment/tuner/Tuner.html" class="extype" name="commbank.grimlock.framework.environment.tuner.Tuner">Tuner</a></span>]</span><span class="params">(<span name="context">context: <a href="environment/Context.html" class="extype" name="commbank.grimlock.scala.environment.Context">Context</a></span>, <span name="file">file: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="dictionary">dictionary: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="separator">separator: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="tuner">tuner: <span class="extype" name="commbank.grimlock.scala.Matrix5D.saveAsIV.T">T</span> = <span class="symbol"><span class="name"><a href="../../package.html">Default()</a></span></span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="ev">ev: <a href="../framework/Matrix$$SaveAsIVTuner.html" class="extype" name="commbank.grimlock.framework.Matrix.SaveAsIVTuner">SaveAsIVTuner</a>[<a href="environment/Context$.html#U[A]=List[A]" class="extmbr" name="commbank.grimlock.scala.environment.Context.U">U</a>, <span class="extype" name="commbank.grimlock.scala.Matrix5D.saveAsIV.T">T</span>]</span>)</span><span class="result">: <a href="environment/Context$.html#U[A]=List[A]" class="extmbr" name="commbank.grimlock.scala.environment.Context.U">U</a>[<a href="../framework/Cell.html" class="extype" name="commbank.grimlock.framework.Cell">Cell</a>[<span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V1">V1</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V2">V2</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V3">V3</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V4">V4</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V5">V5</span>, <span class="extype" name="shapeless.HNil">HNil</span>]]]]]]]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#commbank.grimlock.scala.Matrix5D@saveAsIV[T&lt;:commbank.grimlock.framework.environment.tuner.Tuner](context:commbank.grimlock.scala.environment.Context,file:String,dictionary:String,separator:String,tuner:T)(implicitev:commbank.grimlock.framework.Matrix.SaveAsIVTuner[commbank.grimlock.scala.environment.Context.U,T]):commbank.grimlock.scala.environment.Context.U[commbank.grimlock.framework.Cell[shapeless.::[V1,shapeless.::[V2,shapeless.::[V3,shapeless.::[V4,shapeless.::[V5,shapeless.HNil]]]]]]]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Persist as a sparse matrix file (index, value).</p><div class="fullcomment"><div class="comment cmt"><p>Persist as a sparse matrix file (index, value).
+</p></div><dl class="paramcmts block"><dt class="param">context</dt><dd class="cmt"><p>The operating context.</p></dd><dt class="param">file</dt><dd class="cmt"><p>File to write to.</p></dd><dt class="param">dictionary</dt><dd class="cmt"><p>Pattern for the dictionary file name.</p></dd><dt class="param">separator</dt><dd class="cmt"><p>Column separator to use in dictionary file.</p></dd><dt class="param">tuner</dt><dd class="cmt"><p>The tuner for the job.</p></dd><dt>returns</dt><dd class="cmt"><p>A <code>C#U[Cell[P]]</code>; that is it returns <code>data</code>.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="commbank.grimlock.scala.Matrix5D">Matrix5D</a> → <a href="../framework/SetDimensionMatrix.html" class="extype" name="commbank.grimlock.framework.SetDimensionMatrix">SetDimensionMatrix</a></dd></dl></div>
+    </li><li name="commbank.grimlock.scala.MatrixXD#saveDictionary" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="saveDictionary[D&lt;:shapeless.Nat](dim:D,context:commbank.grimlock.scala.environment.Context,file:String,dictionary:String,separator:String,tuner:commbank.grimlock.framework.environment.tuner.Tuner)(implicitevidence$3:shapeless.ops.nat.ToInt[D],implicitev:commbank.grimlock.framework.position.Position.IndexConstraints[P,D]):commbank.grimlock.scala.environment.Context.U[(commbank.grimlock.framework.position.Position[shapeless.::[ev.V,shapeless.HNil]],Long)]"></a>
+      <a id="saveDictionary[D&lt;:Nat](D,Context,String,String,String,Tuner)(ToInt[D],IndexConstraints[::[V1,::[V2,::[V3,::[V4,::[V5,HNil]]]]],D]):U[(Position[::[V,HNil]],Long)]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">saveDictionary</span><span class="tparams">[<span name="D">D &lt;: <span class="extype" name="shapeless.Nat">Nat</span></span>]</span><span class="params">(<span name="dim">dim: <span class="extype" name="commbank.grimlock.scala.MatrixXD.saveDictionary.D">D</span></span>, <span name="context">context: <a href="environment/Context.html" class="extype" name="commbank.grimlock.scala.environment.Context">Context</a></span>, <span name="file">file: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="dictionary">dictionary: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="separator">separator: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="tuner">tuner: <a href="../framework/environment/tuner/Tuner.html" class="extype" name="commbank.grimlock.framework.environment.tuner.Tuner">Tuner</a></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <span class="extype" name="shapeless.ops.nat.ToInt">ToInt</span>[<span class="extype" name="commbank.grimlock.scala.MatrixXD.saveDictionary.D">D</span>]</span>, <span name="ev">ev: <a href="../framework/position/Position$$IndexConstraints.html" class="extype" name="commbank.grimlock.framework.position.Position.IndexConstraints">IndexConstraints</a>[<span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V1">V1</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V2">V2</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V3">V3</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V4">V4</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V5">V5</span>, <span class="extype" name="shapeless.HNil">HNil</span>]]]]], <span class="extype" name="commbank.grimlock.scala.MatrixXD.saveDictionary.D">D</span>]</span>)</span><span class="result">: <a href="environment/Context$.html#U[A]=List[A]" class="extmbr" name="commbank.grimlock.scala.environment.Context.U">U</a>[(<a href="../framework/position/Position.html" class="extype" name="commbank.grimlock.framework.position.Position">Position</a>[<span class="extype" name="shapeless.::">::</span>[<a href="../framework/position/Position$$IndexConstraints.html#V&lt;:commbank.grimlock.framework.encoding.Value[_]" class="extmbr" name="commbank.grimlock.framework.position.Position.IndexConstraints.V">V</a>, <span class="extype" name="shapeless.HNil">HNil</span>]], <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Long" class="extype" target="_top">Long</a>)]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#commbank.grimlock.scala.Matrix5D@saveDictionary[D&lt;:shapeless.Nat](dim:D,context:commbank.grimlock.scala.environment.Context,file:String,dictionary:String,separator:String,tuner:commbank.grimlock.framework.environment.tuner.Tuner)(implicitevidence$3:shapeless.ops.nat.ToInt[D],implicitev:commbank.grimlock.framework.position.Position.IndexConstraints[P,D]):commbank.grimlock.scala.environment.Context.U[(commbank.grimlock.framework.position.Position[shapeless.::[ev.V,shapeless.HNil]],Long)]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd><a href="MatrixXD.html" class="extype" name="commbank.grimlock.scala.MatrixXD">MatrixXD</a></dd></dl></div>
+    </li><li name="commbank.grimlock.scala.Persist#saveText" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="saveText[T&lt;:commbank.grimlock.framework.environment.tuner.Tuner](context:commbank.grimlock.scala.environment.Context,file:String,writer:commbank.grimlock.framework.Persist.TextWriter[X],tuner:T):commbank.grimlock.scala.environment.Context.U[X]"></a>
+      <a id="saveText[T&lt;:Tuner](Context,String,TextWriter[Cell[::[V1,::[V2,::[V3,::[V4,::[V5,HNil]]]]]]],T):U[Cell[::[V1,::[V2,::[V3,::[V4,::[V5,HNil]]]]]]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">saveText</span><span class="tparams">[<span name="T">T &lt;: <a href="../framework/environment/tuner/Tuner.html" class="extype" name="commbank.grimlock.framework.environment.tuner.Tuner">Tuner</a></span>]</span><span class="params">(<span name="context">context: <a href="environment/Context.html" class="extype" name="commbank.grimlock.scala.environment.Context">Context</a></span>, <span name="file">file: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="writer">writer: <a href="../framework/Persist$.html#TextWriter[T]=T=&gt;TraversableOnce[String]" class="extmbr" name="commbank.grimlock.framework.Persist.TextWriter">TextWriter</a>[<a href="../framework/Cell.html" class="extype" name="commbank.grimlock.framework.Cell">Cell</a>[<span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V1">V1</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V2">V2</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V3">V3</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V4">V4</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V5">V5</span>, <span class="extype" name="shapeless.HNil">HNil</span>]]]]]]]</span>, <span name="tuner">tuner: <span class="extype" name="commbank.grimlock.scala.Persist.saveText.T">T</span></span>)</span><span class="result">: <a href="environment/Context$.html#U[A]=List[A]" class="extmbr" name="commbank.grimlock.scala.environment.Context.U">U</a>[<a href="../framework/Cell.html" class="extype" name="commbank.grimlock.framework.Cell">Cell</a>[<span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V1">V1</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V2">V2</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V3">V3</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V4">V4</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V5">V5</span>, <span class="extype" name="shapeless.HNil">HNil</span>]]]]]]]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#commbank.grimlock.scala.Matrix5D@saveText[T&lt;:commbank.grimlock.framework.environment.tuner.Tuner](context:commbank.grimlock.scala.environment.Context,file:String,writer:commbank.grimlock.framework.Persist.TextWriter[X],tuner:T):commbank.grimlock.scala.environment.Context.U[X]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd><a href="Persist.html" class="extype" name="commbank.grimlock.scala.Persist">Persist</a></dd></dl></div>
+    </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
+      <a id="synchronized[T0](⇒T0):T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">synchronized</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="params">(<span name="arg0">arg0: ⇒ <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>)</span><span class="result">: <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#commbank.grimlock.scala.Matrix5D@synchronized[T0](x$1:=&gt;T0):T0" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="commbank.grimlock.framework.Persist#toUnit" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="toUnit():Unit"></a>
+      <a id="toUnit():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">toUnit</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#commbank.grimlock.scala.Matrix5D@toUnit():Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">  Convenience function for suppressing ‘Discarded non-unit value’ compiler warnings.</p><div class="fullcomment"><div class="comment cmt"><p>  Convenience function for suppressing ‘Discarded non-unit value’ compiler warnings.</p><p>  These occur when the output of a function is not assigned to a variable (for a non-unit return).
+  This function ensures that such warnings are suppressed, it does not affect the flow or outcome.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../framework/Persist.html" class="extype" name="commbank.grimlock.framework.Persist">Persist</a></dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait():Unit"></a>
+      <a id="wait():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#commbank.grimlock.scala.Matrix5D@wait():Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long,x$2:Int):Unit"></a>
+      <a id="wait(Long,Int):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Long" class="extype" target="_top">Long</a></span>, <span name="arg1">arg1: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Int" class="extype" target="_top">Int</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#commbank.grimlock.scala.Matrix5D@wait(x$1:Long,x$2:Int):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long):Unit"></a>
+      <a id="wait(Long):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Long" class="extype" target="_top">Long</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#commbank.grimlock.scala.Matrix5D@wait(x$1:Long):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="scala.Serializable">
+              <h3>Inherited from <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></h3>
+            </div><div class="parent" name="scala.Product">
+              <h3>Inherited from <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Product" class="extype" target="_top">Product</a></h3>
+            </div><div class="parent" name="scala.Equals">
+              <h3>Inherited from <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Equals" class="extype" target="_top">Equals</a></h3>
+            </div><div class="parent" name="commbank.grimlock.scala.MatrixXD">
+              <h3>Inherited from <a href="MatrixXD.html" class="extype" name="commbank.grimlock.scala.MatrixXD">MatrixXD</a>[<span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V1">V1</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V2">V2</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V3">V3</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V4">V4</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V5">V5</span>, <span class="extype" name="shapeless.HNil">HNil</span>]]]]]]</h3>
+            </div><div class="parent" name="commbank.grimlock.scala.Persist">
+              <h3>Inherited from <a href="Persist.html" class="extype" name="commbank.grimlock.scala.Persist">Persist</a>[<a href="../framework/Cell.html" class="extype" name="commbank.grimlock.framework.Cell">Cell</a>[<span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V1">V1</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V2">V2</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V3">V3</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V4">V4</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V5">V5</span>, <span class="extype" name="shapeless.HNil">HNil</span>]]]]]]]</h3>
+            </div><div class="parent" name="commbank.grimlock.framework.Matrix5D">
+              <h3>Inherited from <a href="../framework/Matrix5D.html" class="extype" name="commbank.grimlock.framework.Matrix5D">framework.Matrix5D</a>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V1">V1</span>, <span class="extype" name="commbank.grimlock.scala.Matrix5D.V2">V2</span>, <span class="extype" name="commbank.grimlock.scala.Matrix5D.V3">V3</span>, <span class="extype" name="commbank.grimlock.scala.Matrix5D.V4">V4</span>, <span class="extype" name="commbank.grimlock.scala.Matrix5D.V5">V5</span>, <a href="environment/Context.html" class="extype" name="commbank.grimlock.scala.environment.Context">Context</a>]</h3>
+            </div><div class="parent" name="commbank.grimlock.framework.SetDimensionMatrix">
+              <h3>Inherited from <a href="../framework/SetDimensionMatrix.html" class="extype" name="commbank.grimlock.framework.SetDimensionMatrix">SetDimensionMatrix</a>[<span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V1">V1</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V2">V2</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V3">V3</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V4">V4</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V5">V5</span>, <span class="extype" name="shapeless.HNil">HNil</span>]]]]], <a href="environment/Context.html" class="extype" name="commbank.grimlock.scala.environment.Context">Context</a>]</h3>
+            </div><div class="parent" name="commbank.grimlock.framework.Persist">
+              <h3>Inherited from <a href="../framework/Persist.html" class="extype" name="commbank.grimlock.framework.Persist">framework.Persist</a>[<a href="../framework/Cell.html" class="extype" name="commbank.grimlock.framework.Cell">Cell</a>[<span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V1">V1</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V2">V2</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V3">V3</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V4">V4</span>, <span class="extype" name="shapeless.::">::</span>[<span class="extype" name="commbank.grimlock.scala.Matrix5D.V5">V5</span>, <span class="extype" name="shapeless.HNil">HNil</span>]]]]]], <a href="environment/Context.html" class="extype" name="commbank.grimlock.scala.environment.Context">Context</a>]</h3>
+            </div><div class="parent" name="java.io.Serializable">
+              <h3>Inherited from <span class="extype" name="java.io.Serializable">Serializable</span></h3>
+            </div><div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>
+            </div>
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>
