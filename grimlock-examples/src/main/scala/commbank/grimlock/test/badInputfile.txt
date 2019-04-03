@@ -1,0 +1,7 @@
+iid:0221707|fid:A|2014-05-12|long|continuous|abc
+iid:0221707|fid:B|2014-05-05|string|nominal(A,B,C)|H
+iid:0221707|fid:Y|2014-04-26|long|continuous|801.23
+iid:0221707|fid:Z|2014-04-26|long|continuous|123
+iid:0364354|fid:A|2014-05-12|long|discrete|911.64
+iid:0364354|fid:B|2014-05-07|long|discrete(1,3,1)|4
+iid:0364354|fid:Z|2014-05-07|long|nominal|F
