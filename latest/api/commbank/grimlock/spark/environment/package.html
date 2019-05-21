@@ -1,0 +1,309 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>environment - commbank.grimlock.spark.environment</title>
+          <meta name="description" content="environment - commbank.grimlock.spark.environment" />
+          <meta name="keywords" content="environment commbank.grimlock.spark.environment" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../index.html';
+            var hash = 'commbank.grimlock.spark.environment.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Package" src="../../../../lib/package_big.png" />
+        <p id="owner"><a href="../../../package.html" class="extype" name="commbank">commbank</a>.<a href="../../package.html" class="extype" name="commbank.grimlock">grimlock</a>.<a href="../package.html" class="extype" name="commbank.grimlock.spark">spark</a></p>
+        <h1>environment</h1><span class="permalink">
+      <a href="../../../../index.html#commbank.grimlock.spark.environment.package" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">environment</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        
+        
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="commbank.grimlock.spark.environment.Context" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ContextextendsContext[commbank.grimlock.spark.environment.Context]withProductwithSerializable"></a>
+      <a id="Context:Context"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Context.html"><span class="name">Context</span></a><span class="params">(<span name="session">session: <span class="extype" name="org.apache.spark.sql.SparkSession">SparkSession</span></span>)</span><span class="result"> extends <a href="../../framework/environment/Context.html" class="extype" name="commbank.grimlock.framework.environment.Context">framework.environment.Context</a>[<a href="Context.html" class="extype" name="commbank.grimlock.spark.environment.Context">Context</a>] with <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#commbank.grimlock.spark.environment.package@ContextextendsContext[commbank.grimlock.spark.environment.Context]withProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Spark operating context state.</p><div class="fullcomment"><div class="comment cmt"><p>Spark operating context state.
+</p></div><dl class="paramcmts block"><dt class="param">session</dt><dd class="cmt"><p>The Spark session.</p></dd></dl></div>
+    </li><li name="commbank.grimlock.spark.environment.NativeOperations" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="NativeOperations[X]extendsNativeOperations[X,commbank.grimlock.spark.environment.Context.U]withProductwithSerializable"></a>
+      <a id="NativeOperations[X]:NativeOperations[X]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="NativeOperations.html"><span class="name">NativeOperations</span></a><span class="tparams">[<span name="X">X</span>]</span><span class="params">(<span name="data">data: <a href="Context$.html#U[T]=org.apache.spark.rdd.RDD[T]" class="extmbr" name="commbank.grimlock.spark.environment.Context.U">U</a>[<span class="extype" name="commbank.grimlock.spark.environment.NativeOperations.X">X</span>]</span>)</span><span class="result"> extends <a href="../../framework/environment/NativeOperations.html" class="extype" name="commbank.grimlock.framework.environment.NativeOperations">framework.environment.NativeOperations</a>[<span class="extype" name="commbank.grimlock.spark.environment.NativeOperations.X">X</span>, <a href="Context$.html#U[T]=org.apache.spark.rdd.RDD[T]" class="extmbr" name="commbank.grimlock.spark.environment.Context.U">U</a>] with <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#commbank.grimlock.spark.environment.package@NativeOperations[X]extendsNativeOperations[X,commbank.grimlock.spark.environment.Context.U]withProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Implements all native operations.</p>
+    </li><li name="commbank.grimlock.spark.environment.ValueOperations" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ValueOperations[X]extendsValueOperations[X,commbank.grimlock.spark.environment.Context.E]withProductwithSerializable"></a>
+      <a id="ValueOperations[X]:ValueOperations[X]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ValueOperations.html"><span class="name">ValueOperations</span></a><span class="tparams">[<span name="X">X</span>]</span><span class="params">(<span name="value">value: <a href="Context$.html#E[T]=T" class="extmbr" name="commbank.grimlock.spark.environment.Context.E">E</a>[<span class="extype" name="commbank.grimlock.spark.environment.ValueOperations.X">X</span>]</span>)</span><span class="result"> extends <a href="../../framework/environment/ValueOperations.html" class="extype" name="commbank.grimlock.framework.environment.ValueOperations">framework.environment.ValueOperations</a>[<span class="extype" name="commbank.grimlock.spark.environment.ValueOperations.X">X</span>, <a href="Context$.html#E[T]=T" class="extmbr" name="commbank.grimlock.spark.environment.Context.E">E</a>] with <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#commbank.grimlock.spark.environment.package@ValueOperations[X]extendsValueOperations[X,commbank.grimlock.spark.environment.Context.E]withProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Implements all value operations.</p>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="commbank.grimlock.spark.environment.CellImplicits" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="CellImplicits"></a>
+      <a id="CellImplicits:CellImplicits"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="CellImplicits$.html"><span class="name">CellImplicits</span></a><span class="result"> extends <a href="../../framework/environment/CellImplicits.html" class="extype" name="commbank.grimlock.framework.environment.CellImplicits">framework.environment.CellImplicits</a>[<a href="Context.html" class="extype" name="commbank.grimlock.spark.environment.Context">Context</a>] with <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#commbank.grimlock.spark.environment.package@CellImplicits" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Implements all cell implicits.</p>
+    </li><li name="commbank.grimlock.spark.environment.ContentImplicits" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ContentImplicits"></a>
+      <a id="ContentImplicits:ContentImplicits"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ContentImplicits$.html"><span class="name">ContentImplicits</span></a><span class="result"> extends <a href="../../framework/environment/ContentImplicits.html" class="extype" name="commbank.grimlock.framework.environment.ContentImplicits">framework.environment.ContentImplicits</a>[<a href="Context.html" class="extype" name="commbank.grimlock.spark.environment.Context">Context</a>] with <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#commbank.grimlock.spark.environment.package@ContentImplicits" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Implements all content implicits.</p>
+    </li><li name="commbank.grimlock.spark.environment.Context" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Context"></a>
+      <a id="Context:Context"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Context$.html"><span class="name">Context</span></a><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#commbank.grimlock.spark.environment.package@Context" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Companion object to <code>Context</code> with additional constructors and implicits.</p>
+    </li><li name="commbank.grimlock.spark.environment.EnvironmentImplicits" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="EnvironmentImplicits"></a>
+      <a id="EnvironmentImplicits:EnvironmentImplicits"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="EnvironmentImplicits$.html"><span class="name">EnvironmentImplicits</span></a><span class="result"> extends <a href="../../framework/environment/EnvironmentImplicits.html" class="extype" name="commbank.grimlock.framework.environment.EnvironmentImplicits">framework.environment.EnvironmentImplicits</a>[<a href="Context.html" class="extype" name="commbank.grimlock.spark.environment.Context">Context</a>] with <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#commbank.grimlock.spark.environment.package@EnvironmentImplicits" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Implements all environment implicits.</p>
+    </li><li name="commbank.grimlock.spark.environment.Implicits" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Implicits"></a>
+      <a id="Implicits:Implicits"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Implicits$.html"><span class="name">Implicits</span></a><span class="result"> extends <a href="../../framework/environment/Implicits.html" class="extype" name="commbank.grimlock.framework.environment.Implicits">framework.environment.Implicits</a>[<a href="Context.html" class="extype" name="commbank.grimlock.spark.environment.Context">Context</a>] with <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#commbank.grimlock.spark.environment.package@Implicits" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Implements all implicits.</p>
+    </li><li name="commbank.grimlock.spark.environment.Library" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Library"></a>
+      <a id="Library:Library"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Library$.html"><span class="name">Library</span></a><span class="result"> extends <a href="../../framework/environment/Library.html" class="extype" name="commbank.grimlock.framework.environment.Library">framework.environment.Library</a>[<a href="Context.html" class="extype" name="commbank.grimlock.spark.environment.Context">Context</a>] with <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#commbank.grimlock.spark.environment.package@Library" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Implements all library functions/data.</p>
+    </li><li name="commbank.grimlock.spark.environment.MatrixImplicits" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MatrixImplicits"></a>
+      <a id="MatrixImplicits:MatrixImplicits"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="MatrixImplicits$.html"><span class="name">MatrixImplicits</span></a><span class="result"> extends <a href="../../framework/environment/MatrixImplicits.html" class="extype" name="commbank.grimlock.framework.environment.MatrixImplicits">framework.environment.MatrixImplicits</a>[<a href="Context.html" class="extype" name="commbank.grimlock.spark.environment.Context">Context</a>] with <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#commbank.grimlock.spark.environment.package@MatrixImplicits" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Implements all matrix implicits.</p>
+    </li><li name="commbank.grimlock.spark.environment.PartitionImplicits" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="PartitionImplicits"></a>
+      <a id="PartitionImplicits:PartitionImplicits"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="PartitionImplicits$.html"><span class="name">PartitionImplicits</span></a><span class="result"> extends <a href="../../framework/environment/PartitionImplicits.html" class="extype" name="commbank.grimlock.framework.environment.PartitionImplicits">framework.environment.PartitionImplicits</a>[<a href="Context.html" class="extype" name="commbank.grimlock.spark.environment.Context">Context</a>] with <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#commbank.grimlock.spark.environment.package@PartitionImplicits" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Implements all partition implicits.</p>
+    </li><li name="commbank.grimlock.spark.environment.PositionImplicits" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="PositionImplicits"></a>
+      <a id="PositionImplicits:PositionImplicits"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="PositionImplicits$.html"><span class="name">PositionImplicits</span></a><span class="result"> extends <a href="../../framework/environment/PositionImplicits.html" class="extype" name="commbank.grimlock.framework.environment.PositionImplicits">framework.environment.PositionImplicits</a>[<a href="Context.html" class="extype" name="commbank.grimlock.spark.environment.Context">Context</a>] with <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#commbank.grimlock.spark.environment.package@PositionImplicits" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Implements all position implicits.</p>
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>
