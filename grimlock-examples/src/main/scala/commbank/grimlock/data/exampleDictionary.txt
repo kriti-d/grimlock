@@ -1,3 +1,0 @@
-fid:X|double|continuous
-fid:Y|string|nominal
-fid:Z|long|discrete
