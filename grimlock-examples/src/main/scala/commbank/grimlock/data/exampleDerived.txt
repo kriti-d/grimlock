@@ -1,0 +1,9 @@
+iid:0221701|fid:X|2014-01-01|long|continuous|0
+iid:0221701|fid:X|2014-01-31|long|continuous|30
+iid:0221701|fid:Y|2014-01-01|long|continuous|0
+iid:0221701|fid:Y|2014-01-16|long|continuous|30
+iid:0221701|fid:Y|2014-01-31|long|continuous|90
+iid:0221701|fid:Z|2014-01-01|long|continuous|0
+iid:0221701|fid:Z|2014-01-11|long|continuous|10
+iid:0221701|fid:Z|2014-01-21|long|continuous|10
+iid:0221701|fid:Z|2014-01-31|long|continuous|0
