@@ -318,9 +318,11 @@ class TestStringValue extends TestGrimlock {
 
 class TestDecimalValue extends TestGrimlock {
   val cdc = DecimalCodec(3, 2)
+  val bigCdc = DecimalCodec(310, 1)
   val one = BigDecimal(1.0)
   val pi = BigDecimal(3.14)
   val dvone = DecimalValue(one, cdc)
+  val bigDvone = DecimalValue(one, bigCdc)
   val dvpi = DecimalValue(pi, cdc)
 
   "A DecimalValue" should "return its short string" in {
@@ -336,7 +338,11 @@ class TestDecimalValue extends TestGrimlock {
   }
 
   it should "return a double" in {
-    dvone.as[Double] shouldBe None
+    dvone.as[Double] shouldBe Option(1.0)
+  }
+
+  it should "not return a double if too big" in {
+    bigDvone.as[Double] shouldBe None
   }
 
   it should "return a float" in {

@@ -417,8 +417,7 @@ object DecimalCodec {
   }
 
   private def decimalAsDoubleConvertor(precision: Int, scale: Int): Option[Codec.Converter[BigDecimal, Double]] = {
-    val maxDecimal = BigDecimal(10, 0).pow(precision - scale) - BigDecimal(1, scale)
-    if (maxDecimal > BigDecimal(Double.MaxValue) || -maxDecimal < BigDecimal(Double.MinValue))
+    if ((precision - scale) >= 309)
       None
     else
       Option(_.doubleValue())
