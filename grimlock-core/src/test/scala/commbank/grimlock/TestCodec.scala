@@ -131,7 +131,9 @@ class TestDecimalCodec extends TestGrimlock {
   }
 
   it should "return fields" in {
-    codec.converters.size shouldBe 0
+    codec.converters.size shouldBe 1
+    DecimalCodec(308, 0).size shouldBe 1
+    DecimalCodec(309, 0).size shouldBe 0
 
     codec.date.isEmpty shouldBe true
     codec.integral.isEmpty shouldBe true

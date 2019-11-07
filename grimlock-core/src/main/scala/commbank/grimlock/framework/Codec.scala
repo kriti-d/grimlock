@@ -374,7 +374,7 @@ object DateCodec {
 
 /** Codec for dealing with `BigDecimal`. */
 case class DecimalCodec(precision: Int, scale: Int) extends Codec[BigDecimal] {
-  val converters: Set[Codec.Converter[BigDecimal, Any]] = Set.empty
+  val converters: Set[Codec.Converter[BigDecimal, Any]] = DecimalCodec.decimalAsDoubleConvertor(precision, scale).toSet
   val date: Option[BigDecimal => Date] = None
   val integral: Option[Integral[BigDecimal]] = None
   val numeric: Option[Numeric[BigDecimal]] = Option(Numeric.BigDecimalIsFractional)
@@ -412,8 +412,16 @@ object DecimalCodec {
         p <- IntCodec.decode(precision)
         s <- IntCodec.decode(scale)
       } yield DecimalCodec(p, s)
-    case PatternNoScale(precision) => { for {p <- IntCodec.decode(precision) } yield DecimalCodec(p, 0) }
+    case PatternNoScale(precision) => for {p <- IntCodec.decode(precision) } yield DecimalCodec(p, 0)
     case _ => None
+  }
+
+  private def decimalAsDoubleConvertor(precision: Int, scale: Int): Option[Codec.Converter[BigDecimal, Double]] = {
+    val maxDecimal = BigDecimal(10, 0).pow(precision - scale) - BigDecimal(1, scale)
+    if (maxDecimal > BigDecimal(Double.MaxValue) || -maxDecimal < BigDecimal(Double.MinValue))
+      None
+    else
+      Option(_.doubleValue())
   }
 }
 
