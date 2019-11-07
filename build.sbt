@@ -26,8 +26,8 @@ lazy val all = Project(
 )
 
 lazy val core = Project(
-  id = "grimlock-core",
-  base = file("grimlock-core"),
+  id = "core",
+  base = file("core"),
   settings = Seq(
     libraryDependencies ++= Seq(
       "org.apache.spark" %% "spark-core" % "2.3.2"
@@ -86,8 +86,8 @@ lazy val core = Project(
 )
 
 lazy val examples = Project(
-  id = "grimlock-examples",
-  base = file("grimlock-examples"),
+  id = "examples",
+  base = file("examples"),
   settings = standardSettings ++ assemblySettings ++ shadeShapelessSettings
 ).dependsOn(core % "test->test;compile->compile")
 
