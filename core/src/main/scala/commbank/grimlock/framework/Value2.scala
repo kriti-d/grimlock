@@ -26,5 +26,11 @@ trait Value[T] {
     throw new IllegalArgumentException(s"${value} does not conform to schema ${schema.toShortString}")
 }
 
-case class DecimalValue(value: BigDecimal, schema: Schema[BigDecimal]) extends Value[BigDecimal]
+case class DecimalValue(value: BigDecimal, schema: Schema[BigDecimal]) extends Value[BigDecimal] {
+  // TODO add comparison methods
+}
+
+case class DoubleValue(value: Double, schema: Schema[Double]) extends Value[Double] {
+  // TODO add comparison methods
+}
 

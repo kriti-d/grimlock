@@ -66,7 +66,10 @@ trait Schema[T] {
    *
    * @return `Some[T]` if the decode was successful, `None` otherwise.
    */
-  def decode(str: String): Option[T]
+  def decode(str: String): Option[T] = for {
+    v <- parse(str)
+    if (validate(v))
+  } yield v
 
   /**
    * Converts a value to a consise (terse) string.
@@ -78,7 +81,7 @@ trait Schema[T] {
   def encode(value: T): String
 
   /** Return a consise (terse) string representation of a schema. */
-  def toShortString: String = classification.toString + round(paramString)
+  def toShortString: String = name + round(paramString)
 
   /**
    * Validates if a value confirms to this schema.
@@ -89,7 +92,11 @@ trait Schema[T] {
    */
   def validate(value: T): Boolean
 
+  protected def name: String
+
   protected def paramString: String = ""
+
+  protected def parse(str: String): Option[T]
 
   private def round(str: String): String = if (str.isEmpty) str else "(" + str + ")"
 }
@@ -111,11 +118,15 @@ trait NumericalSchema[T] extends Schema[T] {
 
 trait ContinuousSchema[T] extends NumericalSchema[T] {
   val classification = ContinuousType
+  val date: Option[T => Date] = None
+  val integral: Option[Integral[T]] = None
   val min: Option[T]
   val max: Option[T]
   val numeric: Option[Numeric[T]] = Option(num)
   val precision: Option[Int]
   val scale: Option[Int]
+
+  def ordering: Ordering[T] = num
 
   def validate(value: T): Boolean = {
     val dec = toDecimal(value)
@@ -134,34 +145,28 @@ trait ContinuousSchema[T] extends NumericalSchema[T] {
   private val extra = List(("precision", precision.map(_.toString)), ("scale", scale.map(_.toString)))
 }
 
-/** Codec for dealing with `BigDecimal`. */
-case class DecimalSchema(decimalPrecision: Int, decimalScale: Int) extends ContinuousSchema[BigDecimal] {
+/** Schema for dealing with `BigDecimal`. */
+case class DecimalSchema(
+  min: Option[BigDecimal],
+  max: Option[BigDecimal],
+  decimalPrecision: Int,
+  decimalScale: Int
+) extends ContinuousSchema[BigDecimal] {
   val converters: Set[Schema.Converter[BigDecimal, Any]] = decimalAsDoubleConvertor.toSet
-  val date: Option[BigDecimal => Date] = None
-  val integral: Option[Integral[BigDecimal]] = None
-  // Infer max from precision and scale
-  val max: Option[BigDecimal] = Option(
-    BigDecimal(10).pow(decimalPrecision - decimalScale) - BigDecimal(10).pow(-decimalScale)
-  )
-  val min: Option[BigDecimal] = max.map(-_)
   val precision: Option[Int] = Option(decimalPrecision)
   val scale: Option[Int] = Option(decimalScale)
-
-  def ordering: Ordering[BigDecimal] = Ordering.BigDecimal
 
   def boxUnsafe(value: BigDecimal): Value[BigDecimal] = DecimalValue(value, this)
 
   def compare(x: BigDecimal, y: BigDecimal): Int = x.compare(y)
 
-  def decode(value: String): Option[BigDecimal] = Try(BigDecimal(value))
-    .toOption
-    .flatMap { case db => if (db.precision <= decimalPrecision && db.scale <= decimalPrecision) Option(db) else None }
-
   def encode(value: BigDecimal): String = value.toString
 
   protected implicit val num: Numeric[BigDecimal] = implicitly[Numeric[BigDecimal]]
 
-  override protected def paramString = s"decimal(${precision},${scale})"
+  protected def name: String = "decimal"
+
+  protected def parse(str: String): Option[BigDecimal] = Try(BigDecimal(str)).toOption
 
   override protected def toDecimal(value: BigDecimal): BigDecimal = value
 
@@ -173,40 +178,28 @@ case class DecimalSchema(decimalPrecision: Int, decimalScale: Int) extends Conti
   }
 }
 
-/*
-/** Codec for dealing with `Double`. */
-case class DoubleSchema extends ContinuousSchema[Double] {
-  val converters: Set[Codec.Converter[Double, Any]] = Set.empty
-  val date: Option[Double => Date] = None
-  val integral: Option[Integral[Double]] = None
-  val numeric: Option[Numeric[Double]] = Option(Numeric.DoubleIsFractional)
-  val ordering: Ordering[Double] = Ordering.Double
 
-  /** Pattern for parsing `DoubleCodec` from string. */
-  val Pattern = "double".r
+/** Schema for dealing with `Double`. */
+case class DoubleSchema(
+  min: Option[Double],
+  max: Option[Double],
+  precision: Option[Int],
+  scale: Option[Int]
+) extends ContinuousSchema[Double] {
+  val converters: Set[Schema.Converter[Double, Any]] = Set.empty
 
-  def box(value: Double): Value[Double] = DoubleValue(value, this)
+  def boxUnsafe(value: Double): Value[Double] = DoubleValue(value, this)
 
   def compare(x: Double, y: Double): Int = x.compare(y)
 
-  def decode(str: String): Option[Double] = Try(str.toDouble).toOption
-
   def encode(value: Double): String = value.toString
 
-  /**
-   * Parse a DoubleCodec from a string.
-   *
-   * @param str String from which to parse the codec.
-   *
-   * @return A `Some[DoubleCodec]` in case of success, `None` otherwise.
-   */
-  def fromShortString(str: String): Option[DoubleCodec.type] = str match {
-    case Pattern() => Option(this)
-    case _ => None
-  }
+  protected implicit val num: Numeric[Double] = implicitly[Numeric[Double]]
 
-  def toShortString = Pattern.toString
-} */
+  protected def name: String = "double"
+
+  protected def parse(str: String): Option[Double] = Try(str.toDouble).toOption
+}
 
 /** Functions for dealing with schema parameters. */
 private object SchemaParameters {
