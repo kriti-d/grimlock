@@ -145,6 +145,16 @@ case class DoubleValue(value: Double, schema: Schema[Double]) extends Value[Doub
   def cmp(that: Value[_]): Option[Int] = that.as[Double].map(d => cmp(d))
 }
 
+/**
+ * Value for when the data is of type `String`.
+ *
+ * @param value A `String`.
+ * @param codec The codec used for encoding/decoding `value`.
+ */
+case class StringValue(value: String, schema: Schema[String]) extends Value[String] {
+  def cmp(that: Value[_]): Option[Int] = that.as[String].map(s => cmp(s))
+}
+
 /** Hetrogeneous comparison results. */
 sealed private trait CompareResult
 private case object GreaterEqual extends CompareResult
