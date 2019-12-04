@@ -14,6 +14,8 @@
 
 package commbank.grimlock.framework.encoding2
 
+import java.util.Date
+
 import scala.reflect.ClassTag
 import scala.util.matching.Regex
 
@@ -135,6 +137,16 @@ trait Value[T] {
     case Some(x) if (x < 0) => (op == Less) || (op == LessEqual)
     case _ => false
   }
+}
+
+/**
+ * Value for when the data is of type `java.util.Date`
+ *
+ * @param value A `java.util.Date`.
+ * @param schema The schema used for encoding/decoding `value`.
+ */
+case class DateValue(value: Date, schema: Schema[Date]) extends Value[Date] {
+  def cmp(that: Value[_]): Option[Int] = that.as[Date].map(d => cmp(d))
 }
 
 /**

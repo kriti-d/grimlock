@@ -14,9 +14,10 @@
 
 package commbank.grimlock.framework.encoding2
 
+import java.text.{ ParsePosition, SimpleDateFormat }
 import java.util.Date
 
-import scala.util.Try
+import scala.util.{ Success, Try }
 import scala.util.matching.Regex
 
 trait Schema[T] {
@@ -330,6 +331,57 @@ case class BoundedStringSchema(min: Int, max: Int) extends StringSchema {
   def validate(value: String): Boolean = value.size >= min && value.size <= max
 
   protected def name: String = "boundedString"
+}
+
+/**
+ * Schema for date variables.
+ *
+ * @param dates The values of the variable, a set or range.
+ */
+case class DateSchema(
+  dates: Either[Set[Date], (Option[Date], Option[Date])] = Left(Set.empty[Date]),
+  format: String = "yyyy-MM-dd"
+) extends Schema[Date] {
+  val converters: Set[Schema.Converter[Date, Any]] = Set(DateSchema.DateAsLong)
+
+  def boxUnsafe(value: Date): Value[Date] = DateValue(value, this)
+
+  def date: Option[Date => Date] = Option(identity)
+
+  def encode(value: Date): String = df.format(value)
+
+  def integral: Option[Integral[Date]] = None
+
+  def numeric: Option[Numeric[Date]] = None
+
+  def ordering: Ordering[Date] = implicitly[Ordering[Date]]
+
+  def parse(value: String): Option[Date] = {
+    val fmt = df
+    val pos = new ParsePosition(0)
+
+    fmt.setLenient(false)
+
+    Try(fmt.parse(value, pos)) match {
+      case Success(d) if (pos.getIndex == value.length) => Option(d)
+      case _ => None
+    }
+  }
+
+  def validate(value: Date): Boolean = dates.fold(
+    domain => domain.isEmpty || domain.contains(value),
+    range => range._1.fold(true)(t => compare(value, t) >= 0) && range._2.fold(true)(t => compare(value, t) <= 0)
+  )
+
+  protected def name: String = "date"
+
+  private def df: SimpleDateFormat = new SimpleDateFormat(format)
+}
+
+object DateSchema {
+  private case object DateAsLong extends Schema.Converter[Date, Long] {
+    def apply(d: Date): Long = d.getTime
+  }
 }
 
 /** Functions for dealing with schema parameters. */
