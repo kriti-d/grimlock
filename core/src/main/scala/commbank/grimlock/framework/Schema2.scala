@@ -41,9 +41,17 @@ trait Schema[T] {
    * @param value The data to box.
    *
    * @return The value wrapped in a `Value`.
+   * @throws IllegalArgumentException if the value does not conform to this schema.
    */
   def boxUnsafe(value: T): Value[T]
 
+  /**
+   * Safely box a (basic) data type in a `Value`
+   *
+   * @param value The data to box.
+   *
+   * @return `Some[Value[T]]` if the value conforms to this schema, `None` otherwise.
+   */
   def box(value: T): Option[Value[T]] = Try(boxUnsafe(value)).toOption
 
   /**
@@ -93,6 +101,7 @@ trait Schema[T] {
 
   protected def paramString: String = ""
 
+  /** Subtypes should implement parsing logic in this method. */
   protected def parse(str: String): Option[T]
 
   private def round(str: String): String = if (str.isEmpty) str else "(" + str + ")"
@@ -102,10 +111,12 @@ object Schema {
   type Converter[T, X] = (T) => X
 }
 
-/** Trait for schemas for numerical variables. */
+/** Trait for schemas for which may have a range of valid values. */
 trait RangeSchema[T] extends Schema[T] {
   val min: Option[T]
   val max: Option[T]
+
+  def validate(value: T): Boolean = validateRange(value)
 
   protected def validateRange(
     value: T
@@ -123,7 +134,7 @@ trait ScaleSchema[T] extends RangeSchema[T] {
 
   def ordering: Ordering[T] = num
 
-  def validate(value: T): Boolean = {
+  override def validate(value: T): Boolean = {
     val dec = toDecimal(value)
 
     validateRange(value) &&
@@ -209,7 +220,74 @@ case class DoubleSchema(
   protected def parse(str: String): Option[Double] = Try(str.toDouble).toOption
 }
 
-/** Trait for schemas for categorical variables. */
+/** Schema for dealing with `Float`. */
+case class FloatSchema(
+  min: Option[Float],
+  max: Option[Float],
+  precision: Option[Int],
+  scale: Option[Int]
+) extends ScaleSchema[Float] {
+  val converters: Set[Schema.Converter[Float, Any]] = Set(FloatSchema.FloatAsDouble)
+
+  def boxUnsafe(value: Float): Value[Float] = FloatValue(value, this)
+
+  def encode(value: Float): String = value.toString
+
+  protected implicit val num: Numeric[Float] = implicitly[Numeric[Float]]
+
+  protected def name: String = "double"
+
+  protected def parse(str: String): Option[Float] = Try(str.toFloat).toOption
+}
+
+/** Companion object to `FloatSchema`. */
+object FloatSchema {
+  private case object FloatAsDouble extends Schema.Converter[Float, Double] {
+    def apply(f: Float): Double = f.toDouble
+  }
+}
+
+case class IntSchema(min: Option[Int], max: Option[Int]) extends RangeSchema[Int] {
+  val converters: Set[Schema.Converter[Int, Any]] = Set(
+    IntSchema.IntAsBigDecimal, IntSchema.IntAsDouble, IntSchema.IntAsFloat, IntSchema.IntAsLong
+  )
+  val date: Option[Int => Date] = None
+
+  def boxUnsafe(value: Int): Value[Int] = IntValue(value, this)
+
+  def encode(value: Int): String = value.toString
+
+  def integral: Option[Integral[Int]] = Option(implicitly[Integral[Int]])
+
+  def numeric: Option[Numeric[Int]] = Option(implicitly[Numeric[Int]])
+
+  def ordering: Ordering[Int] = implicitly[Ordering[Int]]
+
+  protected def name: String = "int"
+
+  protected def parse(str: String): Option[Int] = Try(str.toInt).toOption
+}
+
+/** Companion object to `IntSchema`. */
+object IntSchema {
+  private case object IntAsBigDecimal extends Schema.Converter[Int, BigDecimal] {
+    def apply(i: Int): BigDecimal = BigDecimal(i)
+  }
+
+  private case object IntAsDouble extends Schema.Converter[Int, Double] {
+    def apply(i: Int): Double = i.toDouble
+  }
+
+  private case object IntAsFloat extends Schema.Converter[Int, Float] {
+    def apply(i: Int): Float = i.toFloat
+  }
+
+  private case object IntAsLong extends Schema.Converter[Int, Long] {
+    def apply(i: Int): Long = i.toLong
+  }
+}
+
+/** Trait for schemas which mark values as valid if and only if they exist in a domain. */
 trait DomainSchema[T] extends Schema[T] {
   /** Values the variable can take. */
   val domain: Either[Set[T], Regex]
@@ -218,6 +296,7 @@ trait DomainSchema[T] extends Schema[T] {
     .fold(set => set.isEmpty || set.contains(value), regex => regex.pattern.matcher(encode(value)).matches)
 }
 
+/** Trait for dealing with `Schema`s of `String` values. */
 trait StringSchema extends Schema[String] {
   val converters: Set[Schema.Converter[String, Any]] = Set.empty
 
@@ -234,6 +313,7 @@ trait StringSchema extends Schema[String] {
   protected def parse(str: String): Option[String] = Option(str)
 }
 
+/** Schema for dealing with `String` with specific domain. */
 case class DomainStringSchema(
   domain: Either[Set[String], Regex],
   customOrdering: Option[Ordering[String]] = None
@@ -243,10 +323,8 @@ case class DomainStringSchema(
   protected def name: String = "domainString"
 }
 
-case class BoundedStringSchema(
-  min: Int,
-  max: Int
-) extends StringSchema {
+/** Schema for dealing with strings of bounded length. */
+case class BoundedStringSchema(min: Int, max: Int) extends StringSchema {
   def ordering: Ordering[String] = Ordering.String
 
   def validate(value: String): Boolean = value.size >= min && value.size <= max

@@ -137,12 +137,48 @@ trait Value[T] {
   }
 }
 
+/**
+ * Value for when the data is of type `BigDecimal`.
+ *
+ * @param value A `BigDecimal`.
+ * @param schema The schema used for encoding/decoding `value`.
+ */
 case class DecimalValue(value: BigDecimal, schema: Schema[BigDecimal]) extends Value[BigDecimal] {
   def cmp(that: Value[_]): Option[Int] = that.as[BigDecimal].map(bd => cmp(bd))
 }
 
+/**
+ * Value for when the data is of type `Double`.
+ *
+ * @param value A `Double`.
+ * @param schema The schema used for encoding/decoding `value`.
+ */
 case class DoubleValue(value: Double, schema: Schema[Double]) extends Value[Double] {
   def cmp(that: Value[_]): Option[Int] = that.as[Double].map(d => cmp(d))
+}
+
+/**
+ * Value for when the data is of type `Float`.
+ *
+ * @param value A `Float`.
+ * @param schema The schema used for encoding/decoding `value`.
+ */
+case class FloatValue(value: Float, schema: Schema[Float]) extends Value[Float] {
+  def cmp(that: Value[_]): Option[Int] = that.as[Float].map(d => cmp(d))
+}
+
+/**
+ * Value for when the data is of type `Int`.
+ *
+ * @param value A `Int`.
+ * @param schema The schema used for encoding/decoding `value`.
+ */
+case class IntValue(value: Int, schema: Schema[Int]) extends Value[Int] {
+  def cmp(that: Value[_]): Option[Int] = that
+    .as[Int]
+    .map(i => super.cmp(i))
+    .orElse(that.as[Long].map(l => super.cmp(l.toInt)))
+    .orElse(that.as[Double].map(d => super.cmp(if (d > value) math.ceil(d).toInt else math.floor(d).toInt)))
 }
 
 /**
