@@ -168,7 +168,7 @@ case class DecimalSchema(
 
   def encode(value: BigDecimal): String = value.toString
 
-  protected implicit val num: Numeric[BigDecimal] = implicitly[Numeric[BigDecimal]]
+  protected implicit val num: Numeric[BigDecimal] = Numeric.BigDecimalIsFractional
 
   protected def name: String = "decimal"
 
@@ -214,7 +214,7 @@ case class DoubleSchema(
 
   def encode(value: Double): String = value.toString
 
-  protected implicit val num: Numeric[Double] = implicitly[Numeric[Double]]
+  protected implicit val num: Numeric[Double] = Numeric.DoubleIsFractional
 
   protected def name: String = "double"
 
@@ -234,7 +234,7 @@ case class FloatSchema(
 
   def encode(value: Float): String = value.toString
 
-  protected implicit val num: Numeric[Float] = implicitly[Numeric[Float]]
+  protected implicit val num: Numeric[Float] = Numeric.FloatIsFractional
 
   protected def name: String = "double"
 
@@ -258,11 +258,11 @@ case class IntSchema(min: Option[Int], max: Option[Int]) extends RangeSchema[Int
 
   def encode(value: Int): String = value.toString
 
-  def integral: Option[Integral[Int]] = Option(implicitly[Integral[Int]])
+  def integral: Option[Integral[Int]] = Option(Numeric.IntIsIntegral)
 
-  def numeric: Option[Numeric[Int]] = Option(implicitly[Numeric[Int]])
+  def numeric: Option[Numeric[Int]] = Option(Numeric.IntIsIntegral)
 
-  def ordering: Ordering[Int] = implicitly[Ordering[Int]]
+  def ordering: Ordering[Int] = Ordering.Int
 
   protected def name: String = "int"
 
@@ -354,7 +354,7 @@ case class DateSchema(
 
   def numeric: Option[Numeric[Date]] = None
 
-  def ordering: Ordering[Date] = implicitly[Ordering[Date]]
+  def ordering: Ordering[Date] = new Ordering[Date] { def compare(x: Date, y: Date): Int = x.compareTo(y) }
 
   def parse(value: String): Option[Date] = {
     val fmt = df

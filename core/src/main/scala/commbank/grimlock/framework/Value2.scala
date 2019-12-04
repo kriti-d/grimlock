@@ -27,6 +27,9 @@ trait Value[T] {
   /** The encapsulated value. */
   val value: T
 
+  println("value == " + value)
+  println("schema == " + schema)
+
   if (!schema.validate(value))
     throw new IllegalArgumentException(s"${value} does not conform to schema ${schema.toShortString}")
 

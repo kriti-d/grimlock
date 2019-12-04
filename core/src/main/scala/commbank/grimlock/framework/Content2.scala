@@ -15,7 +15,7 @@
 package commbank.grimlock.framework.content2
 
 import commbank.grimlock.framework.encoding2.Value
-import commbank.grimlock.framework.metadata.{ ContinuousType, DiscreteType, Type }
+import commbank.grimlock.framework.metadata.{ ContinuousType, DiscreteType, OrdinalType, NominalType, Type }
 
 /** Contents of a cell in a matrix. */
 trait Content {
@@ -48,26 +48,30 @@ object Content {
   )(implicit
     ev: VariableConstraints[T, X]
   ): Content = ContentImpl(classification, value)
-}
 
-/** Trait for capturing matching variable `Type`s and storage types. */
-trait VariableConstraints[T <: Type, X]
+  /** Trait for capturing matching variable `Type`s and storage types. */
+  trait VariableConstraints[T <: Type, X]
 
-/** Companion object to `VariableConstraints` with type cass instances. */
-object VariableConstraints {
-  implicit def fractionalIsContinuous[
-    T <: ContinuousType.type,
-    X
-  ](implicit
-    ev: Fractional[X]
-  ): VariableConstraints[T, X] = new VariableConstraints[T, X] { }
+  /** Companion object to `VariableConstraints` with type cass instances. */
+  object VariableConstraints {
+    implicit def fractionalAsContinuous[
+      T <: ContinuousType.type,
+      X
+    ](implicit
+      ev: Fractional[X]
+    ): VariableConstraints[T, X] = new VariableConstraints[T, X] { }
 
-  implicit def integralIsDiscrete[
-    T <: DiscreteType.type,
-    X
-  ](implicit
-    ev: Integral[X]
-  ): VariableConstraints[T, X] = new VariableConstraints[T, X] { }
+    implicit def integralAsDiscrete[
+      T <: DiscreteType.type,
+      X
+    ](implicit
+      ev: Integral[X]
+    ): VariableConstraints[T, X] = new VariableConstraints[T, X] { }
+
+    implicit def stringAsNominal[T <: NominalType.type] = new VariableConstraints[T, String] { }
+
+    implicit def stringAsOrdinal[T <: OrdinalType.type] = new VariableConstraints[T, String] { }
+  }
 }
 
 private case class ContentImpl(classification: Type, value: Value[_]) extends Content
