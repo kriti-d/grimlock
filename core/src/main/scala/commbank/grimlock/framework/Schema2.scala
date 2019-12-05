@@ -78,7 +78,7 @@ case class StringLengthValidator(min: Int, max: Int) extends Validator[String] {
   def validate(value: String): Boolean = min <= value.length && value.length <= max
 }
 
-/** Schema defines a set of legal values, operations and conversions for a variable. */
+/** Schema defines a set of legal values, parsing methods and conversions for a variable. */
 trait Schema[T] {
   /** Custom convertors (i.e. other than identity) for converting `T` to another type. */
   def converters: Set[Schema.Converter[T, Any]]
