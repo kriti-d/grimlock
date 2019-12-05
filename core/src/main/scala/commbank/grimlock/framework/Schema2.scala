@@ -20,6 +20,65 @@ import java.util.Date
 import scala.util.{ Success, Try }
 import scala.util.matching.Regex
 
+/** Trait for defining legal values of a schema. */
+trait Validator[T] {
+  /**
+   * Check if a value is valid.
+   *
+   * @param value The value to validate.
+   *
+   * @return True is the value is valid, false otherwise.
+   */
+  def validate(value: T): Boolean
+}
+
+case class RangeValidator[T](min: Option[T], max: Option[T])(implicit ordering: Ordering[T]) extends Validator[T] {
+  def validate(
+    value: T
+  ): Boolean = min.fold(true)(t => ordering.gteq(t, value)) && max.fold(true)(t => ordering.lteq(t, value))
+}
+
+trait ScaleValidator[T] extends Validator[T] {
+  val precision: Option[Int]
+  val scale: Option[Int]
+
+  def validate(value: T): Boolean = {
+    val dec = toDecimal(value)
+
+    precision.fold(true)(p => dec.precision <= p) && scale.fold(true)(s => dec.scale <= s)
+  }
+
+  protected def toDecimal(value: T): BigDecimal
+}
+
+case class BigDecimalScaleValidator(precision: Option[Int], scale: Option[Int]) extends ScaleValidator[BigDecimal] {
+  protected def toDecimal(value: BigDecimal): BigDecimal = value
+}
+
+case class NumericScaleValidator[
+  T
+](
+  precision: Option[Int],
+  scale: Option[Int]
+)(implicit
+  numeric: Numeric[T]
+) extends ScaleValidator[T] {
+  protected def toDecimal(value: T): BigDecimal = BigDecimal.double2bigDecimal(numeric.toDouble(value))
+}
+
+case class DomainValidator[T](domain: Set[T]) extends Validator[T] {
+  def validate(value: T): Boolean = domain.isEmpty || domain.contains(value)
+}
+
+case class RegexValidator[T](regex: Regex) extends Validator[T] {
+  def validate(value: T): Boolean = regex.pattern.matcher(value.toString).matches
+}
+
+case class StringLengthValidator(min: Int, max: Int) extends Validator[String] {
+  def validate(value: String): Boolean = min <= value.length && value.length <= max
+}
+
+/** Schema defines a set of legal values, operations and conversions for a variable. */
 trait Schema[T] {
   /** Custom convertors (i.e. other than identity) for converting `T` to another type. */
   def converters: Set[Schema.Converter[T, Any]]
@@ -35,6 +94,9 @@ trait Schema[T] {
 
   /** An ordering for this data type. */
   def ordering: Ordering[T]
+
+  /** Set of validators for this schema. */
+  def validators: Set[Validator[T]]
 
   /**
    * Box a (basic) data type in a `Value`.
@@ -90,13 +152,13 @@ trait Schema[T] {
   def toShortString: String = name + round(paramString)
 
   /**
-   * Validates if a value confirms to this schema.
+   * Validates if a value conforms to this schema.
    *
    * @param value The value to validate.
    *
-   * @return True is the value confirms to this schema, false otherwise.
+   * @return True is the value conforms to this schema, false otherwise.
    */
-  def validate(value: T): Boolean
+  def validate(value: T): Boolean = validators.forall(_.validate(value))
 
   protected def name: String
 
@@ -112,79 +174,43 @@ object Schema {
   type Converter[T, X] = (T) => X
 }
 
-/** Trait for schemas for which may have a range of valid values. */
-trait RangeSchema[T] extends Schema[T] {
-  val min: Option[T]
-  val max: Option[T]
-
-  def validate(value: T): Boolean = validateRange(value)
-
-  protected def validateRange(
-    value: T
-  ): Boolean = min.fold(true)(t => ordering.gteq(t, value)) && max.fold(true)(t => ordering.lteq(t, value))
-}
-
-trait ScaleSchema[T] extends RangeSchema[T] {
-  val date: Option[T => Date] = None
-  val integral: Option[Integral[T]] = None
-  val min: Option[T]
-  val max: Option[T]
-  val numeric: Option[Numeric[T]] = Option(num)
-  val precision: Option[Int]
-  val scale: Option[Int]
-
-  def ordering: Ordering[T] = num
-
-  override def validate(value: T): Boolean = {
-    val dec = toDecimal(value)
-
-    validateRange(value) &&
-      precision.fold(true)(p => dec.precision <= p) &&
-      scale.fold(true)(s => dec.scale <= s)
-  }
-
-  protected implicit val num: Numeric[T]
-
-  override protected def paramString: String = SchemaParameters.writeRange(min, max, this, extra)
-
-  protected def toDecimal(value: T): BigDecimal = BigDecimal.double2bigDecimal(num.toDouble(value))
-
-  private val extra = List(("precision", precision.map(_.toString)), ("scale", scale.map(_.toString)))
-}
-
 /** Schema for dealing with `BigDecimal`. */
 case class DecimalSchema(
-  min: Option[BigDecimal],
-  max: Option[BigDecimal],
-  decimalPrecision: Int,
-  decimalScale: Int
-) extends ScaleSchema[BigDecimal] {
+  precision: Int,
+  scale: Int,
+  additionalValidators: Set[Validator[BigDecimal]] = Set()
+) extends Schema[BigDecimal] {
   val converters: Set[Schema.Converter[BigDecimal, Any]] = decimalAsDoubleConvertor.toSet ++
     decimalAsFloatConvertor.toSet
-  val precision: Option[Int] = Option(decimalPrecision)
-  val scale: Option[Int] = Option(decimalScale)
+
+  val date: Option[BigDecimal => Date] = None
 
   def boxUnsafe(value: BigDecimal): Value[BigDecimal] = DecimalValue(value, this)
 
   def encode(value: BigDecimal): String = value.toString
 
-  protected implicit val num: Numeric[BigDecimal] = Numeric.BigDecimalIsFractional
+  def integral: Option[Integral[BigDecimal]] = None
+
+  def numeric: Option[Numeric[BigDecimal]] = Option(Numeric.BigDecimalIsFractional)
+
+  def ordering: Ordering[BigDecimal] = Ordering.BigDecimal
+
+  def validators: Set[Validator[BigDecimal]] = additionalValidators +
+    BigDecimalScaleValidator(Option(precision), Option(scale))
 
   protected def name: String = "decimal"
 
   protected def parse(str: String): Option[BigDecimal] = Try(BigDecimal(str)).toOption
 
-  override protected def toDecimal(value: BigDecimal): BigDecimal = value
-
   private def decimalAsDoubleConvertor: Option[Schema.Converter[BigDecimal, Double]] = {
-    if ((decimalPrecision - decimalScale) >= 309)
+    if ((precision - scale) >= 309)
       None
     else
       Option(DecimalSchema.BigDecimalAsDouble)
   }
 
   private def decimalAsFloatConvertor: Option[Schema.Converter[BigDecimal, Float]] = {
-    if ((decimalPrecision - decimalScale) >= 39)
+    if ((precision - scale) >= 39)
       None
     else
       Option(DecimalSchema.BigDecimalAsFloat)
@@ -202,19 +228,20 @@ object DecimalSchema {
 }
 
 /** Schema for dealing with `Double`. */
-case class DoubleSchema(
-  min: Option[Double],
-  max: Option[Double],
-  precision: Option[Int],
-  scale: Option[Int]
-) extends ScaleSchema[Double] {
+case class DoubleSchema(validators: Set[Validator[Double]]) extends Schema[Double] {
   val converters: Set[Schema.Converter[Double, Any]] = Set.empty
+
+  def date: Option[Double => Date] = None
 
   def boxUnsafe(value: Double): Value[Double] = DoubleValue(value, this)
 
   def encode(value: Double): String = value.toString
 
-  protected implicit val num: Numeric[Double] = Numeric.DoubleIsFractional
+  def integral: Option[Integral[Double]] = None
+
+  def numeric: Option[Numeric[Double]] = Option(Numeric.DoubleIsFractional)
+
+  def ordering: Ordering[Double] = Ordering.Double
 
   protected def name: String = "double"
 
@@ -222,19 +249,20 @@ case class DoubleSchema(
 }
 
 /** Schema for dealing with `Float`. */
-case class FloatSchema(
-  min: Option[Float],
-  max: Option[Float],
-  precision: Option[Int],
-  scale: Option[Int]
-) extends ScaleSchema[Float] {
+case class FloatSchema(validators: Set[Validator[Float]]) extends Schema[Float] {
   val converters: Set[Schema.Converter[Float, Any]] = Set(FloatSchema.FloatAsDouble)
+
+  def date: Option[Float => Date] = None
 
   def boxUnsafe(value: Float): Value[Float] = FloatValue(value, this)
 
   def encode(value: Float): String = value.toString
 
-  protected implicit val num: Numeric[Float] = Numeric.FloatIsFractional
+  def integral: Option[Integral[Float]] = None
+
+  def numeric: Option[Numeric[Float]] = Option(Numeric.FloatIsFractional)
+
+  def ordering: Ordering[Float] = Ordering.Float
 
   protected def name: String = "double"
 
@@ -248,7 +276,7 @@ object FloatSchema {
   }
 }
 
-case class IntSchema(min: Option[Int], max: Option[Int]) extends RangeSchema[Int] {
+case class IntSchema(validators: Set[Validator[Int]]) extends Schema[Int] {
   val converters: Set[Schema.Converter[Int, Any]] = Set(
     IntSchema.IntAsBigDecimal, IntSchema.IntAsDouble, IntSchema.IntAsFloat, IntSchema.IntAsLong
   )
@@ -288,17 +316,11 @@ object IntSchema {
   }
 }
 
-/** Trait for schemas which mark values as valid if and only if they exist in a domain. */
-trait DomainSchema[T] extends Schema[T] {
-  /** Values the variable can take. */
-  val domain: Either[Set[T], Regex]
-
-  def validate(value: T): Boolean = domain
-    .fold(set => set.isEmpty || set.contains(value), regex => regex.pattern.matcher(encode(value)).matches)
-}
-
 /** Trait for dealing with `Schema`s of `String` values. */
-trait StringSchema extends Schema[String] {
+case class StringSchema(
+  validators: Set[Validator[String]],
+  ordering: Ordering[String] = Ordering.String
+) extends Schema[String] {
   val converters: Set[Schema.Converter[String, Any]] = Set.empty
 
   def boxUnsafe(value: String): Value[String] = StringValue(value, this)
@@ -311,26 +333,9 @@ trait StringSchema extends Schema[String] {
 
   def numeric: Option[Numeric[String]] = None
 
+  protected def name = "string"
+
   protected def parse(str: String): Option[String] = Option(str)
-}
-
-/** Schema for dealing with `String` with specific domain. */
-case class DomainStringSchema(
-  domain: Either[Set[String], Regex],
-  customOrdering: Option[Ordering[String]] = None
-) extends DomainSchema[String] with StringSchema {
-  def ordering: Ordering[String] = customOrdering.getOrElse(Ordering.String)
-
-  protected def name: String = "domainString"
-}
-
-/** Schema for dealing with strings of bounded length. */
-case class BoundedStringSchema(min: Int, max: Int) extends StringSchema {
-  def ordering: Ordering[String] = Ordering.String
-
-  def validate(value: String): Boolean = value.size >= min && value.size <= max
-
-  protected def name: String = "boundedString"
 }
 
 /**
@@ -339,7 +344,7 @@ case class BoundedStringSchema(min: Int, max: Int) extends StringSchema {
  * @param dates The values of the variable, a set or range.
  */
 case class DateSchema(
-  dates: Either[Set[Date], (Option[Date], Option[Date])] = Left(Set.empty[Date]),
+  validators: Set[Validator[Date]],
   format: String = "yyyy-MM-dd"
 ) extends Schema[Date] {
   val converters: Set[Schema.Converter[Date, Any]] = Set(DateSchema.DateAsLong)
@@ -368,11 +373,6 @@ case class DateSchema(
     }
   }
 
-  def validate(value: Date): Boolean = dates.fold(
-    domain => domain.isEmpty || domain.contains(value),
-    range => range._1.fold(true)(t => compare(value, t) >= 0) && range._2.fold(true)(t => compare(value, t) <= 0)
-  )
-
   protected def name: String = "date"
 
   private def df: SimpleDateFormat = new SimpleDateFormat(format)
@@ -381,23 +381,6 @@ case class DateSchema(
 object DateSchema {
   private case object DateAsLong extends Schema.Converter[Date, Long] {
     def apply(d: Date): Long = d.getTime
-  }
-}
-
-/** Functions for dealing with schema parameters. */
-private object SchemaParameters {
-  def writeRange[T](
-    min: Option[T],
-    max: Option[T],
-    schema: Schema[T],
-    extra: List[(String, Option[String])]
-  ): String = {
-    val list = List(
-      min.map(t => s"min=${schema.encode(t)}"),
-      max.map(t => s"max=${schema.encode(t)}")
-    ) ++ extra.map { case (name, value) => value.map(v => s"${name}=${v}") }
-
-    list.flatten.mkString(",")
   }
 }
 
