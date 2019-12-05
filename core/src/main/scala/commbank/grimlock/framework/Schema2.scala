@@ -44,7 +44,7 @@ trait Schema[T] {
    * @return The value wrapped in a `Value`.
    * @throws IllegalArgumentException if the value does not conform to this schema.
    */
-  def boxUnsafe(value: T): Value[T]
+  protected def boxUnsafe(value: T): Value[T]
 
   /**
    * Safely box a (basic) data type in a `Value`
@@ -73,9 +73,9 @@ trait Schema[T] {
    * @return `Some[T]` if the decode was successful, `None` otherwise.
    */
   def decode(str: String): Option[T] = for {
-    v <- parse(str)
-    if (validate(v))
-  } yield v
+    t <- parse(str)
+    if (validate(t))
+  } yield t
 
   /**
    * Converts a value to a consise (terse) string.
