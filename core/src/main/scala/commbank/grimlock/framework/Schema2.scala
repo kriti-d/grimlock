@@ -152,7 +152,7 @@ object RegexValidator {
   val Pattern = "regex\\((.*)\\)".r
 
   def fromShortString[T](str: String): Option[RegexValidator[T]] = str match {
-    case Pattern(regex) => Option(RegexValidator[T](regex.r))
+    case Pattern(regex) => Try(RegexValidator[T](regex.r)).toOption
     case _ => None
   }
 }
