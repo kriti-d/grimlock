@@ -57,12 +57,12 @@ object Content {
     implicit def fractionalAsContinuous[
       T <: ContinuousType.type,
       X : Numeric
-    ): VariableConstraints[T, X] = new VariableConstraints[T, X] { }
+    ]: VariableConstraints[T, X] = new VariableConstraints[T, X] { }
 
     implicit def integralAsDiscrete[
       T <: DiscreteType.type,
       X : Integral
-    ): VariableConstraints[T, X] = new VariableConstraints[T, X] { }
+    ]: VariableConstraints[T, X] = new VariableConstraints[T, X] { }
 
     implicit def stringAsNominal[T <: NominalType.type] = new VariableConstraints[T, String] { }
 

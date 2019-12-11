@@ -32,10 +32,84 @@ trait Validator[T] {
   def validate(value: T): Boolean
 }
 
-case class RangeValidator[T](min: Option[T], max: Option[T])(implicit ordering: Ordering[T]) extends Validator[T] {
+// object Validator {
+//   def fromShortString[T](str: String): Option[C]
+// }
+
+case class BoundedStringValidator(min: Int, max: Int) extends Validator[String] {
+  def validate(value: String): Boolean = min <= value.length && value.length <= max
+}
+
+object BoundedStringValidator {
+  /** Pattern for parsing `BoundedStringValidator` from string. */
+  val Pattern = "boundedString\\((\\d+),\\s*(\\d+)\\)".r
+
+  /**
+   * Parse a BoundedStringValidator from a string.
+   *
+   * @param str String from which to parse the validator.
+   *
+   * @return A `Some[BoundedStringValidator]` in case of success, `None` otherwise.
+   */
+  def fromShortString(str: String): Option[BoundedStringValidator] = str match {
+    case Pattern(min, max) =>
+      for {
+        l <- IntSchema().decode(min)
+        u <- IntSchema().decode(max)
+      } yield BoundedStringValidator(l, u)
+    case _ => None
+  }
+}
+
+case class RangeValidator[T](min: Option[T], max: Option[T])(implicit ev: Ordering[T]) extends Validator[T] {
   def validate(
     value: T
-  ): Boolean = min.fold(true)(t => ordering.gteq(t, value)) && max.fold(true)(t => ordering.lteq(t, value))
+  ): Boolean = min.fold(true)(t => ev.gteq(t, value)) && max.fold(true)(t => ev.lteq(t, value))
+}
+
+object RangeValidator {
+  def fromComponents[T : Ordering](
+    min: String,
+    max: String,
+    schema: Schema[T]
+  ): Option[RangeValidator[T]] = for {
+    mi <- parseComponent(min, schema)
+    ma <- parseComponent(max, schema)
+  } yield RangeValidator(mi, ma)
+
+  /**
+   * Parse a RangeValidator from string.
+   *
+   * @param str    The string to parse.
+   * @param schema The schema to parse with.
+   *
+   * @return A `Some[RangeValidator]` if successful, `None` otherwise.
+   */
+  def fromShortString[T : Ordering](str: String, schema: Schema[T]): Option[RangeValidator[T]] = for {
+    (min, max) <- str match {
+      case PatternMax(ma) => Option(("", ma))
+      case PatternMin(mi) => Option((mi, ""))
+      case PatternRange(mi, ma) => Option((mi, ma))
+      case _ => None
+    }
+    validator <- fromComponents(min, max, schema)
+  } yield validator
+
+  private val name = "range"
+
+  /** Pattern for matching short string continuous schema with maximum value. */
+  private val PatternMax = s"${name}\\(max=(-?\\d+\\.?\\d*)\\)".r
+
+  /** Pattern for matching short string continuous schema with minimum value. */
+  private val PatternMin = s"${name}\\(min=(-?\\d+\\.?\\d*)\\)".r
+
+  /** Pattern for matching short string continuous schema with range. */
+  private val PatternRange = s"${name}\\(min=(-?\\d+\\.?\\d*),max=(-?\\d+\\.?\\d*)\\)".r
+
+  private def parseComponent[T](component: String, schema: Schema[T]): Option[Option[T]] = component match {
+    case "" => Option(None)
+    case c => schema.decode(c).map(Option.apply)
+  }
 }
 
 trait ScaleValidator[T] extends Validator[T] {
@@ -74,8 +148,13 @@ case class RegexValidator[T](regex: Regex) extends Validator[T] {
   def validate(value: T): Boolean = regex.pattern.matcher(value.toString).matches
 }
 
-case class StringLengthValidator(min: Int, max: Int) extends Validator[String] {
-  def validate(value: String): Boolean = min <= value.length && value.length <= max
+object RegexValidator {
+  val Pattern = "regex\\((.*)\\)".r
+
+  def fromShortString[T](str: String): Option[RegexValidator[T]] = str match {
+    case Pattern(regex) => Option(RegexValidator[T](regex.r))
+    case _ => None
+  }
 }
 
 /** Schema defines a set of legal values, parsing methods and conversions for a variable. */
@@ -96,7 +175,7 @@ trait Schema[T] {
   def ordering: Ordering[T]
 
   /** Set of validators for this schema. */
-  def validators: Set[Validator[T]]
+  def validators: Seq[Validator[T]]
 
   /**
    * Box a (basic) data type in a `Value`.
@@ -175,11 +254,7 @@ object Schema {
 }
 
 /** Schema for dealing with `BigDecimal`. */
-case class DecimalSchema(
-  precision: Int,
-  scale: Int,
-  additionalValidators: Set[Validator[BigDecimal]] = Set()
-) extends Schema[BigDecimal] {
+case class DecimalSchema(validators: Validator[BigDecimal]*) extends Schema[BigDecimal] {
   val converters: Set[Schema.Converter[BigDecimal, Any]] = decimalAsDoubleConvertor.toSet ++
     decimalAsFloatConvertor.toSet
 
@@ -195,25 +270,25 @@ case class DecimalSchema(
 
   def ordering: Ordering[BigDecimal] = Ordering.BigDecimal
 
-  def validators: Set[Validator[BigDecimal]] = additionalValidators +
-    BigDecimalScaleValidator(Option(precision), Option(scale))
-
   protected def name: String = "decimal"
 
   protected def parse(str: String): Option[BigDecimal] = Try(BigDecimal(str)).toOption
 
-  private def decimalAsDoubleConvertor: Option[Schema.Converter[BigDecimal, Double]] = {
-    if ((precision - scale) >= 309)
-      None
-    else
-      Option(DecimalSchema.BigDecimalAsDouble)
-  }
+  private def decimalAsDoubleConvertor: Option[Schema.Converter[BigDecimal, Double]] = asConvertor(
+    DecimalSchema.BigDecimalAsDouble,
+    309
+  )
 
-  private def decimalAsFloatConvertor: Option[Schema.Converter[BigDecimal, Float]] = {
-    if ((precision - scale) >= 39)
-      None
-    else
-      Option(DecimalSchema.BigDecimalAsFloat)
+  private def decimalAsFloatConvertor: Option[Schema.Converter[BigDecimal, Float]] = asConvertor(
+    DecimalSchema.BigDecimalAsFloat,
+    39
+  )
+
+  private def asConvertor[T](
+    convertor: Schema.Converter[BigDecimal, T],
+    limit: Int
+  ): Option[Schema.Converter[BigDecimal, T]] = validators.collectFirst {
+    case s: ScaleValidator[BigDecimal] if ((s.precision.getOrElse(limit) - s.scale.getOrElse(0)) < limit) => convertor
   }
 }
 
@@ -228,7 +303,7 @@ object DecimalSchema {
 }
 
 /** Schema for dealing with `Double`. */
-case class DoubleSchema(validators: Set[Validator[Double]]) extends Schema[Double] {
+case class DoubleSchema(validators: Validator[Double]*) extends Schema[Double] {
   val converters: Set[Schema.Converter[Double, Any]] = Set.empty
 
   def date: Option[Double => Date] = None
@@ -249,7 +324,7 @@ case class DoubleSchema(validators: Set[Validator[Double]]) extends Schema[Doubl
 }
 
 /** Schema for dealing with `Float`. */
-case class FloatSchema(validators: Set[Validator[Float]]) extends Schema[Float] {
+case class FloatSchema(validators: Validator[Float]*) extends Schema[Float] {
   val converters: Set[Schema.Converter[Float, Any]] = Set(FloatSchema.FloatAsDouble)
 
   def date: Option[Float => Date] = None
@@ -276,7 +351,7 @@ object FloatSchema {
   }
 }
 
-case class IntSchema(validators: Set[Validator[Int]]) extends Schema[Int] {
+case class IntSchema(validators: Validator[Int]*) extends Schema[Int] {
   val converters: Set[Schema.Converter[Int, Any]] = Set(
     IntSchema.IntAsBigDecimal, IntSchema.IntAsDouble, IntSchema.IntAsFloat, IntSchema.IntAsLong
   )
@@ -318,8 +393,8 @@ object IntSchema {
 
 /** Trait for dealing with `Schema`s of `String` values. */
 case class StringSchema(
-  validators: Set[Validator[String]],
-  ordering: Ordering[String] = Ordering.String
+  ordering: Ordering[String],
+  validators: Validator[String]*
 ) extends Schema[String] {
   val converters: Set[Schema.Converter[String, Any]] = Set.empty
 
@@ -338,14 +413,18 @@ case class StringSchema(
   protected def parse(str: String): Option[String] = Option(str)
 }
 
+object StringSchema {
+  def apply(validators: Validator[String]*): StringSchema = StringSchema(Ordering.String, validators: _*)
+}
+
 /**
  * Schema for date variables.
  *
  * @param dates The values of the variable, a set or range.
  */
 case class DateSchema(
-  validators: Set[Validator[Date]],
-  format: String = "yyyy-MM-dd"
+  format: String,
+  validators: Validator[Date]*
 ) extends Schema[Date] {
   val converters: Set[Schema.Converter[Date, Any]] = Set(DateSchema.DateAsLong)
 
@@ -379,6 +458,10 @@ case class DateSchema(
 }
 
 object DateSchema {
+  val DefaultFormat = "yyyy-MM-dd"
+
+  def apply(validators: Validator[Date]*): DateSchema = DateSchema(DefaultFormat, validators: _*)
+
   private case object DateAsLong extends Schema.Converter[Date, Long] {
     def apply(d: Date): Long = d.getTime
   }
