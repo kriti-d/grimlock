@@ -32,10 +32,6 @@ trait Validator[T] {
   def validate(value: T): Boolean
 }
 
-// object Validator {
-//   def fromShortString[T](str: String): Option[C]
-// }
-
 case class BoundedStringValidator(min: Int, max: Int) extends Validator[String] {
   def validate(value: String): Boolean = min <= value.length && value.length <= max
 }
@@ -253,6 +249,11 @@ object Schema {
   type Converter[T, X] = (T) => X
 }
 
+// trait SchemaDecoder {
+//   val name: String
+//   val 
+// }
+
 /** Schema for dealing with `BigDecimal`. */
 case class DecimalSchema(validators: Validator[BigDecimal]*) extends Schema[BigDecimal] {
   val converters: Set[Schema.Converter[BigDecimal, Any]] = decimalAsDoubleConvertor.toSet ++
@@ -293,6 +294,17 @@ case class DecimalSchema(validators: Validator[BigDecimal]*) extends Schema[BigD
 }
 
 object DecimalSchema {
+  val DefaultValidators: Map[String, String => Option[Validator[DecimalSchema]]] = Map(
+    RangeValidator.name -> RangeValidator.fromShortString(_, DecimalSchema())
+  )
+
+  val Pattern = "decimal".r
+
+  def fromShortString(
+    str: String,
+    validators: Map[String, String => Option[Validator[DecimalSchema]]]
+  ): Option[DecimalSchema] = ???
+
   private case object BigDecimalAsDouble extends Schema.Converter[BigDecimal, Double] {
     def apply(i: BigDecimal): Double = i.doubleValue()
   }
