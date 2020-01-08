@@ -32,13 +32,50 @@ trait Validator[T] {
   def validate(value: T): Boolean
 }
 
+object Validator {
+  type Parser[T] = String => Option[Validator[T]]
+
+  type ParserFactory[T] = Map[String, Parser[T]]
+
+  val DoubleFactory: ParserFactory[Double] = RangeValidator.factory[Double](DoubleSchema())
+
+  val StringFactory: ParserFactory[String] = BoundedStringValidator.Factory
+
+  def fromShortString[T](str: String, factory: ParserFactory[T]): Option[Validator[T]] = {
+    val idx = str.indexOf("(")
+
+    if (idx < 0)
+      None
+    else {
+      val key = str.take(idx)
+
+      factory
+        .get(key)
+        .flatMap(parser => parser(str))
+    }
+  }
+
+  def fromShortStringDelimited[T](str: String, factory: Validator.ParserFactory[T]): Option[List[Validator[T]]] = {
+    val validators = str.split(",").map(s => fromShortString(s.trim(), factory))
+
+    validators.collectFirst { case None => () } match {
+      case None => Option(validators.flatten.toList)
+      case Some(_) => None
+    }
+  }
+}
+
 case class BoundedStringValidator(min: Int, max: Int) extends Validator[String] {
   def validate(value: String): Boolean = min <= value.length && value.length <= max
 }
 
 object BoundedStringValidator {
+  val Name = "boundedString"
+
+  val Factory: Validator.ParserFactory[String] = Map(Name -> fromShortString)
+
   /** Pattern for parsing `BoundedStringValidator` from string. */
-  val Pattern = "boundedString\\((\\d+),\\s*(\\d+)\\)".r
+  val Pattern = s"${Name}\\((\\d+),\\s*(\\d+)\\)".r
 
   /**
    * Parse a BoundedStringValidator from a string.
@@ -57,13 +94,33 @@ object BoundedStringValidator {
   }
 }
 
-case class RangeValidator[T](min: Option[T], max: Option[T])(implicit ev: Ordering[T]) extends Validator[T] {
+case class RangeValidator[T](
+  min: Option[T] = None,
+  max: Option[T] = None
+)(implicit
+  ev: Ordering[T]
+) extends Validator[T] {
   def validate(
     value: T
   ): Boolean = min.fold(true)(t => ev.gteq(t, value)) && max.fold(true)(t => ev.lteq(t, value))
 }
 
 object RangeValidator {
+  val Name = "range"
+
+  /** Pattern for matching short string continuous schema with maximum value. */
+  val PatternMax = s"${Name}\\(max=(-?\\d+\\.?\\d*)\\)".r
+
+  /** Pattern for matching short string continuous schema with minimum value. */
+  val PatternMin = s"${Name}\\(min=(-?\\d+\\.?\\d*)\\)".r
+
+  /** Pattern for matching short string continuous schema with range. */
+  val PatternRange = s"${Name}\\(min=(-?\\d+\\.?\\d*),max=(-?\\d+\\.?\\d*)\\)".r
+
+  def factory[T : Ordering](schema: Schema[T]): Validator.ParserFactory[T] = Map(
+    Name -> { (str: String) => fromShortString(str, schema) }
+  )
+
   def fromComponents[T : Ordering](
     min: String,
     max: String,
@@ -90,17 +147,6 @@ object RangeValidator {
     }
     validator <- fromComponents(min, max, schema)
   } yield validator
-
-  private val name = "range"
-
-  /** Pattern for matching short string continuous schema with maximum value. */
-  private val PatternMax = s"${name}\\(max=(-?\\d+\\.?\\d*)\\)".r
-
-  /** Pattern for matching short string continuous schema with minimum value. */
-  private val PatternMin = s"${name}\\(min=(-?\\d+\\.?\\d*)\\)".r
-
-  /** Pattern for matching short string continuous schema with range. */
-  private val PatternRange = s"${name}\\(min=(-?\\d+\\.?\\d*),max=(-?\\d+\\.?\\d*)\\)".r
 
   private def parseComponent[T](component: String, schema: Schema[T]): Option[Option[T]] = component match {
     case "" => Option(None)
@@ -247,12 +293,58 @@ trait Schema[T] {
 
 object Schema {
   type Converter[T, X] = (T) => X
+
+  type Parser[T] = (String, Validator.ParserFactory[T]) => Option[Schema[T]]
+
+  type ParserFactory[T] = Map[String, Parser[T]]
+
+  val DoubleFactory: ParserFactory[Double] = DoubleSchema.factory
+
+  val StringFactory: ParserFactory[String] = StringSchema.factory
+
+  def fromShortString[T](
+    str: String,
+    factory: ParserFactory[T],
+    validatorFactory: Validator.ParserFactory[T]
+  ): Option[Schema[T]] = {
+    val idx = str.indexOf("(")
+
+    if (idx < 0)
+      None
+    else {
+      val key = str.take(idx)
+
+      factory
+        .get(key)
+        .flatMap(parser => parser(str, validatorFactory))
+    }
+  }
 }
 
-// trait SchemaDecoder {
-//   val name: String
-//   val 
-// }
+trait SchemaDecoder[T, S <: Schema[T]] {
+  val DefaultValidatorFactory: Validator.ParserFactory[T]
+
+  def factory: Schema.ParserFactory[T] = Map(Name -> { fromShortString(_, _) })
+
+  val Name: String
+
+  def fromShortString(
+    str: String,
+    validatorParsers: Validator.ParserFactory[T] = DefaultValidatorFactory
+  ): Option[S] = {
+    val Pattern = s"${Name}\\((.*)\\)".r
+
+    str match {
+      case `Name` => Option(constructor())
+      case Pattern(validation) => for {
+        validators <- Validator.fromShortStringDelimited(validation, validatorParsers)
+      } yield constructor(validators: _*)
+      case _ => None
+    }
+  }
+
+  protected def constructor(validators: Validator[T]*): S
+}
 
 /** Schema for dealing with `BigDecimal`. */
 case class DecimalSchema(validators: Validator[BigDecimal]*) extends Schema[BigDecimal] {
@@ -294,9 +386,9 @@ case class DecimalSchema(validators: Validator[BigDecimal]*) extends Schema[BigD
 }
 
 object DecimalSchema {
-  val DefaultValidators: Map[String, String => Option[Validator[DecimalSchema]]] = Map(
-    RangeValidator.name -> RangeValidator.fromShortString(_, DecimalSchema())
-  )
+  // val DefaultValidators: Map[String, String => Option[Validator[DecimalSchema]]] = Map(
+  //   RangeValidator.name -> RangeValidator.fromShortString(_, DecimalSchema())
+  // )
 
   val Pattern = "decimal".r
 
@@ -333,6 +425,14 @@ case class DoubleSchema(validators: Validator[Double]*) extends Schema[Double] {
   protected def name: String = "double"
 
   protected def parse(str: String): Option[Double] = Try(str.toDouble).toOption
+}
+
+object DoubleSchema extends SchemaDecoder[Double, DoubleSchema] {
+  val Name = "double"
+
+  val DefaultValidatorFactory = Validator.DoubleFactory
+
+  protected def constructor(validators: Validator[Double]*): DoubleSchema = DoubleSchema(validators: _*)
 }
 
 /** Schema for dealing with `Float`. */
@@ -420,13 +520,19 @@ case class StringSchema(
 
   def numeric: Option[Numeric[String]] = None
 
-  protected def name = "string"
+  protected def name = StringSchema.Name
 
   protected def parse(str: String): Option[String] = Option(str)
 }
 
-object StringSchema {
+object StringSchema extends SchemaDecoder[String, StringSchema] {
+  val DefaultValidatorFactory = Validator.StringFactory
+
+  val Name = "string"
+
   def apply(validators: Validator[String]*): StringSchema = StringSchema(Ordering.String, validators: _*)
+
+  def constructor(validators: Validator[String]*): StringSchema = StringSchema(validators: _*)
 }
 
 /**
