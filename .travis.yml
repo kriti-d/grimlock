@@ -1,0 +1,27 @@
+language: scala
+jdk:
+- openjdk8
+sudo: false
+cache:
+  directories:
+  - "$HOME/.ivy2"
+  - "$HOME/.m2"
+install:
+- curl https://commbank.artifactoryonline.com/commbank/binaries/ci/ci-3.3.1-20161112085142-c2c258a.tar.gz | tar xz
+- cp src/deploy/sbt-ci-build-doc-no-version.sh ci/sbt-ci-build-doc.sh
+- ci/sbt-ci-setup.sh
+- cp /etc/sbt/sbtopts .sbtopts; echo "-Dsbt.global.base=$TRAVIS_BUILD_DIR/ci" >> .sbtopts
+script:
+- sbt test package
+  && ci/sbt-ci-deploy.sh maven http://commbank.artifactoryonline.com/commbank ext-releases-local
+  && ci/sbt-ci-build-doc.sh https://commbank.github.io/ https://github.com/CommBank
+  && ci/ci-push-branch.sh gh-pages
+after_script:
+- rm -rf ci
+before_install:
+- openssl aes-256-cbc -K $encrypted_ed790ad11574_key -iv $encrypted_ed790ad11574_iv
+  -in .ci/deploy-key.enc -out .ci/deploy-key.pem -d
+env:
+  global:
+  - secure: aEYAvf4FFobLe2YFLtitTeWHVFFYAcEuYfJvzTyRWlKPjysor/SWVQ2quJBLzvpUImDO4VoIXJLgBoujYi/DTiLT52gX+GTsDPJeflTLf4OxungFstFsUYs0lBXazPnfOAv96cOXoCP2LAjZVK58bYj+l421fKdt7btU2qgYusQ=
+  - secure: NlOtfbOfsmUwE0TMOApRRKJbdBsC9fXb2PXtmgLYj9xEhX+1FuWb6hXtUPiN4iSFu1oLwR5uDOKGcSgZKSzPEPBItgbyrT/tMNH9VEyBUCaFLze1paZXMWyJmwaTpeHRPYE7SQ162PnWxt1YU5HAmYTXbxTD4VACIsHTJOM0ZPY=
