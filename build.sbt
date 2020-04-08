@@ -135,6 +135,8 @@ lazy val compilerSettings = Seq(
   javacOptions ++= Seq("-Xlint:unchecked")
 )
 
+
+
 lazy val dependencySettings = Seq(
   conflictManager := ConflictManager.strict,
   dependencyOverrides ++= Set(
